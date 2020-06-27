@@ -5,8 +5,7 @@ Public Class Form1
         vHC.SelectedItem = "hashcat"
     End Sub
     Private Sub sDir_Click(sender As Object, e As EventArgs) Handles sDir.Click
-        OpenFileDialog1.ShowDialog()
-        If DialogResult.OK Then
+        If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
             Dim path As String = OpenFileDialog1.FileName
             DirF.Text = path
             Log.Text = My.Computer.FileSystem.ReadAllText(OpenFileDialog1.FileName)
@@ -66,8 +65,7 @@ Public Class Form1
     End Sub
 
     Private Sub GetMC_Click(sender As Object, e As EventArgs) Handles GetMC.Click
-        OpenFileDialog2.ShowDialog()
-        If DialogResult.OK Then
+        If OpenFileDialog2.ShowDialog() = DialogResult.OK Then
             MC.Text = My.Computer.FileSystem.ReadAllText(OpenFileDialog2.FileName)
             Log.Text = "Master Code: " + Mid(MC.Text, 66, 30)
         End If

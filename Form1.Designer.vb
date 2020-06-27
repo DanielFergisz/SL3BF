@@ -78,7 +78,7 @@ Partial Class Form1
         'IMEI1
         '
         Me.IMEI1.Enabled = False
-        Me.IMEI1.Location = New System.Drawing.Point(607, 25)
+        Me.IMEI1.Location = New System.Drawing.Point(607, 24)
         Me.IMEI1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.IMEI1.Name = "IMEI1"
         Me.IMEI1.Size = New System.Drawing.Size(179, 22)
@@ -321,7 +321,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(563, 29)
+        Me.Label1.Location = New System.Drawing.Point(563, 27)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(38, 17)
         Me.Label1.TabIndex = 4
@@ -406,6 +406,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 446)
+        Me.Controls.Add(Me.IMEI1)
         Me.Controls.Add(Me.MC)
         Me.Controls.Add(Me.RB1)
         Me.Controls.Add(Me.help1)
@@ -415,7 +416,6 @@ Partial Class Form1
         Me.Controls.Add(Me.Salt)
         Me.Controls.Add(Me.Pass)
         Me.Controls.Add(Me.TabControl1)
-        Me.Controls.Add(Me.IMEI1)
         Me.Controls.Add(Me.vHC)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
