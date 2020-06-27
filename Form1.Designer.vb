@@ -26,10 +26,8 @@ Partial Class Form1
         Me.IMEI1 = New System.Windows.Forms.TextBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.GetMC = New System.Windows.Forms.Button()
         Me.Restore = New System.Windows.Forms.Button()
-        Me.Command = New System.Windows.Forms.TextBox()
-        Me.Salt = New System.Windows.Forms.TextBox()
-        Me.Pass = New System.Windows.Forms.TextBox()
         Me.StartBF1 = New System.Windows.Forms.Button()
         Me.Log = New System.Windows.Forms.RichTextBox()
         Me.sDir = New System.Windows.Forms.Button()
@@ -46,6 +44,9 @@ Partial Class Form1
         Me.Salt2 = New System.Windows.Forms.TextBox()
         Me.Pass2 = New System.Windows.Forms.TextBox()
         Me.StartBF2 = New System.Windows.Forms.Button()
+        Me.Command = New System.Windows.Forms.TextBox()
+        Me.Salt = New System.Windows.Forms.TextBox()
+        Me.Pass = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.bench1 = New System.Windows.Forms.Button()
@@ -54,7 +55,6 @@ Partial Class Form1
         Me.RB1 = New System.Windows.Forms.GroupBox()
         Me.algo2 = New System.Windows.Forms.RadioButton()
         Me.algo1 = New System.Windows.Forms.RadioButton()
-        Me.GetMC = New System.Windows.Forms.Button()
         Me.MC = New System.Windows.Forms.TextBox()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
         Me.TabControl1.SuspendLayout()
@@ -113,42 +113,24 @@ Partial Class Form1
         Me.TabPage1.Text = "File"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'GetMC
+        '
+        Me.GetMC.Location = New System.Drawing.Point(52, 321)
+        Me.GetMC.Name = "GetMC"
+        Me.GetMC.Size = New System.Drawing.Size(136, 32)
+        Me.GetMC.TabIndex = 9
+        Me.GetMC.Text = "Get Master Code"
+        Me.GetMC.UseVisualStyleBackColor = True
+        '
         'Restore
         '
         Me.Restore.Location = New System.Drawing.Point(579, 321)
-        Me.Restore.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Restore.Margin = New System.Windows.Forms.Padding(4)
         Me.Restore.Name = "Restore"
         Me.Restore.Size = New System.Drawing.Size(136, 32)
         Me.Restore.TabIndex = 8
         Me.Restore.Text = "Restore"
         Me.Restore.UseVisualStyleBackColor = True
-        '
-        'Command
-        '
-        Me.Command.Location = New System.Drawing.Point(50, 469)
-        Me.Command.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Command.Name = "Command"
-        Me.Command.Size = New System.Drawing.Size(681, 22)
-        Me.Command.TabIndex = 7
-        Me.Command.Visible = False
-        '
-        'Salt
-        '
-        Me.Salt.Location = New System.Drawing.Point(538, 497)
-        Me.Salt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Salt.Name = "Salt"
-        Me.Salt.Size = New System.Drawing.Size(193, 22)
-        Me.Salt.TabIndex = 6
-        Me.Salt.Visible = False
-        '
-        'Pass
-        '
-        Me.Pass.Location = New System.Drawing.Point(50, 497)
-        Me.Pass.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Pass.Name = "Pass"
-        Me.Pass.Size = New System.Drawing.Size(481, 22)
-        Me.Pass.TabIndex = 5
-        Me.Pass.Visible = False
         '
         'StartBF1
         '
@@ -221,9 +203,9 @@ Partial Class Form1
         Me.gb1.Controls.Add(Me.Exe1)
         Me.gb1.Controls.Add(Me.cmd1)
         Me.gb1.Location = New System.Drawing.Point(27, 218)
-        Me.gb1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.gb1.Margin = New System.Windows.Forms.Padding(4)
         Me.gb1.Name = "gb1"
-        Me.gb1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.gb1.Padding = New System.Windows.Forms.Padding(4)
         Me.gb1.Size = New System.Drawing.Size(716, 63)
         Me.gb1.TabIndex = 7
         Me.gb1.TabStop = False
@@ -232,7 +214,7 @@ Partial Class Form1
         'Exe1
         '
         Me.Exe1.Location = New System.Drawing.Point(616, 21)
-        Me.Exe1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Exe1.Margin = New System.Windows.Forms.Padding(4)
         Me.Exe1.Name = "Exe1"
         Me.Exe1.Size = New System.Drawing.Size(92, 28)
         Me.Exe1.TabIndex = 1
@@ -242,7 +224,7 @@ Partial Class Form1
         'cmd1
         '
         Me.cmd1.Location = New System.Drawing.Point(8, 23)
-        Me.cmd1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmd1.Margin = New System.Windows.Forms.Padding(4)
         Me.cmd1.Name = "cmd1"
         Me.cmd1.Size = New System.Drawing.Size(599, 22)
         Me.cmd1.TabIndex = 0
@@ -309,6 +291,33 @@ Partial Class Form1
         Me.StartBF2.Text = "Start BF"
         Me.StartBF2.UseVisualStyleBackColor = True
         '
+        'Command
+        '
+        Me.Command.Location = New System.Drawing.Point(50, 469)
+        Me.Command.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Command.Name = "Command"
+        Me.Command.Size = New System.Drawing.Size(681, 22)
+        Me.Command.TabIndex = 7
+        Me.Command.Visible = False
+        '
+        'Salt
+        '
+        Me.Salt.Location = New System.Drawing.Point(538, 497)
+        Me.Salt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Salt.Name = "Salt"
+        Me.Salt.Size = New System.Drawing.Size(193, 22)
+        Me.Salt.TabIndex = 6
+        Me.Salt.Visible = False
+        '
+        'Pass
+        '
+        Me.Pass.Location = New System.Drawing.Point(50, 497)
+        Me.Pass.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Pass.Name = "Pass"
+        Me.Pass.Size = New System.Drawing.Size(481, 22)
+        Me.Pass.TabIndex = 5
+        Me.Pass.Visible = False
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -347,9 +356,9 @@ Partial Class Form1
         Me.RB1.Controls.Add(Me.algo2)
         Me.RB1.Controls.Add(Me.algo1)
         Me.RB1.Location = New System.Drawing.Point(367, 7)
-        Me.RB1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RB1.Margin = New System.Windows.Forms.Padding(4)
         Me.RB1.Name = "RB1"
-        Me.RB1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RB1.Padding = New System.Windows.Forms.Padding(4)
         Me.RB1.Size = New System.Drawing.Size(176, 54)
         Me.RB1.TabIndex = 9
         Me.RB1.TabStop = False
@@ -359,7 +368,7 @@ Partial Class Form1
         '
         Me.algo2.AutoSize = True
         Me.algo2.Location = New System.Drawing.Point(105, 23)
-        Me.algo2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.algo2.Margin = New System.Windows.Forms.Padding(4)
         Me.algo2.Name = "algo2"
         Me.algo2.Size = New System.Drawing.Size(44, 21)
         Me.algo2.TabIndex = 1
@@ -372,22 +381,13 @@ Partial Class Form1
         Me.algo1.AutoSize = True
         Me.algo1.Checked = True
         Me.algo1.Location = New System.Drawing.Point(36, 23)
-        Me.algo1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.algo1.Margin = New System.Windows.Forms.Padding(4)
         Me.algo1.Name = "algo1"
         Me.algo1.Size = New System.Drawing.Size(44, 21)
         Me.algo1.TabIndex = 0
         Me.algo1.TabStop = True
         Me.algo1.Text = "v1"
         Me.algo1.UseVisualStyleBackColor = True
-        '
-        'GetMC
-        '
-        Me.GetMC.Location = New System.Drawing.Point(52, 321)
-        Me.GetMC.Name = "GetMC"
-        Me.GetMC.Size = New System.Drawing.Size(136, 32)
-        Me.GetMC.TabIndex = 9
-        Me.GetMC.Text = "Get Master Code"
-        Me.GetMC.UseVisualStyleBackColor = True
         '
         'MC
         '
@@ -399,7 +399,7 @@ Partial Class Form1
         '
         'OpenFileDialog2
         '
-        Me.OpenFileDialog2.Filter = "Text files|*.txt"
+        Me.OpenFileDialog2.Filter = "Text files|*.txt|All files|*.*"
         '
         'Form1
         '
