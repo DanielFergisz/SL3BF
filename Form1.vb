@@ -62,6 +62,7 @@ Public Class Form1
 
     Private Sub Exe1_Click(sender As Object, e As EventArgs) Handles Exe1.Click
         Process.Start("cmd", "/k " + cmd1.Text)
+        Log.Text = "Benchmark Start.."
     End Sub
 
     Private Sub GetMC_Click(sender As Object, e As EventArgs) Handles GetMC.Click
