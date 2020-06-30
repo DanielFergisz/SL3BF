@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports System
+Imports System.Net
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         vHC.SelectedItem = "hashcat"
@@ -67,7 +68,20 @@ Public Class Form1
     Private Sub GetMC_Click(sender As Object, e As EventArgs) Handles GetMC.Click
         If OpenFileDialog2.ShowDialog() = DialogResult.OK Then
             MC.Text = My.Computer.FileSystem.ReadAllText(OpenFileDialog2.FileName)
-            Log.Text = "Master Code: " + Mid(MC.Text, 66, 30)
+            Log.Clear()
+            Log.Text = "Reading data.."
+            Log.AppendText(Environment.NewLine + "Master Code: ")
+            Log.SelectionColor = Color.DarkBlue
+            Log.AppendText(Mid(MC.Text, 66, 30))
+            Log.SelectionColor = Color.Empty
+            Log.AppendText(Environment.NewLine + "Hash: " + Mid(MC.Text, 1, 40))
+
         End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim webClient As New System.Net.WebClient
+        Dim result As String = webClient.DownloadString("http://dragondev.net.pl/sl3/index.php?hash=" + Hash2nck.Text + "&mastersp=" + mc2nck.Text) 'przechodzi na strone i pobiera treść do stringa
+        getNCK.AppendText(Environment.NewLine + result) 'wkleja zawartość strony do pola tekstowego
     End Sub
 End Class

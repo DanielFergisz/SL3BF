@@ -44,6 +44,12 @@ Partial Class Form1
         Me.Salt2 = New System.Windows.Forms.TextBox()
         Me.Pass2 = New System.Windows.Forms.TextBox()
         Me.StartBF2 = New System.Windows.Forms.Button()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.mc2nck = New System.Windows.Forms.TextBox()
+        Me.Hash2nck = New System.Windows.Forms.TextBox()
         Me.Command = New System.Windows.Forms.TextBox()
         Me.Salt = New System.Windows.Forms.TextBox()
         Me.Pass = New System.Windows.Forms.TextBox()
@@ -57,10 +63,13 @@ Partial Class Form1
         Me.algo1 = New System.Windows.Forms.RadioButton()
         Me.MC = New System.Windows.Forms.TextBox()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
+        Me.Log2 = New System.Windows.Forms.RichTextBox()
+        Me.getNCK = New System.Windows.Forms.RichTextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.gb1.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
         Me.RB1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -88,6 +97,7 @@ Partial Class Form1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Location = New System.Drawing.Point(12, 48)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TabControl1.Name = "TabControl1"
@@ -144,6 +154,7 @@ Partial Class Form1
         '
         'Log
         '
+        Me.Log.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Log.Location = New System.Drawing.Point(27, 69)
         Me.Log.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Log.Name = "Log"
@@ -291,6 +302,62 @@ Partial Class Form1
         Me.StartBF2.Text = "Start BF"
         Me.StartBF2.UseVisualStyleBackColor = True
         '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.Log2)
+        Me.TabPage3.Controls.Add(Me.Button1)
+        Me.TabPage3.Controls.Add(Me.Label7)
+        Me.TabPage3.Controls.Add(Me.Label6)
+        Me.TabPage3.Controls.Add(Me.mc2nck)
+        Me.TabPage3.Controls.Add(Me.Hash2nck)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Size = New System.Drawing.Size(768, 361)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "COD2NCK"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(268, 109)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(232, 47)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "Generate ->"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(25, 52)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(92, 17)
+        Me.Label7.TabIndex = 3
+        Me.Label7.Text = "Master Code:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(42, 24)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(45, 17)
+        Me.Label6.TabIndex = 2
+        Me.Label6.Text = "Hash:"
+        '
+        'mc2nck
+        '
+        Me.mc2nck.Location = New System.Drawing.Point(134, 49)
+        Me.mc2nck.Name = "mc2nck"
+        Me.mc2nck.Size = New System.Drawing.Size(280, 22)
+        Me.mc2nck.TabIndex = 1
+        '
+        'Hash2nck
+        '
+        Me.Hash2nck.Location = New System.Drawing.Point(134, 21)
+        Me.Hash2nck.Name = "Hash2nck"
+        Me.Hash2nck.Size = New System.Drawing.Size(519, 22)
+        Me.Hash2nck.TabIndex = 0
+        '
         'Command
         '
         Me.Command.Location = New System.Drawing.Point(50, 469)
@@ -401,11 +468,28 @@ Partial Class Form1
         '
         Me.OpenFileDialog2.Filter = "Text files|*.txt|All files|*.*"
         '
+        'Log2
+        '
+        Me.Log2.Location = New System.Drawing.Point(28, 175)
+        Me.Log2.Name = "Log2"
+        Me.Log2.Size = New System.Drawing.Size(711, 174)
+        Me.Log2.TabIndex = 5
+        Me.Log2.Text = ""
+        '
+        'getNCK
+        '
+        Me.getNCK.Location = New System.Drawing.Point(48, 534)
+        Me.getNCK.Name = "getNCK"
+        Me.getNCK.Size = New System.Drawing.Size(682, 185)
+        Me.getNCK.TabIndex = 11
+        Me.getNCK.Text = ""
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 446)
+        Me.ClientSize = New System.Drawing.Size(800, 849)
+        Me.Controls.Add(Me.getNCK)
         Me.Controls.Add(Me.IMEI1)
         Me.Controls.Add(Me.MC)
         Me.Controls.Add(Me.RB1)
@@ -428,6 +512,8 @@ Partial Class Form1
         Me.TabPage2.PerformLayout()
         Me.gb1.ResumeLayout(False)
         Me.gb1.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         Me.RB1.ResumeLayout(False)
         Me.RB1.PerformLayout()
         Me.ResumeLayout(False)
@@ -470,4 +556,12 @@ Partial Class Form1
     Friend WithEvents GetMC As Button
     Friend WithEvents MC As TextBox
     Friend WithEvents OpenFileDialog2 As OpenFileDialog
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents mc2nck As TextBox
+    Friend WithEvents Hash2nck As TextBox
+    Friend WithEvents Log2 As RichTextBox
+    Friend WithEvents getNCK As RichTextBox
 End Class
