@@ -76,25 +76,32 @@ Public Class Form1
             Log.AppendText(Mid(MC.Text, 66, 30))
             Log.SelectionColor = Color.Empty
             Log.AppendText(Environment.NewLine + "Hash: " + Mid(MC.Text, 1, 40))
-
+            Hash2nck.Text = Mid(MC.Text, 1, 40)
+            mc2nck.Text = Mid(MC.Text, 66, 30)
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim webClient As New System.Net.WebClient
-        Dim result As String = webClient.DownloadString("http://dragondev.net.pl/sl3/exe/index.php?hash=" + Hash2nck.Text + "&mastersp=" + mc2nck.Text) 'przechodzi na strone i pobiera treść do stringa
-        getNCK.AppendText(Environment.NewLine + result) 'wkleja zawartość strony do pola tekstowego
-        If getNCK.Text.Length = 0 Then
+    Private Sub genCod2NCK_Click(sender As Object, e As EventArgs) Handles genCod2NCK.Click
+        If mc2nck.Text.Length = 0 Then
+            Log2.Text = "Please enter Master Code !!"
         Else
-            Log2.Text = "Getting data from server..."
-            Log2.AppendText(Environment.NewLine)
-            Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 4, 22))
-            Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 30, 22))
-            Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 56, 22))
-            Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 82, 22))
-            Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 108, 22))
-            Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 134, 22))
-            Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 160, 22))
+            Dim webClient As New System.Net.WebClient
+            Dim result As String = webClient.DownloadString("http://dragondev.net.pl/sl3/exe/index.php?hash=" + Hash2nck.Text + "&mastersp=" + mc2nck.Text) 'przechodzi na strone i pobiera treść do stringa
+            getNCK.Clear()
+            getNCK.AppendText(Environment.NewLine + result) 'wkleja zawartość strony do pola tekstowego
+            If getNCK.Text.Length = 0 Then
+            Else
+                Log2.Clear()
+                Log2.Text = "Getting data from server..."
+                Log2.AppendText(Environment.NewLine)
+                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 4, 22))
+                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 30, 22))
+                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 56, 22))
+                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 82, 22))
+                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 108, 22))
+                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 134, 22))
+                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 160, 22))
+            End If
         End If
     End Sub
 
