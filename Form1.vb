@@ -82,17 +82,16 @@ Public Class Form1
     End Sub
 
     Private Sub genCod2NCK_Click(sender As Object, e As EventArgs) Handles genCod2NCK.Click
-        If mc2nck.Text.Length = 0 Then
-            Log2.Text = "Please enter Master Code !!"
+        If mc2nck.Text.Length = 0 Or Hash2nck.Text.Length = 0 Then
+            Log2.Text = "Please enter Master Code and Hash !!"
         Else
             Dim webClient As New System.Net.WebClient
             Dim result As String = webClient.DownloadString("http://dragondev.net.pl/sl3/exe/index.php?hash=" + Hash2nck.Text + "&mastersp=" + mc2nck.Text) 'przechodzi na strone i pobiera treść do stringa
             getNCK.Clear()
+            Log2.Text = "Getting data from server..."
             getNCK.AppendText(Environment.NewLine + result) 'wkleja zawartość strony do pola tekstowego
             If getNCK.Text.Length = 0 Then
             Else
-                Log2.Clear()
-                Log2.Text = "Getting data from server..."
                 Log2.AppendText(Environment.NewLine)
                 Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 4, 22))
                 Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 30, 22))
