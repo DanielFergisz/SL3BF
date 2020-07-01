@@ -76,8 +76,6 @@ Public Class Form1
             Log.AppendText(Mid(MC.Text, 66, 30))
             Log.SelectionColor = Color.Empty
             Log.AppendText(Environment.NewLine + "Hash: " + Mid(MC.Text, 1, 40))
-            Hash2nck.Text = Mid(MC.Text, 1, 40)
-            mc2nck.Text = Mid(MC.Text, 66, 30)
         End If
     End Sub
 
@@ -104,4 +102,8 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub getData_F_Click(sender As Object, e As EventArgs) Handles getData_F.Click
+        Hash2nck.Text = Mid(MC.Text, 1, 40)
+        mc2nck.Text = Mid(MC.Text, 66, 30)
+    End Sub
 End Class

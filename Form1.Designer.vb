@@ -45,6 +45,7 @@ Partial Class Form1
         Me.Pass2 = New System.Windows.Forms.TextBox()
         Me.StartBF2 = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.getData_F = New System.Windows.Forms.Button()
         Me.Log2 = New System.Windows.Forms.RichTextBox()
         Me.genCod2NCK = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -105,7 +106,7 @@ Partial Class Form1
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(679, 319)
+        Me.TabControl1.Size = New System.Drawing.Size(679, 299)
         Me.TabControl1.TabIndex = 2
         '
         'TabPage1
@@ -122,7 +123,7 @@ Partial Class Form1
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TabPage1.Size = New System.Drawing.Size(671, 288)
+        Me.TabPage1.Size = New System.Drawing.Size(671, 268)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "File"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -130,10 +131,10 @@ Partial Class Form1
         'GetMC
         '
         Me.GetMC.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.GetMC.Location = New System.Drawing.Point(45, 252)
+        Me.GetMC.Location = New System.Drawing.Point(547, 164)
         Me.GetMC.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GetMC.Name = "GetMC"
-        Me.GetMC.Size = New System.Drawing.Size(119, 30)
+        Me.GetMC.Size = New System.Drawing.Size(105, 46)
         Me.GetMC.TabIndex = 9
         Me.GetMC.Text = "Get Master Code"
         Me.GetMC.UseVisualStyleBackColor = True
@@ -141,10 +142,10 @@ Partial Class Form1
         'Restore
         '
         Me.Restore.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Restore.Location = New System.Drawing.Point(507, 252)
+        Me.Restore.Location = New System.Drawing.Point(547, 215)
         Me.Restore.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Restore.Name = "Restore"
-        Me.Restore.Size = New System.Drawing.Size(119, 30)
+        Me.Restore.Size = New System.Drawing.Size(105, 24)
         Me.Restore.TabIndex = 8
         Me.Restore.Text = "Restore"
         Me.Restore.UseVisualStyleBackColor = True
@@ -152,10 +153,10 @@ Partial Class Form1
         'StartBF1
         '
         Me.StartBF1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.StartBF1.Location = New System.Drawing.Point(221, 250)
+        Me.StartBF1.Location = New System.Drawing.Point(547, 66)
         Me.StartBF1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.StartBF1.Name = "StartBF1"
-        Me.StartBF1.Size = New System.Drawing.Size(228, 36)
+        Me.StartBF1.Size = New System.Drawing.Size(105, 94)
         Me.StartBF1.TabIndex = 4
         Me.StartBF1.Text = "Start BF"
         Me.StartBF1.UseVisualStyleBackColor = True
@@ -167,7 +168,7 @@ Partial Class Form1
         Me.Log.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Log.Name = "Log"
         Me.Log.ReadOnly = True
-        Me.Log.Size = New System.Drawing.Size(620, 186)
+        Me.Log.Size = New System.Drawing.Size(499, 201)
         Me.Log.TabIndex = 3
         Me.Log.Text = ""
         '
@@ -213,7 +214,7 @@ Partial Class Form1
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TabPage2.Size = New System.Drawing.Size(671, 288)
+        Me.TabPage2.Size = New System.Drawing.Size(671, 268)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Manual"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -222,14 +223,14 @@ Partial Class Form1
         '
         Me.gb1.Controls.Add(Me.Exe1)
         Me.gb1.Controls.Add(Me.cmd1)
-        Me.gb1.Location = New System.Drawing.Point(18, 135)
+        Me.gb1.Location = New System.Drawing.Point(18, 195)
         Me.gb1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.gb1.Name = "gb1"
         Me.gb1.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.gb1.Size = New System.Drawing.Size(626, 59)
         Me.gb1.TabIndex = 7
         Me.gb1.TabStop = False
-        Me.gb1.Text = "Command"
+        Me.gb1.Text = "Dos Command"
         '
         'Exe1
         '
@@ -281,7 +282,7 @@ Partial Class Form1
         Me.FileName1.Location = New System.Drawing.Point(127, 83)
         Me.FileName1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.FileName1.Name = "FileName1"
-        Me.FileName1.Size = New System.Drawing.Size(169, 26)
+        Me.FileName1.Size = New System.Drawing.Size(200, 26)
         Me.FileName1.TabIndex = 3
         '
         'Salt2
@@ -298,21 +299,22 @@ Partial Class Form1
         Me.Pass2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Pass2.MaxLength = 40
         Me.Pass2.Name = "Pass2"
-        Me.Pass2.Size = New System.Drawing.Size(589, 26)
+        Me.Pass2.Size = New System.Drawing.Size(267, 26)
         Me.Pass2.TabIndex = 1
         '
         'StartBF2
         '
-        Me.StartBF2.Location = New System.Drawing.Point(208, 222)
+        Me.StartBF2.Location = New System.Drawing.Point(391, 42)
         Me.StartBF2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.StartBF2.Name = "StartBF2"
-        Me.StartBF2.Size = New System.Drawing.Size(253, 37)
+        Me.StartBF2.Size = New System.Drawing.Size(253, 44)
         Me.StartBF2.TabIndex = 0
         Me.StartBF2.Text = "Start BF"
         Me.StartBF2.UseVisualStyleBackColor = True
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.getData_F)
         Me.TabPage3.Controls.Add(Me.Log2)
         Me.TabPage3.Controls.Add(Me.genCod2NCK)
         Me.TabPage3.Controls.Add(Me.Label7)
@@ -322,15 +324,24 @@ Partial Class Form1
         Me.TabPage3.Location = New System.Drawing.Point(4, 27)
         Me.TabPage3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(671, 288)
+        Me.TabPage3.Size = New System.Drawing.Size(671, 268)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "COD2NCK"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'getData_F
+        '
+        Me.getData_F.Location = New System.Drawing.Point(450, 13)
+        Me.getData_F.Name = "getData_F"
+        Me.getData_F.Size = New System.Drawing.Size(203, 27)
+        Me.getData_F.TabIndex = 6
+        Me.getData_F.Text = "Get data from last open file"
+        Me.getData_F.UseVisualStyleBackColor = True
+        '
         'Log2
         '
         Me.Log2.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Log2.Location = New System.Drawing.Point(30, 130)
+        Me.Log2.Location = New System.Drawing.Point(30, 102)
         Me.Log2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Log2.Name = "Log2"
         Me.Log2.ReadOnly = True
@@ -340,7 +351,7 @@ Partial Class Form1
         '
         'genCod2NCK
         '
-        Me.genCod2NCK.Location = New System.Drawing.Point(234, 81)
+        Me.genCod2NCK.Location = New System.Drawing.Point(450, 45)
         Me.genCod2NCK.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.genCod2NCK.Name = "genCod2NCK"
         Me.genCod2NCK.Size = New System.Drawing.Size(203, 44)
@@ -351,7 +362,7 @@ Partial Class Form1
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(22, 22)
+        Me.Label7.Location = New System.Drawing.Point(5, 32)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(90, 18)
         Me.Label7.TabIndex = 3
@@ -360,7 +371,7 @@ Partial Class Form1
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(68, 48)
+        Me.Label6.Location = New System.Drawing.Point(51, 58)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(42, 18)
         Me.Label6.TabIndex = 2
@@ -369,26 +380,26 @@ Partial Class Form1
         'mc2nck
         '
         Me.mc2nck.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.mc2nck.Location = New System.Drawing.Point(116, 18)
+        Me.mc2nck.Location = New System.Drawing.Point(99, 27)
         Me.mc2nck.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.mc2nck.MaxLength = 30
         Me.mc2nck.Name = "mc2nck"
-        Me.mc2nck.Size = New System.Drawing.Size(246, 26)
+        Me.mc2nck.Size = New System.Drawing.Size(263, 26)
         Me.mc2nck.TabIndex = 1
         '
         'Hash2nck
         '
         Me.Hash2nck.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Hash2nck.Location = New System.Drawing.Point(116, 45)
+        Me.Hash2nck.Location = New System.Drawing.Point(99, 54)
         Me.Hash2nck.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Hash2nck.MaxLength = 40
         Me.Hash2nck.Name = "Hash2nck"
-        Me.Hash2nck.Size = New System.Drawing.Size(455, 26)
+        Me.Hash2nck.Size = New System.Drawing.Size(263, 26)
         Me.Hash2nck.TabIndex = 0
         '
         'Command
         '
-        Me.Command.Location = New System.Drawing.Point(44, 406)
+        Me.Command.Location = New System.Drawing.Point(44, 374)
         Me.Command.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Command.Name = "Command"
         Me.Command.Size = New System.Drawing.Size(596, 24)
@@ -397,7 +408,7 @@ Partial Class Form1
         '
         'Salt
         '
-        Me.Salt.Location = New System.Drawing.Point(471, 432)
+        Me.Salt.Location = New System.Drawing.Point(471, 400)
         Me.Salt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Salt.Name = "Salt"
         Me.Salt.Size = New System.Drawing.Size(169, 24)
@@ -406,7 +417,7 @@ Partial Class Form1
         '
         'Pass
         '
-        Me.Pass.Location = New System.Drawing.Point(44, 432)
+        Me.Pass.Location = New System.Drawing.Point(44, 400)
         Me.Pass.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Pass.Name = "Pass"
         Me.Pass.Size = New System.Drawing.Size(421, 24)
@@ -490,7 +501,7 @@ Partial Class Form1
         '
         'MC
         '
-        Me.MC.Location = New System.Drawing.Point(44, 380)
+        Me.MC.Location = New System.Drawing.Point(44, 348)
         Me.MC.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MC.Name = "MC"
         Me.MC.Size = New System.Drawing.Size(596, 24)
@@ -503,7 +514,7 @@ Partial Class Form1
         '
         'getNCK
         '
-        Me.getNCK.Location = New System.Drawing.Point(42, 467)
+        Me.getNCK.Location = New System.Drawing.Point(42, 435)
         Me.getNCK.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.getNCK.Name = "getNCK"
         Me.getNCK.Size = New System.Drawing.Size(597, 95)
@@ -515,7 +526,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(700, 370)
+        Me.ClientSize = New System.Drawing.Size(700, 351)
         Me.Controls.Add(Me.getNCK)
         Me.Controls.Add(Me.IMEI1)
         Me.Controls.Add(Me.MC)
@@ -532,7 +543,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.03"
+        Me.Text = "SL3BF v1.04"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -592,4 +603,5 @@ Partial Class Form1
     Friend WithEvents Hash2nck As TextBox
     Friend WithEvents Log2 As RichTextBox
     Friend WithEvents getNCK As RichTextBox
+    Friend WithEvents getData_F As Button
 End Class
