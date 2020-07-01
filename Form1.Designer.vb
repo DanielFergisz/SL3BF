@@ -45,6 +45,7 @@ Partial Class Form1
         Me.Pass2 = New System.Windows.Forms.TextBox()
         Me.StartBF2 = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Log2 = New System.Windows.Forms.RichTextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -63,7 +64,6 @@ Partial Class Form1
         Me.algo1 = New System.Windows.Forms.RadioButton()
         Me.MC = New System.Windows.Forms.TextBox()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
-        Me.Log2 = New System.Windows.Forms.RichTextBox()
         Me.getNCK = New System.Windows.Forms.RichTextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -76,21 +76,23 @@ Partial Class Form1
         'vHC
         '
         Me.vHC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.vHC.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.vHC.FormattingEnabled = True
         Me.vHC.Items.AddRange(New Object() {"hashcat", "hashcat32", "hashcat64"})
-        Me.vHC.Location = New System.Drawing.Point(12, 12)
+        Me.vHC.Location = New System.Drawing.Point(12, 14)
         Me.vHC.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.vHC.Name = "vHC"
-        Me.vHC.Size = New System.Drawing.Size(121, 24)
+        Me.vHC.Size = New System.Drawing.Size(121, 26)
         Me.vHC.TabIndex = 0
         '
         'IMEI1
         '
         Me.IMEI1.Enabled = False
-        Me.IMEI1.Location = New System.Drawing.Point(607, 24)
+        Me.IMEI1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.IMEI1.Location = New System.Drawing.Point(607, 26)
         Me.IMEI1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.IMEI1.Name = "IMEI1"
-        Me.IMEI1.Size = New System.Drawing.Size(179, 22)
+        Me.IMEI1.Size = New System.Drawing.Size(179, 26)
         Me.IMEI1.TabIndex = 1
         '
         'TabControl1
@@ -98,11 +100,11 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 48)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 54)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(776, 390)
+        Me.TabControl1.Size = New System.Drawing.Size(776, 439)
         Me.TabControl1.TabIndex = 2
         '
         'TabPage1
@@ -114,40 +116,40 @@ Partial Class Form1
         Me.TabPage1.Controls.Add(Me.sDir)
         Me.TabPage1.Controls.Add(Me.DirF)
         Me.TabPage1.Controls.Add(Me.Label2)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 27)
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TabPage1.Size = New System.Drawing.Size(768, 361)
+        Me.TabPage1.Size = New System.Drawing.Size(768, 408)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "File"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'GetMC
         '
-        Me.GetMC.Location = New System.Drawing.Point(52, 321)
+        Me.GetMC.Location = New System.Drawing.Point(51, 357)
         Me.GetMC.Name = "GetMC"
-        Me.GetMC.Size = New System.Drawing.Size(136, 32)
+        Me.GetMC.Size = New System.Drawing.Size(136, 36)
         Me.GetMC.TabIndex = 9
         Me.GetMC.Text = "Get Master Code"
         Me.GetMC.UseVisualStyleBackColor = True
         '
         'Restore
         '
-        Me.Restore.Location = New System.Drawing.Point(579, 321)
+        Me.Restore.Location = New System.Drawing.Point(579, 357)
         Me.Restore.Margin = New System.Windows.Forms.Padding(4)
         Me.Restore.Name = "Restore"
-        Me.Restore.Size = New System.Drawing.Size(136, 32)
+        Me.Restore.Size = New System.Drawing.Size(136, 36)
         Me.Restore.TabIndex = 8
         Me.Restore.Text = "Restore"
         Me.Restore.UseVisualStyleBackColor = True
         '
         'StartBF1
         '
-        Me.StartBF1.Location = New System.Drawing.Point(253, 318)
+        Me.StartBF1.Location = New System.Drawing.Point(253, 354)
         Me.StartBF1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.StartBF1.Name = "StartBF1"
-        Me.StartBF1.Size = New System.Drawing.Size(261, 38)
+        Me.StartBF1.Size = New System.Drawing.Size(261, 43)
         Me.StartBF1.TabIndex = 4
         Me.StartBF1.Text = "Start BF"
         Me.StartBF1.UseVisualStyleBackColor = True
@@ -155,38 +157,39 @@ Partial Class Form1
         'Log
         '
         Me.Log.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Log.Location = New System.Drawing.Point(27, 69)
+        Me.Log.Location = New System.Drawing.Point(34, 64)
         Me.Log.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Log.Name = "Log"
         Me.Log.ReadOnly = True
-        Me.Log.Size = New System.Drawing.Size(708, 242)
+        Me.Log.Size = New System.Drawing.Size(708, 272)
         Me.Log.TabIndex = 3
         Me.Log.Text = ""
         '
         'sDir
         '
-        Me.sDir.Location = New System.Drawing.Point(709, 18)
+        Me.sDir.Location = New System.Drawing.Point(709, 20)
         Me.sDir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.sDir.Name = "sDir"
-        Me.sDir.Size = New System.Drawing.Size(36, 23)
+        Me.sDir.Size = New System.Drawing.Size(36, 26)
         Me.sDir.TabIndex = 2
         Me.sDir.Text = "..."
         Me.sDir.UseVisualStyleBackColor = True
         '
         'DirF
         '
-        Me.DirF.Location = New System.Drawing.Point(92, 18)
+        Me.DirF.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.DirF.Location = New System.Drawing.Point(92, 20)
         Me.DirF.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DirF.Name = "DirF"
-        Me.DirF.Size = New System.Drawing.Size(600, 22)
+        Me.DirF.Size = New System.Drawing.Size(600, 26)
         Me.DirF.TabIndex = 1
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(5, 22)
+        Me.Label2.Location = New System.Drawing.Point(5, 25)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(71, 17)
+        Me.Label2.Size = New System.Drawing.Size(68, 18)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Hash File:"
         '
@@ -200,11 +203,11 @@ Partial Class Form1
         Me.TabPage2.Controls.Add(Me.Salt2)
         Me.TabPage2.Controls.Add(Me.Pass2)
         Me.TabPage2.Controls.Add(Me.StartBF2)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 27)
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TabPage2.Size = New System.Drawing.Size(768, 361)
+        Me.TabPage2.Size = New System.Drawing.Size(768, 408)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Manual"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -213,91 +216,91 @@ Partial Class Form1
         '
         Me.gb1.Controls.Add(Me.Exe1)
         Me.gb1.Controls.Add(Me.cmd1)
-        Me.gb1.Location = New System.Drawing.Point(27, 218)
+        Me.gb1.Location = New System.Drawing.Point(27, 245)
         Me.gb1.Margin = New System.Windows.Forms.Padding(4)
         Me.gb1.Name = "gb1"
         Me.gb1.Padding = New System.Windows.Forms.Padding(4)
-        Me.gb1.Size = New System.Drawing.Size(716, 63)
+        Me.gb1.Size = New System.Drawing.Size(716, 71)
         Me.gb1.TabIndex = 7
         Me.gb1.TabStop = False
         Me.gb1.Text = "Command"
         '
         'Exe1
         '
-        Me.Exe1.Location = New System.Drawing.Point(616, 21)
+        Me.Exe1.Location = New System.Drawing.Point(616, 24)
         Me.Exe1.Margin = New System.Windows.Forms.Padding(4)
         Me.Exe1.Name = "Exe1"
-        Me.Exe1.Size = New System.Drawing.Size(92, 28)
+        Me.Exe1.Size = New System.Drawing.Size(92, 32)
         Me.Exe1.TabIndex = 1
         Me.Exe1.Text = "Send"
         Me.Exe1.UseVisualStyleBackColor = True
         '
         'cmd1
         '
-        Me.cmd1.Location = New System.Drawing.Point(8, 23)
+        Me.cmd1.Location = New System.Drawing.Point(8, 26)
         Me.cmd1.Margin = New System.Windows.Forms.Padding(4)
         Me.cmd1.Name = "cmd1"
-        Me.cmd1.Size = New System.Drawing.Size(599, 22)
+        Me.cmd1.Size = New System.Drawing.Size(599, 26)
         Me.cmd1.TabIndex = 0
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(17, 91)
+        Me.Label5.Location = New System.Drawing.Point(17, 102)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(122, 17)
+        Me.Label5.Size = New System.Drawing.Size(122, 18)
         Me.Label5.TabIndex = 6
         Me.Label5.Text = "Output File Name:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(17, 59)
+        Me.Label4.Location = New System.Drawing.Point(17, 66)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(36, 17)
+        Me.Label4.Size = New System.Drawing.Size(35, 18)
         Me.Label4.TabIndex = 5
         Me.Label4.Text = "Salt:"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(17, 27)
+        Me.Label3.Location = New System.Drawing.Point(17, 30)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(45, 17)
+        Me.Label3.Size = New System.Drawing.Size(42, 18)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Hash:"
         '
         'FileName1
         '
-        Me.FileName1.Location = New System.Drawing.Point(145, 89)
+        Me.FileName1.Location = New System.Drawing.Point(145, 100)
         Me.FileName1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.FileName1.Name = "FileName1"
-        Me.FileName1.Size = New System.Drawing.Size(193, 22)
+        Me.FileName1.Size = New System.Drawing.Size(193, 26)
         Me.FileName1.TabIndex = 3
         '
         'Salt2
         '
-        Me.Salt2.Location = New System.Drawing.Point(68, 57)
+        Me.Salt2.Location = New System.Drawing.Point(68, 64)
         Me.Salt2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Salt2.Name = "Salt2"
-        Me.Salt2.Size = New System.Drawing.Size(305, 22)
+        Me.Salt2.Size = New System.Drawing.Size(305, 26)
         Me.Salt2.TabIndex = 2
         '
         'Pass2
         '
-        Me.Pass2.Location = New System.Drawing.Point(68, 25)
+        Me.Pass2.Location = New System.Drawing.Point(68, 28)
         Me.Pass2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Pass2.MaxLength = 40
         Me.Pass2.Name = "Pass2"
-        Me.Pass2.Size = New System.Drawing.Size(673, 22)
+        Me.Pass2.Size = New System.Drawing.Size(673, 26)
         Me.Pass2.TabIndex = 1
         '
         'StartBF2
         '
-        Me.StartBF2.Location = New System.Drawing.Point(236, 315)
+        Me.StartBF2.Location = New System.Drawing.Point(236, 354)
         Me.StartBF2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.StartBF2.Name = "StartBF2"
-        Me.StartBF2.Size = New System.Drawing.Size(289, 39)
+        Me.StartBF2.Size = New System.Drawing.Size(289, 44)
         Me.StartBF2.TabIndex = 0
         Me.StartBF2.Text = "Start BF"
         Me.StartBF2.UseVisualStyleBackColor = True
@@ -310,87 +313,99 @@ Partial Class Form1
         Me.TabPage3.Controls.Add(Me.Label6)
         Me.TabPage3.Controls.Add(Me.mc2nck)
         Me.TabPage3.Controls.Add(Me.Hash2nck)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 27)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(768, 361)
+        Me.TabPage3.Size = New System.Drawing.Size(768, 408)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "COD2NCK"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'Log2
+        '
+        Me.Log2.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Log2.Location = New System.Drawing.Point(28, 169)
+        Me.Log2.Name = "Log2"
+        Me.Log2.ReadOnly = True
+        Me.Log2.Size = New System.Drawing.Size(711, 223)
+        Me.Log2.TabIndex = 5
+        Me.Log2.Text = ""
+        '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(268, 109)
+        Me.Button1.Location = New System.Drawing.Point(267, 100)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(232, 47)
+        Me.Button1.Size = New System.Drawing.Size(232, 53)
         Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Generate ->"
+        Me.Button1.Text = "Generate"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(25, 52)
+        Me.Label7.Location = New System.Drawing.Point(25, 26)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(92, 17)
+        Me.Label7.Size = New System.Drawing.Size(90, 18)
         Me.Label7.TabIndex = 3
         Me.Label7.Text = "Master Code:"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(42, 24)
+        Me.Label6.Location = New System.Drawing.Point(42, 58)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(45, 17)
+        Me.Label6.Size = New System.Drawing.Size(42, 18)
         Me.Label6.TabIndex = 2
         Me.Label6.Text = "Hash:"
         '
         'mc2nck
         '
-        Me.mc2nck.Location = New System.Drawing.Point(134, 49)
+        Me.mc2nck.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.mc2nck.Location = New System.Drawing.Point(134, 24)
         Me.mc2nck.Name = "mc2nck"
-        Me.mc2nck.Size = New System.Drawing.Size(280, 22)
+        Me.mc2nck.Size = New System.Drawing.Size(280, 26)
         Me.mc2nck.TabIndex = 1
         '
         'Hash2nck
         '
-        Me.Hash2nck.Location = New System.Drawing.Point(134, 21)
+        Me.Hash2nck.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Hash2nck.Location = New System.Drawing.Point(134, 56)
         Me.Hash2nck.Name = "Hash2nck"
-        Me.Hash2nck.Size = New System.Drawing.Size(519, 22)
+        Me.Hash2nck.Size = New System.Drawing.Size(519, 26)
         Me.Hash2nck.TabIndex = 0
         '
         'Command
         '
-        Me.Command.Location = New System.Drawing.Point(50, 469)
+        Me.Command.Location = New System.Drawing.Point(50, 528)
         Me.Command.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Command.Name = "Command"
-        Me.Command.Size = New System.Drawing.Size(681, 22)
+        Me.Command.Size = New System.Drawing.Size(681, 26)
         Me.Command.TabIndex = 7
         Me.Command.Visible = False
         '
         'Salt
         '
-        Me.Salt.Location = New System.Drawing.Point(538, 497)
+        Me.Salt.Location = New System.Drawing.Point(538, 559)
         Me.Salt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Salt.Name = "Salt"
-        Me.Salt.Size = New System.Drawing.Size(193, 22)
+        Me.Salt.Size = New System.Drawing.Size(193, 26)
         Me.Salt.TabIndex = 6
         Me.Salt.Visible = False
         '
         'Pass
         '
-        Me.Pass.Location = New System.Drawing.Point(50, 497)
+        Me.Pass.Location = New System.Drawing.Point(50, 559)
         Me.Pass.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Pass.Name = "Pass"
-        Me.Pass.Size = New System.Drawing.Size(481, 22)
+        Me.Pass.Size = New System.Drawing.Size(481, 26)
         Me.Pass.TabIndex = 5
         Me.Pass.Visible = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(563, 27)
+        Me.Label1.Location = New System.Drawing.Point(563, 30)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(38, 17)
+        Me.Label1.Size = New System.Drawing.Size(39, 18)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "IMEI:"
         '
@@ -400,20 +415,20 @@ Partial Class Form1
         '
         'bench1
         '
-        Me.bench1.Location = New System.Drawing.Point(161, 23)
+        Me.bench1.Location = New System.Drawing.Point(160, 20)
         Me.bench1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.bench1.Name = "bench1"
-        Me.bench1.Size = New System.Drawing.Size(103, 27)
+        Me.bench1.Size = New System.Drawing.Size(103, 30)
         Me.bench1.TabIndex = 7
         Me.bench1.Text = "Benchmark"
         Me.bench1.UseVisualStyleBackColor = True
         '
         'help1
         '
-        Me.help1.Location = New System.Drawing.Point(269, 23)
+        Me.help1.Location = New System.Drawing.Point(269, 20)
         Me.help1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.help1.Name = "help1"
-        Me.help1.Size = New System.Drawing.Size(75, 27)
+        Me.help1.Size = New System.Drawing.Size(75, 30)
         Me.help1.TabIndex = 8
         Me.help1.Text = "Help"
         Me.help1.UseVisualStyleBackColor = True
@@ -422,11 +437,11 @@ Partial Class Form1
         '
         Me.RB1.Controls.Add(Me.algo2)
         Me.RB1.Controls.Add(Me.algo1)
-        Me.RB1.Location = New System.Drawing.Point(367, 7)
+        Me.RB1.Location = New System.Drawing.Point(367, 8)
         Me.RB1.Margin = New System.Windows.Forms.Padding(4)
         Me.RB1.Name = "RB1"
         Me.RB1.Padding = New System.Windows.Forms.Padding(4)
-        Me.RB1.Size = New System.Drawing.Size(176, 54)
+        Me.RB1.Size = New System.Drawing.Size(176, 61)
         Me.RB1.TabIndex = 9
         Me.RB1.TabStop = False
         Me.RB1.Text = "algo"
@@ -434,10 +449,10 @@ Partial Class Form1
         'algo2
         '
         Me.algo2.AutoSize = True
-        Me.algo2.Location = New System.Drawing.Point(105, 23)
+        Me.algo2.Location = New System.Drawing.Point(105, 26)
         Me.algo2.Margin = New System.Windows.Forms.Padding(4)
         Me.algo2.Name = "algo2"
-        Me.algo2.Size = New System.Drawing.Size(44, 21)
+        Me.algo2.Size = New System.Drawing.Size(43, 22)
         Me.algo2.TabIndex = 1
         Me.algo2.TabStop = True
         Me.algo2.Text = "v2"
@@ -447,10 +462,10 @@ Partial Class Form1
         '
         Me.algo1.AutoSize = True
         Me.algo1.Checked = True
-        Me.algo1.Location = New System.Drawing.Point(36, 23)
+        Me.algo1.Location = New System.Drawing.Point(36, 26)
         Me.algo1.Margin = New System.Windows.Forms.Padding(4)
         Me.algo1.Name = "algo1"
-        Me.algo1.Size = New System.Drawing.Size(44, 21)
+        Me.algo1.Size = New System.Drawing.Size(43, 22)
         Me.algo1.TabIndex = 0
         Me.algo1.TabStop = True
         Me.algo1.Text = "v1"
@@ -458,9 +473,9 @@ Partial Class Form1
         '
         'MC
         '
-        Me.MC.Location = New System.Drawing.Point(50, 442)
+        Me.MC.Location = New System.Drawing.Point(50, 497)
         Me.MC.Name = "MC"
-        Me.MC.Size = New System.Drawing.Size(681, 22)
+        Me.MC.Size = New System.Drawing.Size(681, 26)
         Me.MC.TabIndex = 10
         Me.MC.Visible = False
         '
@@ -468,27 +483,20 @@ Partial Class Form1
         '
         Me.OpenFileDialog2.Filter = "Text files|*.txt|All files|*.*"
         '
-        'Log2
-        '
-        Me.Log2.Location = New System.Drawing.Point(28, 175)
-        Me.Log2.Name = "Log2"
-        Me.Log2.Size = New System.Drawing.Size(711, 174)
-        Me.Log2.TabIndex = 5
-        Me.Log2.Text = ""
-        '
         'getNCK
         '
-        Me.getNCK.Location = New System.Drawing.Point(48, 534)
+        Me.getNCK.Location = New System.Drawing.Point(48, 601)
         Me.getNCK.Name = "getNCK"
-        Me.getNCK.Size = New System.Drawing.Size(682, 185)
+        Me.getNCK.Size = New System.Drawing.Size(682, 208)
         Me.getNCK.TabIndex = 11
         Me.getNCK.Text = ""
+        Me.getNCK.Visible = False
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 849)
+        Me.ClientSize = New System.Drawing.Size(800, 502)
         Me.Controls.Add(Me.getNCK)
         Me.Controls.Add(Me.IMEI1)
         Me.Controls.Add(Me.MC)
@@ -501,10 +509,11 @@ Partial Class Form1
         Me.Controls.Add(Me.Pass)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.vHC)
+        Me.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.02"
+        Me.Text = "SL3BF v1.03"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()

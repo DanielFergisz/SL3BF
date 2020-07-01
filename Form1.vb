@@ -37,6 +37,7 @@ Public Class Form1
             Pass.Visible = True
             Command.Visible = True
             MC.Visible = True
+            getNCK.Visible = True
             DirF.Clear()
         End If
     End Sub
@@ -81,7 +82,20 @@ Public Class Form1
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim webClient As New System.Net.WebClient
-        Dim result As String = webClient.DownloadString("http://dragondev.net.pl/sl3/index.php?hash=" + Hash2nck.Text + "&mastersp=" + mc2nck.Text) 'przechodzi na strone i pobiera treść do stringa
+        Dim result As String = webClient.DownloadString("http://dragondev.net.pl/sl3/exe/index.php?hash=" + Hash2nck.Text + "&mastersp=" + mc2nck.Text) 'przechodzi na strone i pobiera treść do stringa
         getNCK.AppendText(Environment.NewLine + result) 'wkleja zawartość strony do pola tekstowego
+        If getNCK.Text.Length = 0 Then
+        Else
+            Log2.Text = "Getting data from server..."
+            Log2.AppendText(Environment.NewLine)
+            Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 4, 22))
+            Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 30, 22))
+            Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 56, 22))
+            Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 82, 22))
+            Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 108, 22))
+            Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 134, 22))
+            Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 160, 22))
+        End If
     End Sub
+
 End Class
