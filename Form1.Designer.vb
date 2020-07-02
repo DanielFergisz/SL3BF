@@ -441,7 +441,7 @@ Partial Class Form1
         '
         'OpenFileDialog1
         '
-        Me.OpenFileDialog1.Filter = "Infinity files|*.bcl|All files|*.*|Text files|*.txt"
+        Me.OpenFileDialog1.Filter = "Infinity files|*.bcl|Cyclone files|*.log|All files|*.*|Text files|*.txt"
         '
         'bench1
         '
@@ -548,7 +548,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.04"
+        Me.Text = "SL3BF v1.06"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()

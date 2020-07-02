@@ -9,10 +9,18 @@ Public Class Form1
         If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
             Dim path As String = OpenFileDialog1.FileName
             DirF.Text = path
-            Log.Text = My.Computer.FileSystem.ReadAllText(OpenFileDialog1.FileName)
-            IMEI1.Text = Mid(Log.Text, 12, 15)
-            Pass.Text = Mid(Log.Text, 33, 40)
-            Salt.Text = "00" + Mid(IMEI1.Text, 1, 14) + "00"
+            If DirF.Text.Contains(".bcl") Then
+                Log.Text = My.Computer.FileSystem.ReadAllText(OpenFileDialog1.FileName)
+                IMEI1.Text = Mid(Log.Text, 12, 15)
+                Pass.Text = Mid(Log.Text, 33, 40)
+                Salt.Text = "00" + Mid(IMEI1.Text, 1, 14) + "00"
+            End If
+            If DirF.Text.Contains(".log") Then
+                Log.Text = My.Computer.FileSystem.ReadAllText(OpenFileDialog1.FileName)
+                IMEI1.Text = Mid(Log.Text, 1, 15)
+                Pass.Text = Mid(Log.Text, 17, 40)
+                Salt.Text = "00" + Mid(IMEI1.Text, 1, 14) + "00"
+            End If
         End If
     End Sub
     Private Sub StartBF1_Click(sender As Object, e As EventArgs) Handles StartBF1.Click
