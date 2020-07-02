@@ -152,7 +152,8 @@ Partial Class Form1
         '
         'StartBF1
         '
-        Me.StartBF1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.StartBF1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.StartBF1.ForeColor = System.Drawing.Color.Red
         Me.StartBF1.Location = New System.Drawing.Point(547, 66)
         Me.StartBF1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.StartBF1.Name = "StartBF1"
@@ -304,6 +305,8 @@ Partial Class Form1
         '
         'StartBF2
         '
+        Me.StartBF2.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.StartBF2.ForeColor = System.Drawing.Color.Red
         Me.StartBF2.Location = New System.Drawing.Point(391, 42)
         Me.StartBF2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.StartBF2.Name = "StartBF2"
@@ -351,6 +354,8 @@ Partial Class Form1
         '
         'genCod2NCK
         '
+        Me.genCod2NCK.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.genCod2NCK.ForeColor = System.Drawing.Color.Red
         Me.genCod2NCK.Location = New System.Drawing.Point(450, 45)
         Me.genCod2NCK.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.genCod2NCK.Name = "genCod2NCK"
@@ -465,11 +470,11 @@ Partial Class Form1
         Me.RB1.Controls.Add(Me.algo2)
         Me.RB1.Controls.Add(Me.algo1)
         Me.RB1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.RB1.Location = New System.Drawing.Point(321, 7)
+        Me.RB1.Location = New System.Drawing.Point(330, 10)
         Me.RB1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.RB1.Name = "RB1"
         Me.RB1.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.RB1.Size = New System.Drawing.Size(154, 51)
+        Me.RB1.Size = New System.Drawing.Size(142, 47)
         Me.RB1.TabIndex = 9
         Me.RB1.TabStop = False
         Me.RB1.Text = "algo"
@@ -477,7 +482,7 @@ Partial Class Form1
         'algo2
         '
         Me.algo2.AutoSize = True
-        Me.algo2.Location = New System.Drawing.Point(92, 22)
+        Me.algo2.Location = New System.Drawing.Point(83, 17)
         Me.algo2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.algo2.Name = "algo2"
         Me.algo2.Size = New System.Drawing.Size(43, 22)
@@ -490,7 +495,7 @@ Partial Class Form1
         '
         Me.algo1.AutoSize = True
         Me.algo1.Checked = True
-        Me.algo1.Location = New System.Drawing.Point(32, 22)
+        Me.algo1.Location = New System.Drawing.Point(32, 17)
         Me.algo1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.algo1.Name = "algo1"
         Me.algo1.Size = New System.Drawing.Size(43, 22)

@@ -84,7 +84,7 @@ Public Class Form1
             Log2.Text = "Please enter Master Code and Hash !!"
         Else
             Dim webClient As New System.Net.WebClient
-            Dim result As String = webClient.DownloadString("http://dragondev.net.pl/sl3/exe/index.php?hash=" + Hash2nck.Text + "&mastersp=" + mc2nck.Text) 'przechodzi na strone i pobiera treść do stringa
+            Dim result As String = webClient.DownloadString("http://easyrepair.pl/sl3/exe/index.php?hash=" + Hash2nck.Text + "&mastersp=" + mc2nck.Text) 'przechodzi na strone i pobiera treść do stringa
             getNCK.Clear()
             Log2.Text = "Getting data from server..."
             getNCK.AppendText(Environment.NewLine + result) 'wkleja zawartość strony do pola tekstowego
