@@ -67,19 +67,21 @@ Partial Class Form1
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
         Me.getNCK = New System.Windows.Forms.RichTextBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.M1 = New System.Windows.Forms.TextBox()
+        Me.M2 = New System.Windows.Forms.TextBox()
+        Me.M3 = New System.Windows.Forms.TextBox()
+        Me.M4 = New System.Windows.Forms.TextBox()
+        Me.M5 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.M6 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.mailData = New System.Windows.Forms.RichTextBox()
+        Me.OpenFileDialog3 = New System.Windows.Forms.OpenFileDialog()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -549,18 +551,18 @@ Partial Class Form1
         'TabPage4
         '
         Me.TabPage4.Controls.Add(Me.Button1)
-        Me.TabPage4.Controls.Add(Me.TextBox6)
+        Me.TabPage4.Controls.Add(Me.M6)
         Me.TabPage4.Controls.Add(Me.Label13)
         Me.TabPage4.Controls.Add(Me.Label12)
         Me.TabPage4.Controls.Add(Me.Label11)
         Me.TabPage4.Controls.Add(Me.Label10)
         Me.TabPage4.Controls.Add(Me.Label9)
         Me.TabPage4.Controls.Add(Me.Label8)
-        Me.TabPage4.Controls.Add(Me.TextBox5)
-        Me.TabPage4.Controls.Add(Me.TextBox4)
-        Me.TabPage4.Controls.Add(Me.TextBox3)
-        Me.TabPage4.Controls.Add(Me.TextBox2)
-        Me.TabPage4.Controls.Add(Me.TextBox1)
+        Me.TabPage4.Controls.Add(Me.M5)
+        Me.TabPage4.Controls.Add(Me.M4)
+        Me.TabPage4.Controls.Add(Me.M3)
+        Me.TabPage4.Controls.Add(Me.M2)
+        Me.TabPage4.Controls.Add(Me.M1)
         Me.TabPage4.Location = New System.Drawing.Point(4, 27)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Size = New System.Drawing.Size(671, 268)
@@ -568,40 +570,40 @@ Partial Class Form1
         Me.TabPage4.Text = "Settings"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'M1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(137, 23)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(356, 26)
-        Me.TextBox1.TabIndex = 0
+        Me.M1.Location = New System.Drawing.Point(137, 23)
+        Me.M1.Name = "M1"
+        Me.M1.Size = New System.Drawing.Size(356, 26)
+        Me.M1.TabIndex = 0
         '
-        'TextBox2
+        'M2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(137, 55)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(356, 26)
-        Me.TextBox2.TabIndex = 1
+        Me.M2.Location = New System.Drawing.Point(137, 55)
+        Me.M2.Name = "M2"
+        Me.M2.Size = New System.Drawing.Size(356, 26)
+        Me.M2.TabIndex = 1
         '
-        'TextBox3
+        'M3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(137, 87)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(356, 26)
-        Me.TextBox3.TabIndex = 2
+        Me.M3.Location = New System.Drawing.Point(137, 87)
+        Me.M3.Name = "M3"
+        Me.M3.Size = New System.Drawing.Size(356, 26)
+        Me.M3.TabIndex = 2
         '
-        'TextBox4
+        'M4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(137, 119)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(356, 26)
-        Me.TextBox4.TabIndex = 3
+        Me.M4.Location = New System.Drawing.Point(137, 119)
+        Me.M4.Name = "M4"
+        Me.M4.Size = New System.Drawing.Size(356, 26)
+        Me.M4.TabIndex = 3
         '
-        'TextBox5
+        'M5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(137, 151)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(356, 26)
-        Me.TextBox5.TabIndex = 4
+        Me.M5.Location = New System.Drawing.Point(137, 151)
+        Me.M5.Name = "M5"
+        Me.M5.Size = New System.Drawing.Size(356, 26)
+        Me.M5.TabIndex = 4
         '
         'Label8
         '
@@ -657,27 +659,40 @@ Partial Class Form1
         Me.Label13.TabIndex = 10
         Me.Label13.Text = "SMTP Client:"
         '
-        'TextBox6
+        'M6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(137, 183)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(356, 26)
-        Me.TextBox6.TabIndex = 11
+        Me.M6.Location = New System.Drawing.Point(137, 183)
+        Me.M6.Name = "M6"
+        Me.M6.Size = New System.Drawing.Size(356, 26)
+        Me.M6.TabIndex = 11
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(535, 92)
+        Me.Button1.Location = New System.Drawing.Point(548, 23)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 53)
+        Me.Button1.Size = New System.Drawing.Size(100, 40)
         Me.Button1.TabIndex = 12
         Me.Button1.Text = "Save"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'mailData
+        '
+        Me.mailData.Location = New System.Drawing.Point(695, 95)
+        Me.mailData.Name = "mailData"
+        Me.mailData.Size = New System.Drawing.Size(387, 226)
+        Me.mailData.TabIndex = 13
+        Me.mailData.Text = ""
+        Me.mailData.Visible = False
+        '
+        'OpenFileDialog3
+        '
+        Me.OpenFileDialog3.FileName = "OpenFileDialog3"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(700, 351)
+        Me.ClientSize = New System.Drawing.Size(696, 351)
         Me.Controls.Add(Me.getNCK)
         Me.Controls.Add(Me.IMEI1)
         Me.Controls.Add(Me.MC)
@@ -690,6 +705,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Pass)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.vHC)
+        Me.Controls.Add(Me.mailData)
         Me.Font = New System.Drawing.Font("Calibri", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
@@ -758,17 +774,19 @@ Partial Class Form1
     Friend WithEvents getData_F As Button
     Friend WithEvents Salt2 As TextBox
     Friend WithEvents TabPage4 As TabPage
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents M6 As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents M5 As TextBox
+    Friend WithEvents M4 As TextBox
+    Friend WithEvents M3 As TextBox
+    Friend WithEvents M2 As TextBox
+    Friend WithEvents M1 As TextBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents mailData As RichTextBox
+    Friend WithEvents OpenFileDialog3 As OpenFileDialog
 End Class

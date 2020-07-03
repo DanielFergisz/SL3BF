@@ -6,6 +6,9 @@ Imports System.Net.Mail
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         vHC.SelectedItem = "hashcat"
+        If My.Computer.FileSystem.FileExists("Mail_Data.tds") Then
+            mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
+        End If
     End Sub
     Private Sub sDir_Click(sender As Object, e As EventArgs) Handles sDir.Click
         If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
@@ -115,5 +118,9 @@ Public Class Form1
     Private Sub getData_F_Click(sender As Object, e As EventArgs) Handles getData_F.Click
         Hash2nck.Text = Mid(MC.Text, 1, 40)
         mc2nck.Text = Mid(MC.Text, 66, 30)
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        My.Computer.FileSystem.WriteAllText("Mail_Data.tds", M1.Text + vbCrLf + M2.Text + vbCrLf + M3.Text + vbCrLf + M4.Text + vbCrLf + M5.Text + vbCrLf + M6.Text, True)
     End Sub
 End Class
