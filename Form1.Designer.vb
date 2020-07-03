@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Formularz przesłania metodę dispose, aby wyczyścić listę składników.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'UWAGA: następująca procedura jest wymagana przez Projektanta formularzy systemu Windows
     'Możesz to modyfikować, używając Projektanta formularzy systemu Windows. 
     'Nie należy modyfikować za pomocą edytora kodu.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.vHC = New System.Windows.Forms.ComboBox()
         Me.IMEI1 = New System.Windows.Forms.TextBox()
@@ -66,12 +66,27 @@ Partial Class Form1
         Me.MC = New System.Windows.Forms.TextBox()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
         Me.getNCK = New System.Windows.Forms.RichTextBox()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.gb1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.RB1.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
         Me.SuspendLayout()
         '
         'vHC
@@ -101,6 +116,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.TabControl1.Location = New System.Drawing.Point(10, 45)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -288,11 +304,14 @@ Partial Class Form1
         '
         'Salt2
         '
+        Me.Salt2.AccessibleDescription = ""
+        Me.Salt2.AccessibleName = ""
         Me.Salt2.Location = New System.Drawing.Point(60, 53)
         Me.Salt2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Salt2.Name = "Salt2"
         Me.Salt2.Size = New System.Drawing.Size(267, 26)
         Me.Salt2.TabIndex = 2
+        Me.Salt2.Tag = ""
         '
         'Pass2
         '
@@ -441,7 +460,7 @@ Partial Class Form1
         '
         'OpenFileDialog1
         '
-        Me.OpenFileDialog1.Filter = "Infinity files|*.bcl|Cyclone files|*.log|All files|*.*|Text files|*.txt"
+        Me.OpenFileDialog1.Filter = "Infinity files|*.bcl|Cyclone files|*.log|Text files|*.txt"
         '
         'bench1
         '
@@ -527,6 +546,133 @@ Partial Class Form1
         Me.getNCK.Text = ""
         Me.getNCK.Visible = False
         '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.Button1)
+        Me.TabPage4.Controls.Add(Me.TextBox6)
+        Me.TabPage4.Controls.Add(Me.Label13)
+        Me.TabPage4.Controls.Add(Me.Label12)
+        Me.TabPage4.Controls.Add(Me.Label11)
+        Me.TabPage4.Controls.Add(Me.Label10)
+        Me.TabPage4.Controls.Add(Me.Label9)
+        Me.TabPage4.Controls.Add(Me.Label8)
+        Me.TabPage4.Controls.Add(Me.TextBox5)
+        Me.TabPage4.Controls.Add(Me.TextBox4)
+        Me.TabPage4.Controls.Add(Me.TextBox3)
+        Me.TabPage4.Controls.Add(Me.TextBox2)
+        Me.TabPage4.Controls.Add(Me.TextBox1)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 27)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Size = New System.Drawing.Size(671, 268)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Settings"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(137, 23)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(356, 26)
+        Me.TextBox1.TabIndex = 0
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(137, 55)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(356, 26)
+        Me.TextBox2.TabIndex = 1
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(137, 87)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(356, 26)
+        Me.TextBox3.TabIndex = 2
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(137, 119)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(356, 26)
+        Me.TextBox4.TabIndex = 3
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(137, 151)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(356, 26)
+        Me.TextBox5.TabIndex = 4
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(86, 122)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(45, 18)
+        Me.Label8.TabIndex = 5
+        Me.Label8.Text = "Login:"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(60, 154)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(71, 18)
+        Me.Label9.TabIndex = 6
+        Me.Label9.Text = "Password:"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(14, 26)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(121, 18)
+        Me.Label10.TabIndex = 7
+        Me.Label10.Text = "RecipientAddress:"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(29, 58)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(106, 18)
+        Me.Label11.TabIndex = 8
+        Me.Label11.Text = "SenderAddress:"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(39, 186)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(92, 18)
+        Me.Label12.TabIndex = 9
+        Me.Label12.Text = "MessageText:"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(49, 90)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(86, 18)
+        Me.Label13.TabIndex = 10
+        Me.Label13.Text = "SMTP Client:"
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(137, 183)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(356, 26)
+        Me.TextBox6.TabIndex = 11
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(535, 92)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(100, 53)
+        Me.Button1.TabIndex = 12
+        Me.Button1.Text = "Save"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -548,7 +694,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.06"
+        Me.Text = "SL3BF v1.07"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -560,6 +706,8 @@ Partial Class Form1
         Me.TabPage3.PerformLayout()
         Me.RB1.ResumeLayout(False)
         Me.RB1.PerformLayout()
+        Me.TabPage4.ResumeLayout(False)
+        Me.TabPage4.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -580,7 +728,6 @@ Partial Class Form1
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents FileName1 As TextBox
-    Friend WithEvents Salt2 As TextBox
     Friend WithEvents Pass2 As TextBox
     Friend WithEvents StartBF2 As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
@@ -609,4 +756,19 @@ Partial Class Form1
     Friend WithEvents Log2 As RichTextBox
     Friend WithEvents getNCK As RichTextBox
     Friend WithEvents getData_F As Button
+    Friend WithEvents Salt2 As TextBox
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Button1 As Button
 End Class
