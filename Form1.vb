@@ -6,9 +6,12 @@ Imports System.Net.Mail
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         vHC.SelectedItem = "hashcat"
-        If My.Computer.FileSystem.FileExists("Mail_Data.tds") Then
-            mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
-        End If
+        'If My.Computer.FileSystem.FileExists("Mail_Data.tds") Then
+        ' mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
+        'For i = 0 To mailData.Lines.Count - 1
+        'M1.Text = mailData.Lines(i)
+        ' Next
+        'End If
     End Sub
     Private Sub sDir_Click(sender As Object, e As EventArgs) Handles sDir.Click
         If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
@@ -97,7 +100,7 @@ Public Class Form1
             Log2.Text = "Please enter Master Code and Hash !!"
         Else
             Dim webClient As New System.Net.WebClient
-            Dim result As String = webClient.DownloadString("http://easyrepair.pl/sl3/exe/index.php?hash=" + Hash2nck.Text + "&mastersp=" + mc2nck.Text) 'przechodzi na strone i pobiera treść do stringa
+            Dim result As String = webClient.DownloadString("http://repairbox.pl/sl3/exe/index.php?hash=" + Hash2nck.Text + "&mastersp=" + mc2nck.Text) 'przechodzi na strone i pobiera treść do stringa
             getNCK.Clear()
             Log2.Text = "Getting data from server..."
             getNCK.AppendText(Environment.NewLine + result) 'wkleja zawartość strony do pola tekstowego
