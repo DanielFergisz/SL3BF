@@ -52,6 +52,22 @@ Partial Class Form1
         Me.Label6 = New System.Windows.Forms.Label()
         Me.mc2nck = New System.Windows.Forms.TextBox()
         Me.Hash2nck = New System.Windows.Forms.TextBox()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.M7 = New System.Windows.Forms.TextBox()
+        Me.saveMailData = New System.Windows.Forms.Button()
+        Me.M6 = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.M5 = New System.Windows.Forms.TextBox()
+        Me.M4 = New System.Windows.Forms.TextBox()
+        Me.M3 = New System.Windows.Forms.TextBox()
+        Me.M2 = New System.Windows.Forms.TextBox()
+        Me.M1 = New System.Windows.Forms.TextBox()
         Me.Command = New System.Windows.Forms.TextBox()
         Me.Salt = New System.Windows.Forms.TextBox()
         Me.Pass = New System.Windows.Forms.TextBox()
@@ -66,29 +82,16 @@ Partial Class Form1
         Me.MC = New System.Windows.Forms.TextBox()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
         Me.getNCK = New System.Windows.Forms.RichTextBox()
-        Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.M1 = New System.Windows.Forms.TextBox()
-        Me.M2 = New System.Windows.Forms.TextBox()
-        Me.M3 = New System.Windows.Forms.TextBox()
-        Me.M4 = New System.Windows.Forms.TextBox()
-        Me.M5 = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.M6 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.mailData = New System.Windows.Forms.RichTextBox()
         Me.OpenFileDialog3 = New System.Windows.Forms.OpenFileDialog()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.gb1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
-        Me.RB1.SuspendLayout()
         Me.TabPage4.SuspendLayout()
+        Me.RB1.SuspendLayout()
         Me.SuspendLayout()
         '
         'vHC
@@ -423,6 +426,152 @@ Partial Class Form1
         Me.Hash2nck.Size = New System.Drawing.Size(263, 26)
         Me.Hash2nck.TabIndex = 0
         '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.Button1)
+        Me.TabPage4.Controls.Add(Me.Label14)
+        Me.TabPage4.Controls.Add(Me.M7)
+        Me.TabPage4.Controls.Add(Me.saveMailData)
+        Me.TabPage4.Controls.Add(Me.M6)
+        Me.TabPage4.Controls.Add(Me.Label13)
+        Me.TabPage4.Controls.Add(Me.Label12)
+        Me.TabPage4.Controls.Add(Me.Label11)
+        Me.TabPage4.Controls.Add(Me.Label10)
+        Me.TabPage4.Controls.Add(Me.Label9)
+        Me.TabPage4.Controls.Add(Me.Label8)
+        Me.TabPage4.Controls.Add(Me.M5)
+        Me.TabPage4.Controls.Add(Me.M4)
+        Me.TabPage4.Controls.Add(Me.M3)
+        Me.TabPage4.Controls.Add(Me.M2)
+        Me.TabPage4.Controls.Add(Me.M1)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 27)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Size = New System.Drawing.Size(671, 268)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Settings"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(73, 186)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(58, 18)
+        Me.Label14.TabIndex = 14
+        Me.Label14.Text = "Subject:"
+        '
+        'M7
+        '
+        Me.M7.Location = New System.Drawing.Point(137, 215)
+        Me.M7.Name = "M7"
+        Me.M7.Size = New System.Drawing.Size(356, 26)
+        Me.M7.TabIndex = 13
+        '
+        'saveMailData
+        '
+        Me.saveMailData.Location = New System.Drawing.Point(548, 23)
+        Me.saveMailData.Name = "saveMailData"
+        Me.saveMailData.Size = New System.Drawing.Size(100, 40)
+        Me.saveMailData.TabIndex = 12
+        Me.saveMailData.Text = "Save"
+        Me.saveMailData.UseVisualStyleBackColor = True
+        '
+        'M6
+        '
+        Me.M6.Location = New System.Drawing.Point(137, 183)
+        Me.M6.Name = "M6"
+        Me.M6.Size = New System.Drawing.Size(356, 26)
+        Me.M6.TabIndex = 11
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(49, 90)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(86, 18)
+        Me.Label13.TabIndex = 10
+        Me.Label13.Text = "SMTP Client:"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(39, 218)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(92, 18)
+        Me.Label12.TabIndex = 9
+        Me.Label12.Text = "MessageText:"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(29, 58)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(106, 18)
+        Me.Label11.TabIndex = 8
+        Me.Label11.Text = "SenderAddress:"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(14, 26)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(121, 18)
+        Me.Label10.TabIndex = 7
+        Me.Label10.Text = "RecipientAddress:"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(60, 154)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(71, 18)
+        Me.Label9.TabIndex = 6
+        Me.Label9.Text = "Password:"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(86, 122)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(45, 18)
+        Me.Label8.TabIndex = 5
+        Me.Label8.Text = "Login:"
+        '
+        'M5
+        '
+        Me.M5.Location = New System.Drawing.Point(137, 151)
+        Me.M5.Name = "M5"
+        Me.M5.Size = New System.Drawing.Size(356, 26)
+        Me.M5.TabIndex = 4
+        '
+        'M4
+        '
+        Me.M4.Location = New System.Drawing.Point(137, 119)
+        Me.M4.Name = "M4"
+        Me.M4.Size = New System.Drawing.Size(356, 26)
+        Me.M4.TabIndex = 3
+        '
+        'M3
+        '
+        Me.M3.Location = New System.Drawing.Point(137, 87)
+        Me.M3.Name = "M3"
+        Me.M3.Size = New System.Drawing.Size(356, 26)
+        Me.M3.TabIndex = 2
+        '
+        'M2
+        '
+        Me.M2.Location = New System.Drawing.Point(137, 55)
+        Me.M2.Name = "M2"
+        Me.M2.Size = New System.Drawing.Size(356, 26)
+        Me.M2.TabIndex = 1
+        '
+        'M1
+        '
+        Me.M1.Location = New System.Drawing.Point(137, 23)
+        Me.M1.Name = "M1"
+        Me.M1.Size = New System.Drawing.Size(356, 26)
+        Me.M1.TabIndex = 0
+        '
         'Command
         '
         Me.Command.Location = New System.Drawing.Point(44, 374)
@@ -548,138 +697,11 @@ Partial Class Form1
         Me.getNCK.Text = ""
         Me.getNCK.Visible = False
         '
-        'TabPage4
-        '
-        Me.TabPage4.Controls.Add(Me.Button1)
-        Me.TabPage4.Controls.Add(Me.M6)
-        Me.TabPage4.Controls.Add(Me.Label13)
-        Me.TabPage4.Controls.Add(Me.Label12)
-        Me.TabPage4.Controls.Add(Me.Label11)
-        Me.TabPage4.Controls.Add(Me.Label10)
-        Me.TabPage4.Controls.Add(Me.Label9)
-        Me.TabPage4.Controls.Add(Me.Label8)
-        Me.TabPage4.Controls.Add(Me.M5)
-        Me.TabPage4.Controls.Add(Me.M4)
-        Me.TabPage4.Controls.Add(Me.M3)
-        Me.TabPage4.Controls.Add(Me.M2)
-        Me.TabPage4.Controls.Add(Me.M1)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 27)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(671, 268)
-        Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "Settings"
-        Me.TabPage4.UseVisualStyleBackColor = True
-        '
-        'M1
-        '
-        Me.M1.Location = New System.Drawing.Point(137, 23)
-        Me.M1.Name = "M1"
-        Me.M1.Size = New System.Drawing.Size(356, 26)
-        Me.M1.TabIndex = 0
-        '
-        'M2
-        '
-        Me.M2.Location = New System.Drawing.Point(137, 55)
-        Me.M2.Name = "M2"
-        Me.M2.Size = New System.Drawing.Size(356, 26)
-        Me.M2.TabIndex = 1
-        '
-        'M3
-        '
-        Me.M3.Location = New System.Drawing.Point(137, 87)
-        Me.M3.Name = "M3"
-        Me.M3.Size = New System.Drawing.Size(356, 26)
-        Me.M3.TabIndex = 2
-        '
-        'M4
-        '
-        Me.M4.Location = New System.Drawing.Point(137, 119)
-        Me.M4.Name = "M4"
-        Me.M4.Size = New System.Drawing.Size(356, 26)
-        Me.M4.TabIndex = 3
-        '
-        'M5
-        '
-        Me.M5.Location = New System.Drawing.Point(137, 151)
-        Me.M5.Name = "M5"
-        Me.M5.Size = New System.Drawing.Size(356, 26)
-        Me.M5.TabIndex = 4
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(86, 122)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(45, 18)
-        Me.Label8.TabIndex = 5
-        Me.Label8.Text = "Login:"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(60, 154)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(71, 18)
-        Me.Label9.TabIndex = 6
-        Me.Label9.Text = "Password:"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(14, 26)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(121, 18)
-        Me.Label10.TabIndex = 7
-        Me.Label10.Text = "RecipientAddress:"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(29, 58)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(106, 18)
-        Me.Label11.TabIndex = 8
-        Me.Label11.Text = "SenderAddress:"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(39, 186)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(92, 18)
-        Me.Label12.TabIndex = 9
-        Me.Label12.Text = "MessageText:"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(49, 90)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(86, 18)
-        Me.Label13.TabIndex = 10
-        Me.Label13.Text = "SMTP Client:"
-        '
-        'M6
-        '
-        Me.M6.Location = New System.Drawing.Point(137, 183)
-        Me.M6.Name = "M6"
-        Me.M6.Size = New System.Drawing.Size(356, 26)
-        Me.M6.TabIndex = 11
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(548, 23)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 40)
-        Me.Button1.TabIndex = 12
-        Me.Button1.Text = "Save"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'mailData
         '
         Me.mailData.Location = New System.Drawing.Point(695, 95)
         Me.mailData.Name = "mailData"
-        Me.mailData.Size = New System.Drawing.Size(387, 226)
+        Me.mailData.Size = New System.Drawing.Size(502, 226)
         Me.mailData.TabIndex = 13
         Me.mailData.Text = ""
         Me.mailData.Visible = False
@@ -688,11 +710,20 @@ Partial Class Form1
         '
         Me.OpenFileDialog3.FileName = "OpenFileDialog3"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(560, 85)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 28)
+        Me.Button1.TabIndex = 15
+        Me.Button1.Text = "Clear"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(696, 351)
+        Me.ClientSize = New System.Drawing.Size(697, 352)
         Me.Controls.Add(Me.getNCK)
         Me.Controls.Add(Me.IMEI1)
         Me.Controls.Add(Me.MC)
@@ -720,10 +751,10 @@ Partial Class Form1
         Me.gb1.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
-        Me.RB1.ResumeLayout(False)
-        Me.RB1.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
+        Me.RB1.ResumeLayout(False)
+        Me.RB1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -786,7 +817,10 @@ Partial Class Form1
     Friend WithEvents M3 As TextBox
     Friend WithEvents M2 As TextBox
     Friend WithEvents M1 As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents saveMailData As Button
     Friend WithEvents mailData As RichTextBox
     Friend WithEvents OpenFileDialog3 As OpenFileDialog
+    Friend WithEvents Label14 As Label
+    Friend WithEvents M7 As TextBox
+    Friend WithEvents Button1 As Button
 End Class

@@ -6,12 +6,16 @@ Imports System.Net.Mail
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         vHC.SelectedItem = "hashcat"
-        'If My.Computer.FileSystem.FileExists("Mail_Data.tds") Then
-        ' mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
-        'For i = 0 To mailData.Lines.Count - 1
-        'M1.Text = mailData.Lines(i)
-        ' Next
-        'End If
+        If My.Computer.FileSystem.FileExists("Mail_Data.tds") Then
+            mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
+            M1.Text = mailData.Lines(0)
+            M2.Text = mailData.Lines(1)
+            M3.Text = mailData.Lines(2)
+            M4.Text = mailData.Lines(3)
+            M5.Text = mailData.Lines(4)
+            M6.Text = mailData.Lines(5)
+            M7.Text = mailData.Lines(6)
+        End If
     End Sub
     Private Sub sDir_Click(sender As Object, e As EventArgs) Handles sDir.Click
         If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
@@ -36,12 +40,20 @@ Public Class Form1
             MessageBox.Show("Please select hash file !!")
         Else
             If algo1.Checked = True Then
-                Process.Start("cmd", "/k " + vHC.Text + " -w3 -m110 " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "_COD.txt --session=SL3")
-                Command.Text = vHC.Text + " -w3 -m110 " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "_COD.txt --session=SL3"
+                If Directory.Exists(IMEI1.Text) Then
+                Else
+                    Directory.CreateDirectory(IMEI1.Text)
+                End If
+                Process.Start("cmd", "/k " + vHC.Text + " -w3 -m110 " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3")
+                Command.Text = vHC.Text + " -w3 -m110 " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3"
             End If
             If algo2.Checked = True Then
-                Process.Start("cmd", "/k " + vHC.Text + " -m 110 " + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "_COD.txt --session SL3 --force")
-                Command.Text = vHC.Text + " -m 110 " + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "_COD.txt --session SL3 --force"
+                If Directory.Exists(IMEI1.Text) Then
+                Else
+                    Directory.CreateDirectory(IMEI1.Text)
+                End If
+                Process.Start("cmd", "/k " + vHC.Text + " -m 110 " + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force")
+                Command.Text = vHC.Text + " -m 110 " + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force"
             End If
 
         End If
@@ -54,6 +66,7 @@ Public Class Form1
             Command.Visible = True
             MC.Visible = True
             getNCK.Visible = True
+            mailData.Visible = True
             DirF.Clear()
         End If
     End Sub
@@ -123,7 +136,28 @@ Public Class Form1
         mc2nck.Text = Mid(MC.Text, 66, 30)
     End Sub
 
+    Private Sub saveMailData_Click(sender As Object, e As EventArgs) Handles saveMailData.Click
+        If My.Computer.FileSystem.FileExists("Mail_Data.tds") Then
+            My.Computer.FileSystem.DeleteFile("Mail_Data.tds")
+            My.Computer.FileSystem.WriteAllText("Mail_Data.tds", M1.Text + vbCrLf + M2.Text + vbCrLf + M3.Text + vbCrLf + M4.Text + vbCrLf + M5.Text + vbCrLf + M6.Text + vbCrLf + M7.Text, True)
+            mailData.Clear()
+            mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
+        Else
+            My.Computer.FileSystem.WriteAllText("Mail_Data.tds", M1.Text + vbCrLf + M2.Text + vbCrLf + M3.Text + vbCrLf + M4.Text + vbCrLf + M5.Text + vbCrLf + M6.Text + vbCrLf + M7.Text, True)
+            mailData.Clear()
+            mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
+        End If
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        My.Computer.FileSystem.WriteAllText("Mail_Data.tds", M1.Text + vbCrLf + M2.Text + vbCrLf + M3.Text + vbCrLf + M4.Text + vbCrLf + M5.Text + vbCrLf + M6.Text, True)
+        My.Computer.FileSystem.DeleteFile("Mail_Data.tds")
+        mailData.Clear()
+        M1.Clear()
+        M2.Clear()
+        M3.Clear()
+        M4.Clear()
+        M5.Clear()
+        M6.Clear()
+        M7.Clear()
     End Sub
 End Class
