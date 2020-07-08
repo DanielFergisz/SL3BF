@@ -22,6 +22,7 @@ Partial Class Form1
     'Nie należy modyfikować za pomocą edytora kodu.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.vHC = New System.Windows.Forms.ComboBox()
         Me.IMEI1 = New System.Windows.Forms.TextBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -53,6 +54,7 @@ Partial Class Form1
         Me.mc2nck = New System.Windows.Forms.TextBox()
         Me.Hash2nck = New System.Windows.Forms.TextBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.clearMailConfig = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.M7 = New System.Windows.Forms.TextBox()
         Me.saveMailData = New System.Windows.Forms.Button()
@@ -84,7 +86,9 @@ Partial Class Form1
         Me.getNCK = New System.Windows.Forms.RichTextBox()
         Me.mailData = New System.Windows.Forms.RichTextBox()
         Me.OpenFileDialog3 = New System.Windows.Forms.OpenFileDialog()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TimerSaveOk = New System.Windows.Forms.Timer(Me.components)
+        Me.saveInfo = New System.Windows.Forms.Label()
+        Me.fileCodCheck = New System.Windows.Forms.Timer(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -428,7 +432,8 @@ Partial Class Form1
         '
         'TabPage4
         '
-        Me.TabPage4.Controls.Add(Me.Button1)
+        Me.TabPage4.Controls.Add(Me.saveInfo)
+        Me.TabPage4.Controls.Add(Me.clearMailConfig)
         Me.TabPage4.Controls.Add(Me.Label14)
         Me.TabPage4.Controls.Add(Me.M7)
         Me.TabPage4.Controls.Add(Me.saveMailData)
@@ -450,6 +455,15 @@ Partial Class Form1
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Settings"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'clearMailConfig
+        '
+        Me.clearMailConfig.Location = New System.Drawing.Point(560, 85)
+        Me.clearMailConfig.Name = "clearMailConfig"
+        Me.clearMailConfig.Size = New System.Drawing.Size(75, 28)
+        Me.clearMailConfig.TabIndex = 15
+        Me.clearMailConfig.Text = "Clear"
+        Me.clearMailConfig.UseVisualStyleBackColor = True
         '
         'Label14
         '
@@ -710,14 +724,25 @@ Partial Class Form1
         '
         Me.OpenFileDialog3.FileName = "OpenFileDialog3"
         '
-        'Button1
+        'TimerSaveOk
         '
-        Me.Button1.Location = New System.Drawing.Point(560, 85)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 28)
-        Me.Button1.TabIndex = 15
-        Me.Button1.Text = "Clear"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.TimerSaveOk.Interval = 1000
+        '
+        'saveInfo
+        '
+        Me.saveInfo.AutoSize = True
+        Me.saveInfo.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.saveInfo.ForeColor = System.Drawing.Color.ForestGreen
+        Me.saveInfo.Location = New System.Drawing.Point(568, 170)
+        Me.saveInfo.Name = "saveInfo"
+        Me.saveInfo.Size = New System.Drawing.Size(58, 18)
+        Me.saveInfo.TabIndex = 16
+        Me.saveInfo.Text = "Saved !!"
+        Me.saveInfo.Visible = False
+        '
+        'fileCodCheck
+        '
+        Me.fileCodCheck.Interval = 30000
         '
         'Form1
         '
@@ -741,7 +766,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.08"
+        Me.Text = "SL3BF v1.09"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -822,5 +847,8 @@ Partial Class Form1
     Friend WithEvents OpenFileDialog3 As OpenFileDialog
     Friend WithEvents Label14 As Label
     Friend WithEvents M7 As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents clearMailConfig As Button
+    Friend WithEvents TimerSaveOk As Timer
+    Friend WithEvents saveInfo As Label
+    Friend WithEvents fileCodCheck As Timer
 End Class

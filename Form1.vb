@@ -46,6 +46,7 @@ Public Class Form1
                 End If
                 Process.Start("cmd", "/k " + vHC.Text + " -w3 -m110 " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3")
                 Command.Text = vHC.Text + " -w3 -m110 " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3"
+                fileCodCheck.Enabled = True
             End If
             If algo2.Checked = True Then
                 If Directory.Exists(IMEI1.Text) Then
@@ -54,6 +55,7 @@ Public Class Form1
                 End If
                 Process.Start("cmd", "/k " + vHC.Text + " -m 110 " + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force")
                 Command.Text = vHC.Text + " -m 110 " + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force"
+                fileCodCheck.Enabled = True
             End If
 
         End If
@@ -142,14 +144,18 @@ Public Class Form1
             My.Computer.FileSystem.WriteAllText("Mail_Data.tds", M1.Text + vbCrLf + M2.Text + vbCrLf + M3.Text + vbCrLf + M4.Text + vbCrLf + M5.Text + vbCrLf + M6.Text + vbCrLf + M7.Text, True)
             mailData.Clear()
             mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
+            TimerSaveOk.Enabled = True
+            saveInfo.Visible = True
         Else
             My.Computer.FileSystem.WriteAllText("Mail_Data.tds", M1.Text + vbCrLf + M2.Text + vbCrLf + M3.Text + vbCrLf + M4.Text + vbCrLf + M5.Text + vbCrLf + M6.Text + vbCrLf + M7.Text, True)
             mailData.Clear()
             mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
+            TimerSaveOk.Enabled = True
+            saveInfo.Visible = True
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub clearMailConfig_Click(sender As Object, e As EventArgs) Handles clearMailConfig.Click
         My.Computer.FileSystem.DeleteFile("Mail_Data.tds")
         mailData.Clear()
         M1.Clear()
@@ -159,5 +165,46 @@ Public Class Form1
         M5.Clear()
         M6.Clear()
         M7.Clear()
+    End Sub
+
+    Private Sub TimerSaveOk_Tick(sender As Object, e As EventArgs) Handles TimerSaveOk.Tick
+        TimerSaveOk.Enabled = False
+        saveInfo.Visible = False
+    End Sub
+
+    Private Sub fileCodCheck_Tick(sender As Object, e As EventArgs) Handles fileCodCheck.Tick
+        If My.Computer.FileSystem.FileExists(IMEI1.Text + "\" + IMEI1.Text + "_COD.txt") Then
+            fileCodCheck.Enabled = False
+            '***********************************************************************************************************************
+            Try
+                Dim mailfrom As New MailAddress(M1.Text, "SL3BF") ' adres mail do wysyłki + nazwa
+                Dim mailto As New MailAddress(M2.Text, "D2") ' adres docelowy + nazwa
+                Dim message As New MailMessage(mailfrom, mailto)
+                Dim smtp As New SmtpClient(M3.Text) 'serwer smtp
+                Dim zaloncznik As String
+                zaloncznik = IMEI1.Text + "\" + IMEI1.Text + "_COD.txt" 'nazwa pliku
+                If File.Exists(zaloncznik) Then
+                    Dim data As New Attachment(zaloncznik)
+                    message.Attachments.Add(data)
+                End If
+
+                message.Subject = M6.Text 'temat wiadomości
+
+
+                message.BodyEncoding = System.Text.Encoding.UTF8
+                message.Body = M7.Text 'tekst wiadomości
+
+                smtp.Credentials = New NetworkCredential(M4.Text, M5.Text) 'login i hasło
+
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network
+
+                smtp.Send(message)
+
+                MsgBox("E-mail został wysłany")
+
+            Catch ex As SmtpException
+                MsgBox(ex.Message)
+            End Try
+        End If
     End Sub
 End Class
