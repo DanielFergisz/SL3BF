@@ -46,7 +46,10 @@ Public Class Form1
                 End If
                 Process.Start("cmd", "/k " + vHC.Text + " -w3 -m110 " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3")
                 Command.Text = vHC.Text + " -w3 -m110 " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3"
-                fileCodCheck.Enabled = True
+                If M1.Text.Length Or M2.Text.Length Or M3.Text.Length Or M4.Text.Length Or M5.Text.Length Or M6.Text.Length Or M7.Text.Length = 0 Then
+                Else
+                    fileCodCheck.Enabled = True
+                End If
             End If
             If algo2.Checked = True Then
                 If Directory.Exists(IMEI1.Text) Then
@@ -55,8 +58,11 @@ Public Class Form1
                 End If
                 Process.Start("cmd", "/k " + vHC.Text + " -m 110 " + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force")
                 Command.Text = vHC.Text + " -m 110 " + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force"
-                fileCodCheck.Enabled = True
-            End If
+                If M1.Text.Length Or M2.Text.Length Or M3.Text.Length Or M4.Text.Length Or M5.Text.Length Or M6.Text.Length Or M7.Text.Length = 0 Then
+                Else
+                    fileCodCheck.Enabled = True
+                End If
+                End If
 
         End If
     End Sub
@@ -139,32 +145,39 @@ Public Class Form1
     End Sub
 
     Private Sub saveMailData_Click(sender As Object, e As EventArgs) Handles saveMailData.Click
-        If My.Computer.FileSystem.FileExists("Mail_Data.tds") Then
-            My.Computer.FileSystem.DeleteFile("Mail_Data.tds")
-            My.Computer.FileSystem.WriteAllText("Mail_Data.tds", M1.Text + vbCrLf + M2.Text + vbCrLf + M3.Text + vbCrLf + M4.Text + vbCrLf + M5.Text + vbCrLf + M6.Text + vbCrLf + M7.Text, True)
-            mailData.Clear()
-            mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
-            TimerSaveOk.Enabled = True
-            saveInfo.Visible = True
+        If M1.Text.Length Or M2.Text.Length Or M3.Text.Length Or M4.Text.Length Or M5.Text.Length Or M6.Text.Length Or M7.Text.Length = 0 Then
+            MsgBox("Please check all textbox !!")
         Else
-            My.Computer.FileSystem.WriteAllText("Mail_Data.tds", M1.Text + vbCrLf + M2.Text + vbCrLf + M3.Text + vbCrLf + M4.Text + vbCrLf + M5.Text + vbCrLf + M6.Text + vbCrLf + M7.Text, True)
-            mailData.Clear()
-            mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
-            TimerSaveOk.Enabled = True
-            saveInfo.Visible = True
+            If My.Computer.FileSystem.FileExists("Mail_Data.tds") Then
+                My.Computer.FileSystem.DeleteFile("Mail_Data.tds")
+                My.Computer.FileSystem.WriteAllText("Mail_Data.tds", M1.Text + vbCrLf + M2.Text + vbCrLf + M3.Text + vbCrLf + M4.Text + vbCrLf + M5.Text + vbCrLf + M6.Text + vbCrLf + M7.Text, True)
+                mailData.Clear()
+                mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
+                TimerSaveOk.Enabled = True
+                saveInfo.Visible = True
+            Else
+                My.Computer.FileSystem.WriteAllText("Mail_Data.tds", M1.Text + vbCrLf + M2.Text + vbCrLf + M3.Text + vbCrLf + M4.Text + vbCrLf + M5.Text + vbCrLf + M6.Text + vbCrLf + M7.Text, True)
+                mailData.Clear()
+                mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
+                TimerSaveOk.Enabled = True
+                saveInfo.Visible = True
+            End If
         End If
     End Sub
 
     Private Sub clearMailConfig_Click(sender As Object, e As EventArgs) Handles clearMailConfig.Click
-        My.Computer.FileSystem.DeleteFile("Mail_Data.tds")
-        mailData.Clear()
-        M1.Clear()
-        M2.Clear()
-        M3.Clear()
-        M4.Clear()
-        M5.Clear()
-        M6.Clear()
-        M7.Clear()
+        If My.Computer.FileSystem.FileExists("Mail_Data.tds") Then
+            My.Computer.FileSystem.DeleteFile("Mail_Data.tds")
+            mailData.Clear()
+            M1.Clear()
+            M2.Clear()
+            M3.Clear()
+            M4.Clear()
+            M5.Clear()
+            M6.Clear()
+            M7.Clear()
+        Else
+        End If
     End Sub
 
     Private Sub TimerSaveOk_Tick(sender As Object, e As EventArgs) Handles TimerSaveOk.Tick
