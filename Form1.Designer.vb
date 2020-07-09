@@ -54,6 +54,7 @@ Partial Class Form1
         Me.mc2nck = New System.Windows.Forms.TextBox()
         Me.Hash2nck = New System.Windows.Forms.TextBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.saveInfo = New System.Windows.Forms.Label()
         Me.clearMailConfig = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.M7 = New System.Windows.Forms.TextBox()
@@ -87,7 +88,6 @@ Partial Class Form1
         Me.mailData = New System.Windows.Forms.RichTextBox()
         Me.OpenFileDialog3 = New System.Windows.Forms.OpenFileDialog()
         Me.TimerSaveOk = New System.Windows.Forms.Timer(Me.components)
-        Me.saveInfo = New System.Windows.Forms.Label()
         Me.fileCodCheck = New System.Windows.Forms.Timer(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -456,6 +456,18 @@ Partial Class Form1
         Me.TabPage4.Text = "Settings"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
+        'saveInfo
+        '
+        Me.saveInfo.AutoSize = True
+        Me.saveInfo.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.saveInfo.ForeColor = System.Drawing.Color.ForestGreen
+        Me.saveInfo.Location = New System.Drawing.Point(568, 170)
+        Me.saveInfo.Name = "saveInfo"
+        Me.saveInfo.Size = New System.Drawing.Size(58, 18)
+        Me.saveInfo.TabIndex = 16
+        Me.saveInfo.Text = "Saved !!"
+        Me.saveInfo.Visible = False
+        '
         'clearMailConfig
         '
         Me.clearMailConfig.Location = New System.Drawing.Point(560, 85)
@@ -728,18 +740,6 @@ Partial Class Form1
         '
         Me.TimerSaveOk.Interval = 1000
         '
-        'saveInfo
-        '
-        Me.saveInfo.AutoSize = True
-        Me.saveInfo.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.saveInfo.ForeColor = System.Drawing.Color.ForestGreen
-        Me.saveInfo.Location = New System.Drawing.Point(568, 170)
-        Me.saveInfo.Name = "saveInfo"
-        Me.saveInfo.Size = New System.Drawing.Size(58, 18)
-        Me.saveInfo.TabIndex = 16
-        Me.saveInfo.Text = "Saved !!"
-        Me.saveInfo.Visible = False
-        '
         'fileCodCheck
         '
         Me.fileCodCheck.Interval = 30000
@@ -766,7 +766,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.09"
+        Me.Text = "SL3BF v1.10"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
