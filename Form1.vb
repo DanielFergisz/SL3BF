@@ -188,6 +188,7 @@ Public Class Form1
     Private Sub fileCodCheck_Tick(sender As Object, e As EventArgs) Handles fileCodCheck.Tick
         If My.Computer.FileSystem.FileExists(IMEI1.Text + "\" + IMEI1.Text + "_COD.txt") Then
             fileCodCheck.Enabled = False
+
             '***********************************************************************************************************************
             Try
                 Dim mailfrom As New MailAddress(M1.Text, "SL3BF") ' adres mail do wysyłki + nazwa
@@ -218,10 +219,23 @@ Public Class Form1
             Catch ex As SmtpException
                 MsgBox(ex.Message)
             End Try
+        Else
+            If Button1.BackColor = Color.Yellow Then
+                Button1.BackColor = Color.Green
+            Else
+                If Button1.BackColor = Color.Green Then
+                    Button1.BackColor = Color.Red
+                Else
+                    If Button1.BackColor = Color.Red Then
+                        Button1.BackColor = Color.Yellow
+                    End If
+                End If
+            End If
         End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         fileCodCheck.Enabled = True
+        Button1.BackColor = Color.Yellow
     End Sub
 End Class

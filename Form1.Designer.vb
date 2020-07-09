@@ -569,6 +569,7 @@ Partial Class Form1
         '
         Me.M5.Location = New System.Drawing.Point(137, 151)
         Me.M5.Name = "M5"
+        Me.M5.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.M5.Size = New System.Drawing.Size(356, 26)
         Me.M5.TabIndex = 4
         '
@@ -744,16 +745,18 @@ Partial Class Form1
         '
         'fileCodCheck
         '
-        Me.fileCodCheck.Interval = 30000
+        Me.fileCodCheck.Interval = 3000
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(580, 141)
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Button1.Location = New System.Drawing.Point(542, 133)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 8
         Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Form1
         '
