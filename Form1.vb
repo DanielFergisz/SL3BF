@@ -46,7 +46,7 @@ Public Class Form1
                 End If
                 Process.Start("cmd", "/k " + vHC.Text + " -w3 -m110 " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3")
                 Command.Text = vHC.Text + " -w3 -m110 " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3"
-                If M1.Text.Length Or M2.Text.Length Or M3.Text.Length Or M4.Text.Length Or M5.Text.Length Or M6.Text.Length Or M7.Text.Length = 0 Then
+                If M1.Text.Length = 0 Or M2.Text.Length = 0 Or M3.Text.Length = 0 Or M4.Text.Length = 0 Or M5.Text.Length = 0 Or M6.Text.Length = 0 Or M7.Text.Length = 0 Then
                 Else
                     fileCodCheck.Enabled = True
                 End If
@@ -58,7 +58,7 @@ Public Class Form1
                 End If
                 Process.Start("cmd", "/k " + vHC.Text + " -m 110 " + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force")
                 Command.Text = vHC.Text + " -m 110 " + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force"
-                If M1.Text.Length Or M2.Text.Length Or M3.Text.Length Or M4.Text.Length Or M5.Text.Length Or M6.Text.Length Or M7.Text.Length = 0 Then
+                If M1.Text.Length = 0 Or M2.Text.Length = 0 Or M3.Text.Length = 0 Or M4.Text.Length = 0 Or M5.Text.Length = 0 Or M6.Text.Length = 0 Or M7.Text.Length = 0 Then
                 Else
                     fileCodCheck.Enabled = True
                 End If
@@ -145,7 +145,7 @@ Public Class Form1
     End Sub
 
     Private Sub saveMailData_Click(sender As Object, e As EventArgs) Handles saveMailData.Click
-        If M1.Text.Length Or M2.Text.Length Or M3.Text.Length Or M4.Text.Length Or M5.Text.Length Or M6.Text.Length Or M7.Text.Length = 0 Then
+        If M1.Text.Length = 0 Or M2.Text.Length = 0 Or M3.Text.Length = 0 Or M4.Text.Length = 0 Or M5.Text.Length = 0 Or M6.Text.Length = 0 Or M7.Text.Length = 0 Then
             MsgBox("Please check all textbox !!")
         Else
             If My.Computer.FileSystem.FileExists("Mail_Data.tds") Then
@@ -219,5 +219,9 @@ Public Class Form1
                 MsgBox(ex.Message)
             End Try
         End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        fileCodCheck.Enabled = True
     End Sub
 End Class
