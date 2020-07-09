@@ -90,6 +90,7 @@ Partial Class Form1
         Me.TimerSaveOk = New System.Windows.Forms.Timer(Me.components)
         Me.fileCodCheck = New System.Windows.Forms.Timer(Me.components)
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -97,6 +98,7 @@ Partial Class Form1
         Me.TabPage3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.RB1.SuspendLayout()
+        Me.TabPage5.SuspendLayout()
         Me.SuspendLayout()
         '
         'vHC
@@ -127,6 +129,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
+        Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.TabControl1.Location = New System.Drawing.Point(10, 45)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -229,7 +232,6 @@ Partial Class Form1
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.Button1)
         Me.TabPage2.Controls.Add(Me.gb1)
         Me.TabPage2.Controls.Add(Me.Label5)
         Me.TabPage2.Controls.Add(Me.Label4)
@@ -455,7 +457,7 @@ Partial Class Form1
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Size = New System.Drawing.Size(671, 268)
         Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "Settings"
+        Me.TabPage4.Text = "Notifications"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
         'saveInfo
@@ -669,38 +671,37 @@ Partial Class Form1
         Me.RB1.Controls.Add(Me.algo2)
         Me.RB1.Controls.Add(Me.algo1)
         Me.RB1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.RB1.Location = New System.Drawing.Point(330, 10)
+        Me.RB1.Location = New System.Drawing.Point(4, 3)
         Me.RB1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.RB1.Name = "RB1"
         Me.RB1.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.RB1.Size = New System.Drawing.Size(142, 47)
+        Me.RB1.Size = New System.Drawing.Size(98, 78)
         Me.RB1.TabIndex = 9
         Me.RB1.TabStop = False
-        Me.RB1.Text = "algo"
+        Me.RB1.Text = "Command"
         '
         'algo2
         '
         Me.algo2.AutoSize = True
-        Me.algo2.Location = New System.Drawing.Point(83, 17)
+        Me.algo2.Location = New System.Drawing.Point(8, 45)
         Me.algo2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.algo2.Name = "algo2"
-        Me.algo2.Size = New System.Drawing.Size(43, 22)
+        Me.algo2.Size = New System.Drawing.Size(75, 22)
         Me.algo2.TabIndex = 1
         Me.algo2.TabStop = True
-        Me.algo2.Text = "v2"
+        Me.algo2.Text = "Mode 2"
         Me.algo2.UseVisualStyleBackColor = True
         '
         'algo1
         '
         Me.algo1.AutoSize = True
         Me.algo1.Checked = True
-        Me.algo1.Location = New System.Drawing.Point(32, 17)
+        Me.algo1.Location = New System.Drawing.Point(8, 17)
         Me.algo1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.algo1.Name = "algo1"
-        Me.algo1.Size = New System.Drawing.Size(43, 22)
+        Me.algo1.Size = New System.Drawing.Size(75, 22)
         Me.algo1.TabIndex = 0
-        Me.algo1.TabStop = True
-        Me.algo1.Text = "v1"
+        Me.algo1.Text = "Mode 1"
         Me.algo1.UseVisualStyleBackColor = True
         '
         'MC
@@ -745,28 +746,39 @@ Partial Class Form1
         '
         'fileCodCheck
         '
-        Me.fileCodCheck.Interval = 3000
+        Me.fileCodCheck.Interval = 20000
         '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.Font = New System.Drawing.Font("Calibri", 4.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Button1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button1.Location = New System.Drawing.Point(542, 133)
+        Me.Button1.Location = New System.Drawing.Point(647, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(38, 15)
         Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Button1"
+        Me.Button1.Text = "CF"
         Me.Button1.UseVisualStyleBackColor = False
+        '
+        'TabPage5
+        '
+        Me.TabPage5.Controls.Add(Me.RB1)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 27)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Size = New System.Drawing.Size(671, 268)
+        Me.TabPage5.TabIndex = 4
+        Me.TabPage5.Text = "Settings"
+        Me.TabPage5.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(697, 352)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.getNCK)
         Me.Controls.Add(Me.IMEI1)
         Me.Controls.Add(Me.MC)
-        Me.Controls.Add(Me.RB1)
         Me.Controls.Add(Me.help1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Command)
@@ -780,7 +792,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.11"
+        Me.Text = "SL3BF v1.12"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -794,6 +806,7 @@ Partial Class Form1
         Me.TabPage4.PerformLayout()
         Me.RB1.ResumeLayout(False)
         Me.RB1.PerformLayout()
+        Me.TabPage5.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -866,4 +879,5 @@ Partial Class Form1
     Friend WithEvents saveInfo As Label
     Friend WithEvents fileCodCheck As Timer
     Friend WithEvents Button1 As Button
+    Friend WithEvents TabPage5 As TabPage
 End Class
