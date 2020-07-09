@@ -98,6 +98,8 @@ Partial Class Form1
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.SavePC = New System.Windows.Forms.Button()
+        Me.cOne = New System.Windows.Forms.TextBox()
+        Me.cTwo = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -654,7 +656,7 @@ Partial Class Form1
         '
         Me.numPC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.numPC.FormattingEnabled = True
-        Me.numPC.Items.AddRange(New Object() {"1", "2", "3", "4", "5"})
+        Me.numPC.Items.AddRange(New Object() {"1", "2", "3"})
         Me.numPC.Location = New System.Drawing.Point(155, 22)
         Me.numPC.Name = "numPC"
         Me.numPC.Size = New System.Drawing.Size(33, 26)
@@ -797,7 +799,7 @@ Partial Class Form1
         '
         'mailData
         '
-        Me.mailData.Location = New System.Drawing.Point(695, 95)
+        Me.mailData.Location = New System.Drawing.Point(695, 12)
         Me.mailData.Name = "mailData"
         Me.mailData.Size = New System.Drawing.Size(502, 226)
         Me.mailData.TabIndex = 13
@@ -851,11 +853,29 @@ Partial Class Form1
         Me.SavePC.Text = "Save"
         Me.SavePC.UseVisualStyleBackColor = True
         '
+        'cOne
+        '
+        Me.cOne.Location = New System.Drawing.Point(695, 244)
+        Me.cOne.Name = "cOne"
+        Me.cOne.Size = New System.Drawing.Size(163, 24)
+        Me.cOne.TabIndex = 14
+        Me.cOne.Visible = False
+        '
+        'cTwo
+        '
+        Me.cTwo.Location = New System.Drawing.Point(864, 244)
+        Me.cTwo.Name = "cTwo"
+        Me.cTwo.Size = New System.Drawing.Size(149, 24)
+        Me.cTwo.TabIndex = 15
+        Me.cTwo.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(697, 352)
+        Me.Controls.Add(Me.cTwo)
+        Me.Controls.Add(Me.cOne)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.getNCK)
         Me.Controls.Add(Me.IMEI1)
@@ -970,4 +990,6 @@ Partial Class Form1
     Friend WithEvents pcV As ComboBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents SavePC As Button
+    Friend WithEvents cOne As TextBox
+    Friend WithEvents cTwo As TextBox
 End Class

@@ -76,6 +76,8 @@ Public Class Form1
             MC.Visible = True
             getNCK.Visible = True
             mailData.Visible = True
+            cOne.Visible = True
+            cTwo.Visible = True
             DirF.Clear()
         End If
     End Sub
@@ -261,20 +263,16 @@ Public Class Form1
             pcV.Items.Add("2")
             pcV.Items.Add("3")
         End If
-        If numPC.SelectedItem = "4" Then
-            pcV.Items.Clear()
-            pcV.Items.Add("1")
-            pcV.Items.Add("2")
-            pcV.Items.Add("3")
-            pcV.Items.Add("4")
+
+    End Sub
+
+    Private Sub SavePC_Click(sender As Object, e As EventArgs) Handles SavePC.Click
+        If numPC.SelectedItem = "2" Then
+            cOne.Text = 1000000000000000 / 2
         End If
-        If numPC.SelectedItem = "5" Then
-            pcV.Items.Clear()
-            pcV.Items.Add("1")
-            pcV.Items.Add("2")
-            pcV.Items.Add("3")
-            pcV.Items.Add("4")
-            pcV.Items.Add("5")
+        If numPC.SelectedItem = "3" Then
+            cOne.Text = 1000000000000000 / 3
+            cTwo.Text = cOne.Text * 2
         End If
     End Sub
 End Class
