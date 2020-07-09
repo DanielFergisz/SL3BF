@@ -6,6 +6,7 @@ Imports System.Net.Mail
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         vHC.SelectedItem = "hashcat"
+        numPC.SelectedItem = "1"
         If My.Computer.FileSystem.FileExists("Mail_Data.tds") Then
             mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
             M1.Text = mailData.Lines(0)
@@ -237,5 +238,43 @@ Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         fileCodCheck.Enabled = True
         Button1.BackColor = Color.Yellow
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        'hashcat --keyspace -a 3 ?l?l?l?l?l?l?l?l (Dla DEC)
+        ' sl3 = 1000000000000000
+        'MsgBox(1000000000000000 / 2) wynik pokazuje się w oknie
+        ' -s gdzie zaczyna -l gdzie kończy = -s 500000000000000 -l 1000000000000000
+    End Sub
+    Private Sub numPC_SelectedIndexChanged(sender As Object, e As EventArgs) Handles numPC.SelectedIndexChanged
+        If numPC.SelectedItem = "1" Then
+            pcV.Items.Clear()
+        End If
+        If numPC.SelectedItem = "2" Then
+            pcV.Items.Clear()
+            pcV.Items.Add("1")
+            pcV.Items.Add("2")
+        End If
+        If numPC.SelectedItem = "3" Then
+            pcV.Items.Clear()
+            pcV.Items.Add("1")
+            pcV.Items.Add("2")
+            pcV.Items.Add("3")
+        End If
+        If numPC.SelectedItem = "4" Then
+            pcV.Items.Clear()
+            pcV.Items.Add("1")
+            pcV.Items.Add("2")
+            pcV.Items.Add("3")
+            pcV.Items.Add("4")
+        End If
+        If numPC.SelectedItem = "5" Then
+            pcV.Items.Clear()
+            pcV.Items.Add("1")
+            pcV.Items.Add("2")
+            pcV.Items.Add("3")
+            pcV.Items.Add("4")
+            pcV.Items.Add("5")
+        End If
     End Sub
 End Class

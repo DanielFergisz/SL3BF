@@ -71,6 +71,15 @@ Partial Class Form1
         Me.M3 = New System.Windows.Forms.TextBox()
         Me.M2 = New System.Windows.Forms.TextBox()
         Me.M1 = New System.Windows.Forms.TextBox()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.pcV = New System.Windows.Forms.ComboBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.numPC = New System.Windows.Forms.ComboBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.RB1 = New System.Windows.Forms.GroupBox()
+        Me.algo2 = New System.Windows.Forms.RadioButton()
+        Me.algo1 = New System.Windows.Forms.RadioButton()
         Me.Command = New System.Windows.Forms.TextBox()
         Me.Salt = New System.Windows.Forms.TextBox()
         Me.Pass = New System.Windows.Forms.TextBox()
@@ -79,9 +88,6 @@ Partial Class Form1
         Me.bench1 = New System.Windows.Forms.Button()
         Me.help1 = New System.Windows.Forms.Button()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.RB1 = New System.Windows.Forms.GroupBox()
-        Me.algo2 = New System.Windows.Forms.RadioButton()
-        Me.algo1 = New System.Windows.Forms.RadioButton()
         Me.MC = New System.Windows.Forms.TextBox()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
         Me.getNCK = New System.Windows.Forms.RichTextBox()
@@ -90,15 +96,17 @@ Partial Class Form1
         Me.TimerSaveOk = New System.Windows.Forms.Timer(Me.components)
         Me.fileCodCheck = New System.Windows.Forms.Timer(Me.components)
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.SavePC = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.gb1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
-        Me.RB1.SuspendLayout()
         Me.TabPage5.SuspendLayout()
+        Me.RB1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'vHC
@@ -603,6 +611,104 @@ Partial Class Form1
         Me.M1.Size = New System.Drawing.Size(356, 26)
         Me.M1.TabIndex = 0
         '
+        'TabPage5
+        '
+        Me.TabPage5.Controls.Add(Me.GroupBox1)
+        Me.TabPage5.Controls.Add(Me.Button2)
+        Me.TabPage5.Controls.Add(Me.RB1)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 27)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Size = New System.Drawing.Size(671, 268)
+        Me.TabPage5.TabIndex = 4
+        Me.TabPage5.Text = "Settings"
+        Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(93, 61)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(69, 18)
+        Me.Label16.TabIndex = 14
+        Me.Label16.Text = "Select PC:"
+        '
+        'pcV
+        '
+        Me.pcV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.pcV.FormattingEnabled = True
+        Me.pcV.Location = New System.Drawing.Point(155, 58)
+        Me.pcV.Name = "pcV"
+        Me.pcV.Size = New System.Drawing.Size(33, 26)
+        Me.pcV.TabIndex = 13
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(14, 25)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(148, 18)
+        Me.Label15.TabIndex = 12
+        Me.Label15.Text = "Number of computers:"
+        '
+        'numPC
+        '
+        Me.numPC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.numPC.FormattingEnabled = True
+        Me.numPC.Items.AddRange(New Object() {"1", "2", "3", "4", "5"})
+        Me.numPC.Location = New System.Drawing.Point(155, 22)
+        Me.numPC.Name = "numPC"
+        Me.numPC.Size = New System.Drawing.Size(33, 26)
+        Me.numPC.TabIndex = 11
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(551, 23)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 10
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.Visible = False
+        '
+        'RB1
+        '
+        Me.RB1.Controls.Add(Me.algo2)
+        Me.RB1.Controls.Add(Me.algo1)
+        Me.RB1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.RB1.Location = New System.Drawing.Point(4, 3)
+        Me.RB1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.RB1.Name = "RB1"
+        Me.RB1.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.RB1.Size = New System.Drawing.Size(98, 78)
+        Me.RB1.TabIndex = 9
+        Me.RB1.TabStop = False
+        Me.RB1.Text = "Command"
+        '
+        'algo2
+        '
+        Me.algo2.AutoSize = True
+        Me.algo2.Location = New System.Drawing.Point(8, 45)
+        Me.algo2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.algo2.Name = "algo2"
+        Me.algo2.Size = New System.Drawing.Size(75, 22)
+        Me.algo2.TabIndex = 1
+        Me.algo2.TabStop = True
+        Me.algo2.Text = "Mode 2"
+        Me.algo2.UseVisualStyleBackColor = True
+        '
+        'algo1
+        '
+        Me.algo1.AutoSize = True
+        Me.algo1.Checked = True
+        Me.algo1.Location = New System.Drawing.Point(8, 17)
+        Me.algo1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.algo1.Name = "algo1"
+        Me.algo1.Size = New System.Drawing.Size(75, 22)
+        Me.algo1.TabIndex = 0
+        Me.algo1.TabStop = True
+        Me.algo1.Text = "Mode 1"
+        Me.algo1.UseVisualStyleBackColor = True
+        '
         'Command
         '
         Me.Command.Location = New System.Drawing.Point(44, 374)
@@ -666,44 +772,6 @@ Partial Class Form1
         Me.help1.Text = "Help"
         Me.help1.UseVisualStyleBackColor = True
         '
-        'RB1
-        '
-        Me.RB1.Controls.Add(Me.algo2)
-        Me.RB1.Controls.Add(Me.algo1)
-        Me.RB1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.RB1.Location = New System.Drawing.Point(4, 3)
-        Me.RB1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.RB1.Name = "RB1"
-        Me.RB1.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.RB1.Size = New System.Drawing.Size(98, 78)
-        Me.RB1.TabIndex = 9
-        Me.RB1.TabStop = False
-        Me.RB1.Text = "Command"
-        '
-        'algo2
-        '
-        Me.algo2.AutoSize = True
-        Me.algo2.Location = New System.Drawing.Point(8, 45)
-        Me.algo2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.algo2.Name = "algo2"
-        Me.algo2.Size = New System.Drawing.Size(75, 22)
-        Me.algo2.TabIndex = 1
-        Me.algo2.TabStop = True
-        Me.algo2.Text = "Mode 2"
-        Me.algo2.UseVisualStyleBackColor = True
-        '
-        'algo1
-        '
-        Me.algo1.AutoSize = True
-        Me.algo1.Checked = True
-        Me.algo1.Location = New System.Drawing.Point(8, 17)
-        Me.algo1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.algo1.Name = "algo1"
-        Me.algo1.Size = New System.Drawing.Size(75, 22)
-        Me.algo1.TabIndex = 0
-        Me.algo1.Text = "Mode 1"
-        Me.algo1.UseVisualStyleBackColor = True
-        '
         'MC
         '
         Me.MC.Location = New System.Drawing.Point(44, 348)
@@ -760,15 +828,28 @@ Partial Class Form1
         Me.Button1.Text = "CF"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'TabPage5
+        'GroupBox1
         '
-        Me.TabPage5.Controls.Add(Me.RB1)
-        Me.TabPage5.Location = New System.Drawing.Point(4, 27)
-        Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(671, 268)
-        Me.TabPage5.TabIndex = 4
-        Me.TabPage5.Text = "Settings"
-        Me.TabPage5.UseVisualStyleBackColor = True
+        Me.GroupBox1.Controls.Add(Me.SavePC)
+        Me.GroupBox1.Controls.Add(Me.Label16)
+        Me.GroupBox1.Controls.Add(Me.numPC)
+        Me.GroupBox1.Controls.Add(Me.pcV)
+        Me.GroupBox1.Controls.Add(Me.Label15)
+        Me.GroupBox1.Location = New System.Drawing.Point(109, 3)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(326, 101)
+        Me.GroupBox1.TabIndex = 15
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Machines"
+        '
+        'SavePC
+        '
+        Me.SavePC.Location = New System.Drawing.Point(224, 36)
+        Me.SavePC.Name = "SavePC"
+        Me.SavePC.Size = New System.Drawing.Size(75, 31)
+        Me.SavePC.TabIndex = 15
+        Me.SavePC.Text = "Save"
+        Me.SavePC.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -792,7 +873,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.12"
+        Me.Text = "SL3BF v1.13"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -804,9 +885,11 @@ Partial Class Form1
         Me.TabPage3.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
+        Me.TabPage5.ResumeLayout(False)
         Me.RB1.ResumeLayout(False)
         Me.RB1.PerformLayout()
-        Me.TabPage5.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -880,4 +963,11 @@ Partial Class Form1
     Friend WithEvents fileCodCheck As Timer
     Friend WithEvents Button1 As Button
     Friend WithEvents TabPage5 As TabPage
+    Friend WithEvents Button2 As Button
+    Friend WithEvents numPC As ComboBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents pcV As ComboBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents SavePC As Button
 End Class
