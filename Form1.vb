@@ -266,14 +266,16 @@ Public Class Form1
 
                 smtp.Send(message)
 
-                MsgBox("E-mail został wysłany")
+                Log.AppendText(Environment.NewLine)
+                Log.AppendText(Environment.NewLine + "Mail has been sent")
+
 
             Catch ex As SmtpException
-                MsgBox(ex.Message)
+                Log.AppendText(Environment.NewLine + ex.Message)
             End Try
 
             MC2.LoadFile(IMEI1.Text + "\" + IMEI1.Text + "_COD.txt", RichTextBoxStreamType.PlainText)
-            Log.Text = "Reading data.."
+            Log.AppendText(Environment.NewLine + "Reading data...")
             Log.AppendText(Environment.NewLine)
             Log.AppendText(Environment.NewLine + "Master Code: ")
             Log.SelectionColor = Color.DarkBlue
@@ -282,10 +284,7 @@ Public Class Form1
             Log.AppendText(Environment.NewLine + "Hash: " + Mid(MC2.Text, 1, 40))
             Hash2nck.Text = Mid(MC2.Text, 1, 40)
             mc2nck.Text = Mid(MC2.Text, 66, 30)
-            genCod2NCK.PerformClick()
-            Log.AppendText(Environment.NewLine)
-            Log.AppendText(Environment.NewLine + Log2.Text)
-
+            nckC.Enabled = True
         Else
             If Button1.BackColor = Color.Yellow Then
                 Button1.BackColor = Color.Green
@@ -333,5 +332,13 @@ Public Class Form1
             cOne.Text = 1000000000000000 / 3
             cTwo.Text = cOne.Text * 2
         End If
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles nckC.Tick
+        nckC.Enabled = False
+        genCod2NCK_Click(Nothing, Nothing)
+        Log.AppendText(Environment.NewLine)
+        Log.AppendText(Environment.NewLine + Log2.Text)
+        My.Computer.FileSystem.WriteAllText(IMEI1.Text + "\" + IMEI1.Text + "_NCK.txt", Log2.Text, True)
     End Sub
 End Class

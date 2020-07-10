@@ -101,6 +101,7 @@ Partial Class Form1
         Me.cOne = New System.Windows.Forms.TextBox()
         Me.cTwo = New System.Windows.Forms.TextBox()
         Me.MC2 = New System.Windows.Forms.RichTextBox()
+        Me.nckC = New System.Windows.Forms.Timer(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -209,6 +210,7 @@ Partial Class Form1
         Me.Log.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Log.Name = "Log"
         Me.Log.ReadOnly = True
+        Me.Log.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical
         Me.Log.Size = New System.Drawing.Size(499, 201)
         Me.Log.TabIndex = 3
         Me.Log.Text = ""
@@ -879,6 +881,10 @@ Partial Class Form1
         Me.MC2.Text = ""
         Me.MC2.Visible = False
         '
+        'nckC
+        '
+        Me.nckC.Interval = 2000
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -904,7 +910,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.15"
+        Me.Text = "SL3BF v1.16"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -1004,4 +1010,5 @@ Partial Class Form1
     Friend WithEvents cOne As TextBox
     Friend WithEvents cTwo As TextBox
     Friend WithEvents MC2 As RichTextBox
+    Friend WithEvents nckC As Timer
 End Class
