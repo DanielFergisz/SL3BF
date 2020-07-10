@@ -37,6 +37,10 @@ Public Class Form1
         End If
     End Sub
     Private Sub StartBF1_Click(sender As Object, e As EventArgs) Handles StartBF1.Click
+        Dim Commv1 As String = vHC.Text + " -w3 -m110 " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3"
+        Dim Commv2 As String = vHC.Text + " -m 110 " + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force"
+        Dim ksMax As String = "1000000000000000"
+
         If (Pass.Text.Length = 0) And (Salt.Text.Length = 0) Then
             MessageBox.Show("Please select hash file !!")
         Else
@@ -45,26 +49,70 @@ Public Class Form1
                 Else
                     Directory.CreateDirectory(IMEI1.Text)
                 End If
-                Process.Start("cmd", "/k " + vHC.Text + " -w3 -m110 " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3")
-                Command.Text = vHC.Text + " -w3 -m110 " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3"
-                If M1.Text.Length = 0 Or M2.Text.Length = 0 Or M3.Text.Length = 0 Or M4.Text.Length = 0 Or M5.Text.Length = 0 Or M6.Text.Length = 0 Or M7.Text.Length = 0 Then
-                Else
-                    fileCodCheck.Enabled = True
+                If numPC.SelectedIndex = "1" Then
+                    Process.Start("cmd", "/k " + Commv1)
+                    Command.Text = Commv1
                 End If
+                If numPC.SelectedIndex = "2" And pcV.SelectedIndex = "1" Then
+                    Process.Start("cmd", "/k " + Commv1 + " -s 0 -l " + cOne.Text)
+                    Command.Text = Commv1 + " -s 0 -l " + cOne.Text
+                End If
+                If numPC.SelectedIndex = "2" And pcV.SelectedIndex = "2" Then
+                    Process.Start("cmd", "/k " + Commv1 + " -s " + cOne.Text + " -l " + ksMax)
+                    Command.Text = Commv1 + " -s " + cOne.Text + " -l " + ksMax
+                End If
+
+                If numPC.SelectedIndex = "3" And pcV.SelectedIndex = "1" Then
+                    Process.Start("cmd", "/k " + Commv1 + " -s 0 -l " + cOne.Text)
+                    Command.Text = Commv1 + " -s 0 -l " + cOne.Text
+                End If
+                If numPC.SelectedIndex = "3" And pcV.SelectedIndex = "2" Then
+                    Process.Start("cmd", "/k " + Commv1 + " -s " + cOne.Text + " -l " + cTwo.Text)
+                    Command.Text = Commv1 + " -s " + cOne.Text + " -l " + cTwo.Text
+                End If
+                If numPC.SelectedIndex = "3" And pcV.SelectedIndex = "3" Then
+                    Process.Start("cmd", "/k " + Commv1 + " -s " + cTwo.Text + " -l " + ksMax)
+                    Command.Text = Commv1 + " -s " + cTwo.Text + " -l " + ksMax
+                End If
+
             End If
+
             If algo2.Checked = True Then
                 If Directory.Exists(IMEI1.Text) Then
                 Else
                     Directory.CreateDirectory(IMEI1.Text)
                 End If
-                Process.Start("cmd", "/k " + vHC.Text + " -m 110 " + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force")
-                Command.Text = vHC.Text + " -m 110 " + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force"
-                If M1.Text.Length = 0 Or M2.Text.Length = 0 Or M3.Text.Length = 0 Or M4.Text.Length = 0 Or M5.Text.Length = 0 Or M6.Text.Length = 0 Or M7.Text.Length = 0 Then
-                Else
-                    fileCodCheck.Enabled = True
+                If numPC.SelectedIndex = "1" Then
+                    Process.Start("cmd", "/k " + Commv2)
+                    Command.Text = Commv1
                 End If
+                If numPC.SelectedIndex = "2" And pcV.SelectedIndex = "1" Then
+                    Process.Start("cmd", "/k " + Commv2 + " -s 0 -l " + cOne.Text)
+                    Command.Text = Commv1 + " -s 0 -l " + cOne.Text
+                End If
+                If numPC.SelectedIndex = "2" And pcV.SelectedIndex = "2" Then
+                    Process.Start("cmd", "/k " + Commv2 + " -s " + cOne.Text + " -l " + ksMax)
+                    Command.Text = Commv2 + " -s " + cOne.Text + " -l " + ksMax
                 End If
 
+                If numPC.SelectedIndex = "3" And pcV.SelectedIndex = "1" Then
+                    Process.Start("cmd", "/k " + Commv2 + " -s 0 -l " + cOne.Text)
+                    Command.Text = Commv2 + " -s 0 -l " + cOne.Text
+                End If
+                If numPC.SelectedIndex = "3" And pcV.SelectedIndex = "2" Then
+                    Process.Start("cmd", "/k " + Commv2 + " -s " + cOne.Text + " -l " + cTwo.Text)
+                    Command.Text = Commv2 + " -s " + cOne.Text + " -l " + cTwo.Text
+                End If
+                If numPC.SelectedIndex = "3" And pcV.SelectedIndex = "3" Then
+                    Process.Start("cmd", "/k " + Commv2 + " -s " + cTwo.Text + " -l " + ksMax)
+                    Command.Text = Commv2 + " -s " + cTwo.Text + " -l " + ksMax
+                End If
+            End If
+
+            If M1.Text.Length = 0 Or M2.Text.Length = 0 Or M3.Text.Length = 0 Or M4.Text.Length = 0 Or M5.Text.Length = 0 Or M6.Text.Length = 0 Or M7.Text.Length = 0 Then
+            Else
+                fileCodCheck.Enabled = True
+            End If
         End If
     End Sub
 
