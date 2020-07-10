@@ -130,6 +130,10 @@ Public Class Form1
             cTwo.Visible = True
             DirF.Clear()
         End If
+        If DirF.Text = "tlod" Then
+            manualCheck.Visible = True
+            DirF.Clear()
+        End If
     End Sub
     Private Sub StartBF2_Click(sender As Object, e As EventArgs) Handles StartBF2.Click
         If (Pass2.Text.Length = 0) And (Salt2.Text.Length = 0) Then
