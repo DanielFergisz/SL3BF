@@ -122,6 +122,7 @@ Public Class Form1
             Pass.Visible = True
             Command.Visible = True
             MC.Visible = True
+            MC2.Visible = True
             getNCK.Visible = True
             mailData.Visible = True
             cOne.Visible = True
@@ -270,6 +271,21 @@ Public Class Form1
             Catch ex As SmtpException
                 MsgBox(ex.Message)
             End Try
+
+            MC2.LoadFile(IMEI1.Text + "\" + IMEI1.Text + "_COD.txt", RichTextBoxStreamType.PlainText)
+            Log.Text = "Reading data.."
+            Log.AppendText(Environment.NewLine)
+            Log.AppendText(Environment.NewLine + "Master Code: ")
+            Log.SelectionColor = Color.DarkBlue
+            Log.AppendText(Mid(MC2.Text, 66, 30))
+            Log.SelectionColor = Color.Empty
+            Log.AppendText(Environment.NewLine + "Hash: " + Mid(MC2.Text, 1, 40))
+            Hash2nck.Text = Mid(MC2.Text, 1, 40)
+            mc2nck.Text = Mid(MC2.Text, 66, 30)
+            genCod2NCK.PerformClick()
+            Log.AppendText(Environment.NewLine)
+            Log.AppendText(Environment.NewLine + Log2.Text)
+
         Else
             If Button1.BackColor = Color.Yellow Then
                 Button1.BackColor = Color.Green
@@ -289,13 +305,6 @@ Public Class Form1
         fileCodCheck.Enabled = True
         Button1.BackColor = Color.Yellow
     End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        'hashcat --keyspace -a 3 ?l?l?l?l?l?l?l?l (Dla DEC)
-        ' sl3 = 1000000000000000
-        'MsgBox(1000000000000000 / 2) wynik pokazuje się w oknie
-        ' -s gdzie zaczyna -l gdzie kończy = -s 500000000000000 -l 1000000000000000
-    End Sub
     Private Sub numPC_SelectedIndexChanged(sender As Object, e As EventArgs) Handles numPC.SelectedIndexChanged
         If numPC.SelectedItem = "1" Then
             pcV.Items.Clear()
@@ -304,12 +313,14 @@ Public Class Form1
             pcV.Items.Clear()
             pcV.Items.Add("1")
             pcV.Items.Add("2")
+            pcV.SelectedItem = "1"
         End If
         If numPC.SelectedItem = "3" Then
             pcV.Items.Clear()
             pcV.Items.Add("1")
             pcV.Items.Add("2")
             pcV.Items.Add("3")
+            pcV.SelectedItem = "1"
         End If
 
     End Sub

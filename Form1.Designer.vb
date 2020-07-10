@@ -72,10 +72,12 @@ Partial Class Form1
         Me.M2 = New System.Windows.Forms.TextBox()
         Me.M1 = New System.Windows.Forms.TextBox()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.SavePC = New System.Windows.Forms.Button()
         Me.Label16 = New System.Windows.Forms.Label()
+        Me.numPC = New System.Windows.Forms.ComboBox()
         Me.pcV = New System.Windows.Forms.ComboBox()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.numPC = New System.Windows.Forms.ComboBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.RB1 = New System.Windows.Forms.GroupBox()
         Me.algo2 = New System.Windows.Forms.RadioButton()
@@ -96,10 +98,9 @@ Partial Class Form1
         Me.TimerSaveOk = New System.Windows.Forms.Timer(Me.components)
         Me.fileCodCheck = New System.Windows.Forms.Timer(Me.components)
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.SavePC = New System.Windows.Forms.Button()
         Me.cOne = New System.Windows.Forms.TextBox()
         Me.cTwo = New System.Windows.Forms.TextBox()
+        Me.MC2 = New System.Windows.Forms.RichTextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -107,8 +108,8 @@ Partial Class Form1
         Me.TabPage3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.TabPage5.SuspendLayout()
-        Me.RB1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.RB1.SuspendLayout()
         Me.SuspendLayout()
         '
         'vHC
@@ -625,6 +626,29 @@ Partial Class Form1
         Me.TabPage5.Text = "Settings"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.SavePC)
+        Me.GroupBox1.Controls.Add(Me.Label16)
+        Me.GroupBox1.Controls.Add(Me.numPC)
+        Me.GroupBox1.Controls.Add(Me.pcV)
+        Me.GroupBox1.Controls.Add(Me.Label15)
+        Me.GroupBox1.Location = New System.Drawing.Point(109, 3)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(326, 101)
+        Me.GroupBox1.TabIndex = 15
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Machines"
+        '
+        'SavePC
+        '
+        Me.SavePC.Location = New System.Drawing.Point(224, 36)
+        Me.SavePC.Name = "SavePC"
+        Me.SavePC.Size = New System.Drawing.Size(75, 31)
+        Me.SavePC.TabIndex = 15
+        Me.SavePC.Text = "Save"
+        Me.SavePC.UseVisualStyleBackColor = True
+        '
         'Label16
         '
         Me.Label16.AutoSize = True
@@ -633,6 +657,16 @@ Partial Class Form1
         Me.Label16.Size = New System.Drawing.Size(69, 18)
         Me.Label16.TabIndex = 14
         Me.Label16.Text = "Select PC:"
+        '
+        'numPC
+        '
+        Me.numPC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.numPC.FormattingEnabled = True
+        Me.numPC.Items.AddRange(New Object() {"1", "2", "3"})
+        Me.numPC.Location = New System.Drawing.Point(155, 22)
+        Me.numPC.Name = "numPC"
+        Me.numPC.Size = New System.Drawing.Size(33, 26)
+        Me.numPC.TabIndex = 11
         '
         'pcV
         '
@@ -651,16 +685,6 @@ Partial Class Form1
         Me.Label15.Size = New System.Drawing.Size(148, 18)
         Me.Label15.TabIndex = 12
         Me.Label15.Text = "Number of computers:"
-        '
-        'numPC
-        '
-        Me.numPC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.numPC.FormattingEnabled = True
-        Me.numPC.Items.AddRange(New Object() {"1", "2", "3"})
-        Me.numPC.Location = New System.Drawing.Point(155, 22)
-        Me.numPC.Name = "numPC"
-        Me.numPC.Size = New System.Drawing.Size(33, 26)
-        Me.numPC.TabIndex = 11
         '
         'Button2
         '
@@ -830,29 +854,6 @@ Partial Class Form1
         Me.Button1.Text = "CF"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.SavePC)
-        Me.GroupBox1.Controls.Add(Me.Label16)
-        Me.GroupBox1.Controls.Add(Me.numPC)
-        Me.GroupBox1.Controls.Add(Me.pcV)
-        Me.GroupBox1.Controls.Add(Me.Label15)
-        Me.GroupBox1.Location = New System.Drawing.Point(109, 3)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(326, 101)
-        Me.GroupBox1.TabIndex = 15
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Machines"
-        '
-        'SavePC
-        '
-        Me.SavePC.Location = New System.Drawing.Point(224, 36)
-        Me.SavePC.Name = "SavePC"
-        Me.SavePC.Size = New System.Drawing.Size(75, 31)
-        Me.SavePC.TabIndex = 15
-        Me.SavePC.Text = "Save"
-        Me.SavePC.UseVisualStyleBackColor = True
-        '
         'cOne
         '
         Me.cOne.Location = New System.Drawing.Point(695, 244)
@@ -869,11 +870,21 @@ Partial Class Form1
         Me.cTwo.TabIndex = 15
         Me.cTwo.Visible = False
         '
+        'MC2
+        '
+        Me.MC2.Location = New System.Drawing.Point(695, 274)
+        Me.MC2.Name = "MC2"
+        Me.MC2.Size = New System.Drawing.Size(494, 37)
+        Me.MC2.TabIndex = 16
+        Me.MC2.Text = ""
+        Me.MC2.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(697, 352)
+        Me.ClientSize = New System.Drawing.Size(700, 352)
+        Me.Controls.Add(Me.MC2)
         Me.Controls.Add(Me.cTwo)
         Me.Controls.Add(Me.cOne)
         Me.Controls.Add(Me.Button1)
@@ -893,7 +904,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.14"
+        Me.Text = "SL3BF v1.15"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -906,10 +917,10 @@ Partial Class Form1
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
-        Me.RB1.ResumeLayout(False)
-        Me.RB1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.RB1.ResumeLayout(False)
+        Me.RB1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -992,4 +1003,5 @@ Partial Class Form1
     Friend WithEvents SavePC As Button
     Friend WithEvents cOne As TextBox
     Friend WithEvents cTwo As TextBox
+    Friend WithEvents MC2 As RichTextBox
 End Class
