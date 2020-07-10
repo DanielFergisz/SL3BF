@@ -84,11 +84,11 @@ Public Class Form1
                 End If
                 If numPC.SelectedIndex = "1" Then
                     Process.Start("cmd", "/k " + Commv2)
-                    Command.Text = Commv1
+                    Command.Text = Commv2
                 End If
                 If numPC.SelectedIndex = "2" And pcV.SelectedIndex = "1" Then
                     Process.Start("cmd", "/k " + Commv2 + " -s 0 -l " + cOne.Text)
-                    Command.Text = Commv1 + " -s 0 -l " + cOne.Text
+                    Command.Text = Commv2 + " -s 0 -l " + cOne.Text
                 End If
                 If numPC.SelectedIndex = "2" And pcV.SelectedIndex = "2" Then
                     Process.Start("cmd", "/k " + Commv2 + " -s " + cOne.Text + " -l " + ksMax)
@@ -112,6 +112,7 @@ Public Class Form1
             If M1.Text.Length = 0 Or M2.Text.Length = 0 Or M3.Text.Length = 0 Or M4.Text.Length = 0 Or M5.Text.Length = 0 Or M6.Text.Length = 0 Or M7.Text.Length = 0 Then
             Else
                 fileCodCheck.Enabled = True
+                manualCheck.BackColor = Color.Yellow
             End If
         End If
     End Sub
@@ -286,23 +287,23 @@ Public Class Form1
             mc2nck.Text = Mid(MC2.Text, 66, 30)
             nckC.Enabled = True
         Else
-            If Button1.BackColor = Color.Yellow Then
-                Button1.BackColor = Color.Green
+            If manualCheck.BackColor = Color.Yellow Then
+                manualCheck.BackColor = Color.Green
             Else
-                If Button1.BackColor = Color.Green Then
-                    Button1.BackColor = Color.Red
+                If manualCheck.BackColor = Color.Green Then
+                    manualCheck.BackColor = Color.Red
                 Else
-                    If Button1.BackColor = Color.Red Then
-                        Button1.BackColor = Color.Yellow
+                    If manualCheck.BackColor = Color.Red Then
+                        manualCheck.BackColor = Color.Yellow
                     End If
                 End If
             End If
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub manualCheck_Click(sender As Object, e As EventArgs) Handles manualCheck.Click
         fileCodCheck.Enabled = True
-        Button1.BackColor = Color.Yellow
+        manualCheck.BackColor = Color.Yellow
     End Sub
     Private Sub numPC_SelectedIndexChanged(sender As Object, e As EventArgs) Handles numPC.SelectedIndexChanged
         If numPC.SelectedItem = "1" Then
@@ -341,4 +342,6 @@ Public Class Form1
         Log.AppendText(Environment.NewLine + Log2.Text)
         My.Computer.FileSystem.WriteAllText(IMEI1.Text + "\" + IMEI1.Text + "_NCK.txt", Log2.Text, True)
     End Sub
+
+
 End Class
