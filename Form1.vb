@@ -125,6 +125,7 @@ Public Class Form1
 
     Private Sub DirF_TextChanged(sender As Object, e As EventArgs) Handles DirF.TextChanged
         If DirF.Text = "gsmadmin" Then
+            Me.AutoSize = False
             Salt.Visible = True
             Pass.Visible = True
             Command.Visible = True
