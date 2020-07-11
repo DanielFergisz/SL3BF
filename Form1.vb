@@ -42,8 +42,13 @@ Public Class Form1
         Dim Commv2 As String
         Commv2 = vHC.Text + " -m 110 " + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force"
         Dim ksMax As String
-        ksMax = "1000000000000000"
-
+        ksMax = "1000000000000"
+        Dim ks2 As String
+        ks2 = "500000000000"
+        Dim ks3 As String
+        ks3 = "333333333334"
+        Dim ks31 As String
+        ks31 = "666666666668"
         If (Pass.Text.Length = 0) And (Salt.Text.Length = 0) Then
             MessageBox.Show("Please select hash file !!")
         Else
@@ -57,25 +62,25 @@ Public Class Form1
                     Command.Text = Commv1
                 End If
                 If numPC.SelectedItem = "2" And pcV.SelectedItem = "1" Then
-                    Process.Start("cmd", "/k " + Commv1 + " -s 0 -l " + cOne.Text)
-                    Command.Text = Commv1 + " -s 0 -l " + cOne.Text
+                    Process.Start("cmd", "/k " + Commv1 + " -s 0 -l " + ks2)
+                    Command.Text = Commv1 + " -s 0 -l " + ks2
                 End If
                 If numPC.SelectedItem = "2" And pcV.SelectedItem = "2" Then
-                    Process.Start("cmd", "/k " + Commv1 + " -s " + cOne.Text + " -l " + ksMax)
-                    Command.Text = Commv1 + " -s " + cOne.Text + " -l " + ksMax
+                    Process.Start("cmd", "/k " + Commv1 + " -s " + ks2 + " -l " + ksMax)
+                    Command.Text = Commv1 + " -s " + ks2 + " -l " + ksMax
                 End If
 
                 If numPC.SelectedItem = "3" And pcV.SelectedItem = "1" Then
-                    Process.Start("cmd", "/k " + Commv1 + " -s 0 -l " + cOne.Text)
-                    Command.Text = Commv1 + " -s 0 -l " + cOne.Text
+                    Process.Start("cmd", "/k " + Commv1 + " -s 0 -l " + ks3)
+                    Command.Text = Commv1 + " -s 0 -l " + ks3
                 End If
                 If numPC.SelectedItem = "3" And pcV.SelectedItem = "2" Then
-                    Process.Start("cmd", "/k " + Commv1 + " -s " + cOne.Text + " -l " + cTwo.Text)
-                    Command.Text = Commv1 + " -s " + cOne.Text + " -l " + cTwo.Text
+                    Process.Start("cmd", "/k " + Commv1 + " -s " + ks3 + " -l " + ks31)
+                    Command.Text = Commv1 + " -s " + ks3 + " -l " + ks31
                 End If
                 If numPC.SelectedItem = "3" And pcV.SelectedItem = "3" Then
-                    Process.Start("cmd", "/k " + Commv1 + " -s " + cTwo.Text + " -l " + ksMax)
-                    Command.Text = Commv1 + " -s " + cTwo.Text + " -l " + ksMax
+                    Process.Start("cmd", "/k " + Commv1 + " -s " + ks31 + " -l " + ksMax)
+                    Command.Text = Commv1 + " -s " + ks31 + " -l " + ksMax
                 End If
 
             End If
@@ -330,16 +335,6 @@ Public Class Form1
             pcV.SelectedItem = "1"
         End If
 
-    End Sub
-
-    Private Sub SavePC_Click(sender As Object, e As EventArgs) Handles SavePC.Click
-        If numPC.SelectedItem = "2" Then
-            cOne.Text = 1000000000000000 / 2
-        End If
-        If numPC.SelectedItem = "3" Then
-            cOne.Text = 1000000000000000 / 3
-            cTwo.Text = cOne.Text * 2
-        End If
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles nckC.Tick

@@ -75,7 +75,6 @@ Partial Class Form1
         Me.M1 = New System.Windows.Forms.TextBox()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.SavePC = New System.Windows.Forms.Button()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.numPC = New System.Windows.Forms.ComboBox()
         Me.pcV = New System.Windows.Forms.ComboBox()
@@ -648,26 +647,16 @@ Partial Class Form1
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.SavePC)
         Me.GroupBox1.Controls.Add(Me.Label16)
         Me.GroupBox1.Controls.Add(Me.numPC)
         Me.GroupBox1.Controls.Add(Me.pcV)
         Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Location = New System.Drawing.Point(109, 3)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(326, 101)
+        Me.GroupBox1.Size = New System.Drawing.Size(211, 101)
         Me.GroupBox1.TabIndex = 15
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Machines"
-        '
-        'SavePC
-        '
-        Me.SavePC.Location = New System.Drawing.Point(224, 36)
-        Me.SavePC.Name = "SavePC"
-        Me.SavePC.Size = New System.Drawing.Size(75, 31)
-        Me.SavePC.TabIndex = 15
-        Me.SavePC.Text = "Save"
-        Me.SavePC.UseVisualStyleBackColor = True
         '
         'Label16
         '
@@ -1013,7 +1002,6 @@ Partial Class Form1
     Friend WithEvents Label16 As Label
     Friend WithEvents pcV As ComboBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents SavePC As Button
     Friend WithEvents cOne As TextBox
     Friend WithEvents cTwo As TextBox
     Friend WithEvents MC2 As RichTextBox
