@@ -37,9 +37,12 @@ Public Class Form1
         End If
     End Sub
     Private Sub StartBF1_Click(sender As Object, e As EventArgs) Handles StartBF1.Click
-        Dim Commv1 As String = vHC.Text + " -w3 -m110 " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3"
-        Dim Commv2 As String = vHC.Text + " -m 110 " + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force"
-        Dim ksMax As String = "1000000000000000"
+        Dim Commv1 As String
+        Commv1 = vHC.Text + " -w3 -m110 " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3"
+        Dim Commv2 As String
+        Commv2 = vHC.Text + " -m 110 " + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force"
+        Dim ksMax As String
+        ksMax = "1000000000000000"
 
         If (Pass.Text.Length = 0) And (Salt.Text.Length = 0) Then
             MessageBox.Show("Please select hash file !!")
@@ -49,28 +52,28 @@ Public Class Form1
                 Else
                     Directory.CreateDirectory(IMEI1.Text)
                 End If
-                If numPC.SelectedIndex = "1" Then
+                If numPC.SelectedItem = "1" Then
                     Process.Start("cmd", "/k " + Commv1)
                     Command.Text = Commv1
                 End If
-                If numPC.SelectedIndex = "2" And pcV.SelectedIndex = "1" Then
+                If numPC.SelectedItem = "2" And pcV.SelectedItem = "1" Then
                     Process.Start("cmd", "/k " + Commv1 + " -s 0 -l " + cOne.Text)
                     Command.Text = Commv1 + " -s 0 -l " + cOne.Text
                 End If
-                If numPC.SelectedIndex = "2" And pcV.SelectedIndex = "2" Then
+                If numPC.SelectedItem = "2" And pcV.SelectedItem = "2" Then
                     Process.Start("cmd", "/k " + Commv1 + " -s " + cOne.Text + " -l " + ksMax)
                     Command.Text = Commv1 + " -s " + cOne.Text + " -l " + ksMax
                 End If
 
-                If numPC.SelectedIndex = "3" And pcV.SelectedIndex = "1" Then
+                If numPC.SelectedItem = "3" And pcV.SelectedItem = "1" Then
                     Process.Start("cmd", "/k " + Commv1 + " -s 0 -l " + cOne.Text)
                     Command.Text = Commv1 + " -s 0 -l " + cOne.Text
                 End If
-                If numPC.SelectedIndex = "3" And pcV.SelectedIndex = "2" Then
+                If numPC.SelectedItem = "3" And pcV.SelectedItem = "2" Then
                     Process.Start("cmd", "/k " + Commv1 + " -s " + cOne.Text + " -l " + cTwo.Text)
                     Command.Text = Commv1 + " -s " + cOne.Text + " -l " + cTwo.Text
                 End If
-                If numPC.SelectedIndex = "3" And pcV.SelectedIndex = "3" Then
+                If numPC.SelectedItem = "3" And pcV.SelectedItem = "3" Then
                     Process.Start("cmd", "/k " + Commv1 + " -s " + cTwo.Text + " -l " + ksMax)
                     Command.Text = Commv1 + " -s " + cTwo.Text + " -l " + ksMax
                 End If
@@ -82,28 +85,28 @@ Public Class Form1
                 Else
                     Directory.CreateDirectory(IMEI1.Text)
                 End If
-                If numPC.SelectedIndex = "1" Then
+                If numPC.SelectedItem = "1" Then
                     Process.Start("cmd", "/k " + Commv2)
                     Command.Text = Commv2
                 End If
-                If numPC.SelectedIndex = "2" And pcV.SelectedIndex = "1" Then
+                If numPC.SelectedItem = "2" And pcV.SelectedItem = "1" Then
                     Process.Start("cmd", "/k " + Commv2 + " -s 0 -l " + cOne.Text)
                     Command.Text = Commv2 + " -s 0 -l " + cOne.Text
                 End If
-                If numPC.SelectedIndex = "2" And pcV.SelectedIndex = "2" Then
+                If numPC.SelectedItem = "2" And pcV.SelectedItem = "2" Then
                     Process.Start("cmd", "/k " + Commv2 + " -s " + cOne.Text + " -l " + ksMax)
                     Command.Text = Commv2 + " -s " + cOne.Text + " -l " + ksMax
                 End If
 
-                If numPC.SelectedIndex = "3" And pcV.SelectedIndex = "1" Then
+                If numPC.SelectedItem = "3" And pcV.SelectedItem = "1" Then
                     Process.Start("cmd", "/k " + Commv2 + " -s 0 -l " + cOne.Text)
                     Command.Text = Commv2 + " -s 0 -l " + cOne.Text
                 End If
-                If numPC.SelectedIndex = "3" And pcV.SelectedIndex = "2" Then
+                If numPC.SelectedItem = "3" And pcV.SelectedItem = "2" Then
                     Process.Start("cmd", "/k " + Commv2 + " -s " + cOne.Text + " -l " + cTwo.Text)
                     Command.Text = Commv2 + " -s " + cOne.Text + " -l " + cTwo.Text
                 End If
-                If numPC.SelectedIndex = "3" And pcV.SelectedIndex = "3" Then
+                If numPC.SelectedItem = "3" And pcV.SelectedItem = "3" Then
                     Process.Start("cmd", "/k " + Commv2 + " -s " + cTwo.Text + " -l " + ksMax)
                     Command.Text = Commv2 + " -s " + cTwo.Text + " -l " + ksMax
                 End If
