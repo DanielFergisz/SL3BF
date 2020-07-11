@@ -661,11 +661,11 @@ Partial Class Form1
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(93, 61)
+        Me.Label16.Location = New System.Drawing.Point(61, 61)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(69, 18)
+        Me.Label16.Size = New System.Drawing.Size(95, 18)
         Me.Label16.TabIndex = 14
-        Me.Label16.Text = "Select PC:"
+        Me.Label16.Text = "Select this PC:"
         '
         'numPC
         '
@@ -691,9 +691,9 @@ Partial Class Form1
         Me.Label15.AutoSize = True
         Me.Label15.Location = New System.Drawing.Point(14, 25)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(148, 18)
+        Me.Label15.Size = New System.Drawing.Size(150, 18)
         Me.Label15.TabIndex = 12
-        Me.Label15.Text = "Number of computers:"
+        Me.Label15.Text = "Quantity of computers:"
         '
         'RB1
         '

@@ -49,6 +49,7 @@ Public Class Form1
         ks3 = "333333333334"
         Dim ks31 As String
         ks31 = "666666666668"
+
         If (Pass.Text.Length = 0) And (Salt.Text.Length = 0) Then
             MessageBox.Show("Please select hash file !!")
         Else
@@ -82,7 +83,6 @@ Public Class Form1
                     Process.Start("cmd", "/k " + Commv1 + " -s " + ks31 + " -l " + ksMax)
                     Command.Text = Commv1 + " -s " + ks31 + " -l " + ksMax
                 End If
-
             End If
 
             If algo2.Checked = True Then
@@ -334,7 +334,6 @@ Public Class Form1
             pcV.Items.Add("3")
             pcV.SelectedItem = "1"
         End If
-
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles nckC.Tick
@@ -344,6 +343,4 @@ Public Class Form1
         Log.AppendText(Environment.NewLine + Log2.Text)
         My.Computer.FileSystem.WriteAllText(IMEI1.Text + "\" + IMEI1.Text + "_NCK.txt", Log2.Text, True)
     End Sub
-
-
 End Class
