@@ -98,8 +98,6 @@ Partial Class Form1
         Me.TimerSaveOk = New System.Windows.Forms.Timer(Me.components)
         Me.fileCodCheck = New System.Windows.Forms.Timer(Me.components)
         Me.manualCheck = New System.Windows.Forms.Button()
-        Me.cOne = New System.Windows.Forms.TextBox()
-        Me.cTwo = New System.Windows.Forms.TextBox()
         Me.MC2 = New System.Windows.Forms.RichTextBox()
         Me.nckC = New System.Windows.Forms.Timer(Me.components)
         Me.TabControl1.SuspendLayout()
@@ -853,25 +851,9 @@ Partial Class Form1
         Me.manualCheck.UseVisualStyleBackColor = False
         Me.manualCheck.Visible = False
         '
-        'cOne
-        '
-        Me.cOne.Location = New System.Drawing.Point(695, 244)
-        Me.cOne.Name = "cOne"
-        Me.cOne.Size = New System.Drawing.Size(163, 24)
-        Me.cOne.TabIndex = 14
-        Me.cOne.Visible = False
-        '
-        'cTwo
-        '
-        Me.cTwo.Location = New System.Drawing.Point(864, 244)
-        Me.cTwo.Name = "cTwo"
-        Me.cTwo.Size = New System.Drawing.Size(149, 24)
-        Me.cTwo.TabIndex = 15
-        Me.cTwo.Visible = False
-        '
         'MC2
         '
-        Me.MC2.Location = New System.Drawing.Point(695, 274)
+        Me.MC2.Location = New System.Drawing.Point(695, 249)
         Me.MC2.Name = "MC2"
         Me.MC2.Size = New System.Drawing.Size(494, 37)
         Me.MC2.TabIndex = 16
@@ -886,10 +868,8 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(700, 352)
+        Me.ClientSize = New System.Drawing.Size(697, 352)
         Me.Controls.Add(Me.MC2)
-        Me.Controls.Add(Me.cTwo)
-        Me.Controls.Add(Me.cOne)
         Me.Controls.Add(Me.manualCheck)
         Me.Controls.Add(Me.getNCK)
         Me.Controls.Add(Me.IMEI1)
@@ -1002,8 +982,6 @@ Partial Class Form1
     Friend WithEvents Label16 As Label
     Friend WithEvents pcV As ComboBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents cOne As TextBox
-    Friend WithEvents cTwo As TextBox
     Friend WithEvents MC2 As RichTextBox
     Friend WithEvents nckC As Timer
     Friend WithEvents TextBox2 As TextBox

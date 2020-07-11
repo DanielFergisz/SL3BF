@@ -53,11 +53,13 @@ Public Class Form1
         If (Pass.Text.Length = 0) And (Salt.Text.Length = 0) Then
             MessageBox.Show("Please select hash file !!")
         Else
+            If Directory.Exists(IMEI1.Text) Then
+            Else
+                Directory.CreateDirectory(IMEI1.Text)
+            End If
+
             If algo1.Checked = True Then
-                If Directory.Exists(IMEI1.Text) Then
-                Else
-                    Directory.CreateDirectory(IMEI1.Text)
-                End If
+
                 If numPC.SelectedItem = "1" Then
                     Process.Start("cmd", "/k " + Commv1)
                     Command.Text = Commv1
@@ -86,34 +88,30 @@ Public Class Form1
             End If
 
             If algo2.Checked = True Then
-                If Directory.Exists(IMEI1.Text) Then
-                Else
-                    Directory.CreateDirectory(IMEI1.Text)
-                End If
                 If numPC.SelectedItem = "1" Then
                     Process.Start("cmd", "/k " + Commv2)
                     Command.Text = Commv2
                 End If
                 If numPC.SelectedItem = "2" And pcV.SelectedItem = "1" Then
-                    Process.Start("cmd", "/k " + Commv2 + " -s 0 -l " + cOne.Text)
-                    Command.Text = Commv2 + " -s 0 -l " + cOne.Text
+                    Process.Start("cmd", "/k " + Commv2 + " -s 0 -l " + ks2)
+                    Command.Text = Commv2 + " -s 0 -l " + ks2
                 End If
                 If numPC.SelectedItem = "2" And pcV.SelectedItem = "2" Then
-                    Process.Start("cmd", "/k " + Commv2 + " -s " + cOne.Text + " -l " + ksMax)
-                    Command.Text = Commv2 + " -s " + cOne.Text + " -l " + ksMax
+                    Process.Start("cmd", "/k " + Commv2 + " -s " + ks2 + " -l " + ksMax)
+                    Command.Text = Commv2 + " -s " + ks2 + " -l " + ksMax
                 End If
 
                 If numPC.SelectedItem = "3" And pcV.SelectedItem = "1" Then
-                    Process.Start("cmd", "/k " + Commv2 + " -s 0 -l " + cOne.Text)
-                    Command.Text = Commv2 + " -s 0 -l " + cOne.Text
+                    Process.Start("cmd", "/k " + Commv2 + " -s 0 -l " + ks3)
+                    Command.Text = Commv2 + " -s 0 -l " + ks3
                 End If
                 If numPC.SelectedItem = "3" And pcV.SelectedItem = "2" Then
-                    Process.Start("cmd", "/k " + Commv2 + " -s " + cOne.Text + " -l " + cTwo.Text)
-                    Command.Text = Commv2 + " -s " + cOne.Text + " -l " + cTwo.Text
+                    Process.Start("cmd", "/k " + Commv2 + " -s " + ks3 + " -l " + ks31)
+                    Command.Text = Commv2 + " -s " + ks3 + " -l " + ks31
                 End If
                 If numPC.SelectedItem = "3" And pcV.SelectedItem = "3" Then
-                    Process.Start("cmd", "/k " + Commv2 + " -s " + cTwo.Text + " -l " + ksMax)
-                    Command.Text = Commv2 + " -s " + cTwo.Text + " -l " + ksMax
+                    Process.Start("cmd", "/k " + Commv2 + " -s " + ks31 + " -l " + ksMax)
+                    Command.Text = Commv2 + " -s " + ks31 + " -l " + ksMax
                 End If
             End If
 
@@ -134,8 +132,6 @@ Public Class Form1
             MC2.Visible = True
             getNCK.Visible = True
             mailData.Visible = True
-            cOne.Visible = True
-            cTwo.Visible = True
             DirF.Clear()
         End If
         If DirF.Text = "tlod" Then
