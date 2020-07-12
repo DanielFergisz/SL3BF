@@ -56,6 +56,8 @@ Public Class Form1
             Else
                 Directory.CreateDirectory(IMEI1.Text)
             End If
+            Log.Clear()
+            Log.AppendText("Start of calculation..")
 
             If algo1.Checked = True Then
 
@@ -252,7 +254,7 @@ Public Class Form1
             '***********************************************************************************************************************
             Try
                 Dim mailfrom As New MailAddress(M1.Text, "SL3BF") ' adres mail do wysyłki + nazwa
-                Dim mailto As New MailAddress(M2.Text, "D2") ' adres docelowy + nazwa
+                Dim mailto As New MailAddress(M2.Text, "USR") ' adres docelowy + nazwa
                 Dim message As New MailMessage(mailfrom, mailto)
                 Dim smtp As New SmtpClient(M3.Text) 'serwer smtp
                 Dim zaloncznik As String
@@ -274,8 +276,8 @@ Public Class Form1
 
                 smtp.Send(message)
 
+                Log.AppendText(Environment.NewLine + "Done. File has been sent")
                 Log.AppendText(Environment.NewLine)
-                Log.AppendText(Environment.NewLine + "Mail has been sent")
 
 
             Catch ex As SmtpException

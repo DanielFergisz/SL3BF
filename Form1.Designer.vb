@@ -870,7 +870,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(697, 352)
+        Me.ClientSize = New System.Drawing.Size(1205, 534)
         Me.Controls.Add(Me.MC2)
         Me.Controls.Add(Me.manualCheck)
         Me.Controls.Add(Me.getNCK)
@@ -889,7 +889,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.19"
+        Me.Text = "SL3BF v1.20"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
