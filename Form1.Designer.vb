@@ -100,6 +100,9 @@ Partial Class Form1
         Me.manualCheck = New System.Windows.Forms.Button()
         Me.MC2 = New System.Windows.Forms.RichTextBox()
         Me.nckC = New System.Windows.Forms.Timer(Me.components)
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.OptiKer = New System.Windows.Forms.CheckBox()
+        Me.Par1 = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -109,6 +112,7 @@ Partial Class Form1
         Me.TabPage5.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.RB1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'vHC
@@ -634,6 +638,7 @@ Partial Class Form1
         '
         'TabPage5
         '
+        Me.TabPage5.Controls.Add(Me.GroupBox2)
         Me.TabPage5.Controls.Add(Me.GroupBox1)
         Me.TabPage5.Controls.Add(Me.RB1)
         Me.TabPage5.Location = New System.Drawing.Point(4, 27)
@@ -734,7 +739,7 @@ Partial Class Form1
         '
         'Command
         '
-        Me.Command.Location = New System.Drawing.Point(44, 374)
+        Me.Command.Location = New System.Drawing.Point(10, 376)
         Me.Command.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Command.Name = "Command"
         Me.Command.Size = New System.Drawing.Size(596, 24)
@@ -743,7 +748,7 @@ Partial Class Form1
         '
         'Salt
         '
-        Me.Salt.Location = New System.Drawing.Point(471, 400)
+        Me.Salt.Location = New System.Drawing.Point(437, 404)
         Me.Salt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Salt.Name = "Salt"
         Me.Salt.Size = New System.Drawing.Size(169, 24)
@@ -752,7 +757,7 @@ Partial Class Form1
         '
         'Pass
         '
-        Me.Pass.Location = New System.Drawing.Point(44, 400)
+        Me.Pass.Location = New System.Drawing.Point(10, 404)
         Me.Pass.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Pass.Name = "Pass"
         Me.Pass.Size = New System.Drawing.Size(421, 24)
@@ -797,7 +802,7 @@ Partial Class Form1
         '
         'MC
         '
-        Me.MC.Location = New System.Drawing.Point(44, 348)
+        Me.MC.Location = New System.Drawing.Point(10, 348)
         Me.MC.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MC.Name = "MC"
         Me.MC.Size = New System.Drawing.Size(596, 24)
@@ -810,10 +815,10 @@ Partial Class Form1
         '
         'getNCK
         '
-        Me.getNCK.Location = New System.Drawing.Point(42, 435)
+        Me.getNCK.Location = New System.Drawing.Point(10, 432)
         Me.getNCK.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.getNCK.Name = "getNCK"
-        Me.getNCK.Size = New System.Drawing.Size(597, 95)
+        Me.getNCK.Size = New System.Drawing.Size(597, 65)
         Me.getNCK.TabIndex = 11
         Me.getNCK.Text = ""
         Me.getNCK.Visible = False
@@ -822,7 +827,7 @@ Partial Class Form1
         '
         Me.mailData.Location = New System.Drawing.Point(695, 12)
         Me.mailData.Name = "mailData"
-        Me.mailData.Size = New System.Drawing.Size(502, 226)
+        Me.mailData.Size = New System.Drawing.Size(369, 141)
         Me.mailData.TabIndex = 13
         Me.mailData.Text = ""
         Me.mailData.Visible = False
@@ -853,9 +858,9 @@ Partial Class Form1
         '
         'MC2
         '
-        Me.MC2.Location = New System.Drawing.Point(695, 249)
+        Me.MC2.Location = New System.Drawing.Point(695, 159)
         Me.MC2.Name = "MC2"
-        Me.MC2.Size = New System.Drawing.Size(494, 37)
+        Me.MC2.Size = New System.Drawing.Size(369, 37)
         Me.MC2.TabIndex = 16
         Me.MC2.Text = ""
         Me.MC2.Visible = False
@@ -864,13 +869,42 @@ Partial Class Form1
         '
         Me.nckC.Interval = 2000
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.OptiKer)
+        Me.GroupBox2.Location = New System.Drawing.Point(3, 110)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(158, 151)
+        Me.GroupBox2.TabIndex = 16
+        Me.GroupBox2.TabStop = False
+        '
+        'OptiKer
+        '
+        Me.OptiKer.AutoSize = True
+        Me.OptiKer.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.OptiKer.Location = New System.Drawing.Point(13, 22)
+        Me.OptiKer.Name = "OptiKer"
+        Me.OptiKer.Size = New System.Drawing.Size(138, 22)
+        Me.OptiKer.TabIndex = 0
+        Me.OptiKer.Text = "Optimized kernel"
+        Me.OptiKer.UseVisualStyleBackColor = True
+        '
+        'Par1
+        '
+        Me.Par1.Location = New System.Drawing.Point(612, 348)
+        Me.Par1.Name = "Par1"
+        Me.Par1.Size = New System.Drawing.Size(42, 24)
+        Me.Par1.TabIndex = 17
+        Me.Par1.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(1205, 534)
+        Me.ClientSize = New System.Drawing.Size(1071, 502)
+        Me.Controls.Add(Me.Par1)
         Me.Controls.Add(Me.MC2)
         Me.Controls.Add(Me.manualCheck)
         Me.Controls.Add(Me.getNCK)
@@ -889,7 +923,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.20"
+        Me.Text = "SL3BF v1.21"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -906,6 +940,8 @@ Partial Class Form1
         Me.GroupBox1.PerformLayout()
         Me.RB1.ResumeLayout(False)
         Me.RB1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -988,4 +1024,7 @@ Partial Class Form1
     Friend WithEvents nckC As Timer
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents OptiKer As CheckBox
+    Friend WithEvents Par1 As TextBox
 End Class

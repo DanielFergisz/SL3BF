@@ -37,9 +37,9 @@ Public Class Form1
     End Sub
     Private Sub StartBF1_Click(sender As Object, e As EventArgs) Handles StartBF1.Click
         Dim Commv1 As String
-        Commv1 = vHC.Text + " -w3 -m110 " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3"
+        Commv1 = vHC.Text + " -w3 -m110 " + Par1.Text + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3"
         Dim Commv2 As String
-        Commv2 = vHC.Text + " -m 110 " + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force"
+        Commv2 = vHC.Text + " -m 110 " + Par1.Text + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force"
         Dim ksMax As String
         ksMax = "1000000000000"
         Dim ks2 As String
@@ -133,6 +133,7 @@ Public Class Form1
             MC2.Visible = True
             getNCK.Visible = True
             mailData.Visible = True
+            Par1.Visible = True
             DirF.Clear()
         End If
         If DirF.Text = "tlod" Then
@@ -339,5 +340,13 @@ Public Class Form1
         Log.AppendText(Environment.NewLine)
         Log.AppendText(Environment.NewLine + Log2.Text)
         My.Computer.FileSystem.WriteAllText(IMEI1.Text + "\" + IMEI1.Text + "_NCK.txt", Log2.Text, True)
+    End Sub
+
+    Private Sub OptiKer_CheckedChanged(sender As Object, e As EventArgs) Handles OptiKer.CheckedChanged
+        If OptiKer.Checked = True Then
+            Par1.Text = "-O "
+        Else
+            Par1.Clear()
+        End If
     End Sub
 End Class
