@@ -4,7 +4,12 @@ Imports System.Net.Mail
 
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        vHC.SelectedItem = "hashcat"
+        If My.Computer.FileSystem.FileExists("hashcat.exe") Then
+            vHC.SelectedItem = "hashcat"
+        End If
+        If My.Computer.FileSystem.FileExists("hashcat64.exe") Then
+            vHC.SelectedItem = "hashcat64"
+        End If
         numPC.SelectedItem = "1"
         If My.Computer.FileSystem.FileExists("Mail_Data.tds") Then
             mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)

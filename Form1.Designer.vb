@@ -74,6 +74,8 @@ Partial Class Form1
         Me.M2 = New System.Windows.Forms.TextBox()
         Me.M1 = New System.Windows.Forms.TextBox()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.OptiKer = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.numPC = New System.Windows.Forms.ComboBox()
@@ -100,8 +102,6 @@ Partial Class Form1
         Me.manualCheck = New System.Windows.Forms.Button()
         Me.MC2 = New System.Windows.Forms.RichTextBox()
         Me.nckC = New System.Windows.Forms.Timer(Me.components)
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.OptiKer = New System.Windows.Forms.CheckBox()
         Me.Par1 = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -110,9 +110,9 @@ Partial Class Form1
         Me.TabPage3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.TabPage5.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.RB1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'vHC
@@ -239,6 +239,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Label2.Location = New System.Drawing.Point(12, 21)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(68, 18)
@@ -648,12 +649,33 @@ Partial Class Form1
         Me.TabPage5.Text = "Settings"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.OptiKer)
+        Me.GroupBox2.Location = New System.Drawing.Point(3, 110)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(158, 151)
+        Me.GroupBox2.TabIndex = 16
+        Me.GroupBox2.TabStop = False
+        '
+        'OptiKer
+        '
+        Me.OptiKer.AutoSize = True
+        Me.OptiKer.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.OptiKer.Location = New System.Drawing.Point(13, 22)
+        Me.OptiKer.Name = "OptiKer"
+        Me.OptiKer.Size = New System.Drawing.Size(138, 22)
+        Me.OptiKer.TabIndex = 0
+        Me.OptiKer.Text = "Optimized kernel"
+        Me.OptiKer.UseVisualStyleBackColor = True
+        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Label16)
         Me.GroupBox1.Controls.Add(Me.numPC)
         Me.GroupBox1.Controls.Add(Me.pcV)
         Me.GroupBox1.Controls.Add(Me.Label15)
+        Me.GroupBox1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(109, 3)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(211, 101)
@@ -694,7 +716,7 @@ Partial Class Form1
         Me.Label15.AutoSize = True
         Me.Label15.Location = New System.Drawing.Point(14, 25)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(150, 18)
+        Me.Label15.Size = New System.Drawing.Size(151, 18)
         Me.Label15.TabIndex = 12
         Me.Label15.Text = "Quantity of computers:"
         '
@@ -702,7 +724,7 @@ Partial Class Form1
         '
         Me.RB1.Controls.Add(Me.algo2)
         Me.RB1.Controls.Add(Me.algo1)
-        Me.RB1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.RB1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.RB1.Location = New System.Drawing.Point(4, 3)
         Me.RB1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.RB1.Name = "RB1"
@@ -718,7 +740,7 @@ Partial Class Form1
         Me.algo2.Location = New System.Drawing.Point(8, 45)
         Me.algo2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.algo2.Name = "algo2"
-        Me.algo2.Size = New System.Drawing.Size(75, 22)
+        Me.algo2.Size = New System.Drawing.Size(76, 22)
         Me.algo2.TabIndex = 1
         Me.algo2.TabStop = True
         Me.algo2.Text = "Mode 2"
@@ -731,7 +753,7 @@ Partial Class Form1
         Me.algo1.Location = New System.Drawing.Point(8, 17)
         Me.algo1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.algo1.Name = "algo1"
-        Me.algo1.Size = New System.Drawing.Size(75, 22)
+        Me.algo1.Size = New System.Drawing.Size(76, 22)
         Me.algo1.TabIndex = 0
         Me.algo1.TabStop = True
         Me.algo1.Text = "Mode 1"
@@ -869,26 +891,6 @@ Partial Class Form1
         '
         Me.nckC.Interval = 2000
         '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.OptiKer)
-        Me.GroupBox2.Location = New System.Drawing.Point(3, 110)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(158, 151)
-        Me.GroupBox2.TabIndex = 16
-        Me.GroupBox2.TabStop = False
-        '
-        'OptiKer
-        '
-        Me.OptiKer.AutoSize = True
-        Me.OptiKer.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.OptiKer.Location = New System.Drawing.Point(13, 22)
-        Me.OptiKer.Name = "OptiKer"
-        Me.OptiKer.Size = New System.Drawing.Size(138, 22)
-        Me.OptiKer.TabIndex = 0
-        Me.OptiKer.Text = "Optimized kernel"
-        Me.OptiKer.UseVisualStyleBackColor = True
-        '
         'Par1
         '
         Me.Par1.Location = New System.Drawing.Point(612, 348)
@@ -936,12 +938,12 @@ Partial Class Form1
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.RB1.ResumeLayout(False)
         Me.RB1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
