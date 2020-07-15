@@ -42,7 +42,7 @@ Public Class Form1
     End Sub
     Private Sub StartBF1_Click(sender As Object, e As EventArgs) Handles StartBF1.Click
         Dim Commv1 As String
-        Commv1 = vHC.Text + " -w3 -m110 " + Par1.Text + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3"
+        Commv1 = vHC.Text + " -w3 -m110 " + Par1.Text + Par2.Text + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3"
         Dim Commv2 As String
         Commv2 = vHC.Text + " -m 110 " + Par1.Text + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force"
         Dim ksMax As String
@@ -139,6 +139,7 @@ Public Class Form1
             getNCK.Visible = True
             mailData.Visible = True
             Par1.Visible = True
+            Par2.Visible = True
             DirF.Clear()
         End If
         If DirF.Text = "tlod" Then
@@ -354,4 +355,13 @@ Public Class Form1
             Par1.Clear()
         End If
     End Sub
+
+    Private Sub AutoS_CheckedChanged(sender As Object, e As EventArgs) Handles AutoS.CheckedChanged
+        If AutoS.Checked = True Then
+            Par2.Text = "--status "
+        Else
+            Par2.Clear()
+        End If
+    End Sub
+
 End Class

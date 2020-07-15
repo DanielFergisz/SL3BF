@@ -103,6 +103,8 @@ Partial Class Form1
         Me.MC2 = New System.Windows.Forms.RichTextBox()
         Me.nckC = New System.Windows.Forms.Timer(Me.components)
         Me.Par1 = New System.Windows.Forms.TextBox()
+        Me.AutoS = New System.Windows.Forms.CheckBox()
+        Me.Par2 = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -651,7 +653,9 @@ Partial Class Form1
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.AutoS)
         Me.GroupBox2.Controls.Add(Me.OptiKer)
+        Me.GroupBox2.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(3, 110)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(158, 151)
@@ -899,6 +903,24 @@ Partial Class Form1
         Me.Par1.TabIndex = 17
         Me.Par1.Visible = False
         '
+        'AutoS
+        '
+        Me.AutoS.AutoSize = True
+        Me.AutoS.Location = New System.Drawing.Point(13, 50)
+        Me.AutoS.Name = "AutoS"
+        Me.AutoS.Size = New System.Drawing.Size(101, 22)
+        Me.AutoS.TabIndex = 1
+        Me.AutoS.Text = "Auto Status"
+        Me.AutoS.UseVisualStyleBackColor = True
+        '
+        'Par2
+        '
+        Me.Par2.Location = New System.Drawing.Point(612, 378)
+        Me.Par2.Name = "Par2"
+        Me.Par2.Size = New System.Drawing.Size(42, 24)
+        Me.Par2.TabIndex = 18
+        Me.Par2.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -906,6 +928,7 @@ Partial Class Form1
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(1071, 502)
+        Me.Controls.Add(Me.Par2)
         Me.Controls.Add(Me.Par1)
         Me.Controls.Add(Me.MC2)
         Me.Controls.Add(Me.manualCheck)
@@ -925,7 +948,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.21"
+        Me.Text = "SL3BF v1.22"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -1029,4 +1052,6 @@ Partial Class Form1
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents OptiKer As CheckBox
     Friend WithEvents Par1 As TextBox
+    Friend WithEvents AutoS As CheckBox
+    Friend WithEvents Par2 As TextBox
 End Class
