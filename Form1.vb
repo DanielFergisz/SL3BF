@@ -140,6 +140,8 @@ Public Class Form1
             mailData.Visible = True
             Par1.Visible = True
             Par2.Visible = True
+            Par3.Visible = True
+            manualCheck.Visible = True
             DirF.Clear()
         End If
         If DirF.Text = "tlod" Then
@@ -156,7 +158,7 @@ Public Class Form1
     End Sub
 
     Private Sub bench1_Click(sender As Object, e As EventArgs) Handles bench1.Click
-        Process.Start("cmd", "/k " + vHC.Text + " -b")
+        Process.Start("cmd", "/k " + vHC.Text + " -b " + Par3.Text)
     End Sub
 
     Private Sub help1_Click(sender As Object, e As EventArgs) Handles help1.Click
@@ -364,4 +366,11 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub BenchAll_CheckedChanged(sender As Object, e As EventArgs) Handles BenchAll.CheckedChanged
+        If BenchAll.Checked = True Then
+            Par3.Text = "--benchmark-all "
+        Else
+            Par3.Clear()
+        End If
+    End Sub
 End Class
