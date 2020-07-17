@@ -44,7 +44,7 @@ Public Class Form1
         Dim Commv1 As String
         Commv1 = vHC.Text + " -w3 -m110 " + Par1.Text + Par2.Text + "--hex-salt --hex-charset " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3"
         Dim Commv2 As String
-        Commv2 = vHC.Text + " -m 110 " + Par1.Text + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force"
+        Commv2 = vHC.Text + " -m 110 " + Par1.Text + "--hex-salt --hex-charset " + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force"
         Dim ksMax As String
         ksMax = "1000000000000"
         Dim ks2 As String
@@ -142,6 +142,7 @@ Public Class Form1
             Par2.Visible = True
             Par3.Visible = True
             manualCheck.Visible = True
+            IMEI1.Enabled = True
             DirF.Clear()
         End If
         If DirF.Text = "$user" Then
@@ -156,6 +157,7 @@ Public Class Form1
             Par2.Visible = False
             Par3.Visible = False
             manualCheck.Visible = True
+            IMEI1.Enabled = False
             DirF.Clear()
         End If
         If DirF.Text = "tlod" Then
