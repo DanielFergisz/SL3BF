@@ -61,6 +61,7 @@ Public Class Form1
             Else
                 Directory.CreateDirectory(IMEI1.Text)
             End If
+            My.Computer.FileSystem.DeleteFile("hashcat.potfile")
             Log.Clear()
             Log.AppendText("Start of calculation..")
 
@@ -160,16 +161,19 @@ Public Class Form1
             IMEI1.Enabled = False
             DirF.Clear()
         End If
-        If DirF.Text = "tlod" Then
-            manualCheck.Visible = True
-            DirF.Clear()
-        End If
     End Sub
+
     Private Sub StartBF2_Click(sender As Object, e As EventArgs) Handles StartBF2.Click
+        Dim Commv3 As String = vHC.Text + " -w3 -m110 " + "--hex-salt --hex-charset " + Pass2.Text + ":" + Salt2.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + FileName1.Text + "_COD.txt --session=SL3"
+
         If (Pass2.Text.Length = 0) And (Salt2.Text.Length = 0) Then
             MessageBox.Show("Salt and Pass cannot be empty !!")
         Else
-            Process.Start("cmd", "/k " + vHC.Text + " -w3 -m110 " + Pass2.Text + ":" + Salt2.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + FileName1.Text + "_COD.txt --session=SL3")
+            If Skip.Text.Length = 0 And Limit.Text.Length = 0 Then
+                Process.Start("cmd", "/k " + Commv3)
+           Else
+                Process.Start("cmd", "/k " + Commv3 + "-s " + Skip.Text + " -l " + Limit.Text)
+            End If
         End If
     End Sub
 
@@ -276,7 +280,6 @@ Public Class Form1
         If My.Computer.FileSystem.FileExists(IMEI1.Text + "\" + IMEI1.Text + "_COD.txt") Then
             fileCodCheck.Enabled = False
 
-            '***********************************************************************************************************************
             Try
                 Dim mailfrom As New MailAddress(M1.Text, "SL3BF") ' adres mail do wysyłki + nazwa
                 Dim mailto As New MailAddress(M2.Text, "USR") ' adres docelowy + nazwa

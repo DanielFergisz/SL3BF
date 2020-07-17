@@ -35,8 +35,6 @@ Partial Class Form1
         Me.DirF = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.gb1 = New System.Windows.Forms.GroupBox()
         Me.Exe1 = New System.Windows.Forms.Button()
         Me.cmd1 = New System.Windows.Forms.TextBox()
@@ -107,6 +105,10 @@ Partial Class Form1
         Me.Par1 = New System.Windows.Forms.TextBox()
         Me.Par2 = New System.Windows.Forms.TextBox()
         Me.Par3 = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Limit = New System.Windows.Forms.ComboBox()
+        Me.Skip = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -252,8 +254,10 @@ Partial Class Form1
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.TextBox2)
-        Me.TabPage2.Controls.Add(Me.TextBox1)
+        Me.TabPage2.Controls.Add(Me.Skip)
+        Me.TabPage2.Controls.Add(Me.Limit)
+        Me.TabPage2.Controls.Add(Me.Label18)
+        Me.TabPage2.Controls.Add(Me.Label17)
         Me.TabPage2.Controls.Add(Me.gb1)
         Me.TabPage2.Controls.Add(Me.Label5)
         Me.TabPage2.Controls.Add(Me.Label4)
@@ -270,22 +274,6 @@ Partial Class Form1
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Manual"
         Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Enabled = False
-        Me.TextBox2.Location = New System.Drawing.Point(127, 146)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(200, 26)
-        Me.TextBox2.TabIndex = 9
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(127, 114)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(200, 26)
-        Me.TextBox1.TabIndex = 8
         '
         'gb1
         '
@@ -377,10 +365,10 @@ Partial Class Form1
         '
         Me.StartBF2.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.StartBF2.ForeColor = System.Drawing.Color.Red
-        Me.StartBF2.Location = New System.Drawing.Point(391, 42)
+        Me.StartBF2.Location = New System.Drawing.Point(445, 43)
         Me.StartBF2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.StartBF2.Name = "StartBF2"
-        Me.StartBF2.Size = New System.Drawing.Size(253, 44)
+        Me.StartBF2.Size = New System.Drawing.Size(162, 60)
         Me.StartBF2.TabIndex = 0
         Me.StartBF2.Text = "Start BF"
         Me.StartBF2.UseVisualStyleBackColor = True
@@ -942,6 +930,42 @@ Partial Class Form1
         Me.Par3.TabIndex = 19
         Me.Par3.Visible = False
         '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(15, 117)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(38, 18)
+        Me.Label17.TabIndex = 10
+        Me.Label17.Text = "Skip:"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(15, 149)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(43, 18)
+        Me.Label18.TabIndex = 11
+        Me.Label18.Text = "Limit:"
+        '
+        'Limit
+        '
+        Me.Limit.FormattingEnabled = True
+        Me.Limit.Items.AddRange(New Object() {"500000000000", "1000000000000"})
+        Me.Limit.Location = New System.Drawing.Point(60, 146)
+        Me.Limit.Name = "Limit"
+        Me.Limit.Size = New System.Drawing.Size(138, 26)
+        Me.Limit.TabIndex = 12
+        '
+        'Skip
+        '
+        Me.Skip.FormattingEnabled = True
+        Me.Skip.Items.AddRange(New Object() {"0", "500000000000"})
+        Me.Skip.Location = New System.Drawing.Point(60, 117)
+        Me.Skip.Name = "Skip"
+        Me.Skip.Size = New System.Drawing.Size(138, 26)
+        Me.Skip.TabIndex = 13
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -970,7 +994,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.23"
+        Me.Text = "SL3BF v1.24"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -1069,8 +1093,6 @@ Partial Class Form1
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents MC2 As RichTextBox
     Friend WithEvents nckC As Timer
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents OptiKer As CheckBox
     Friend WithEvents Par1 As TextBox
@@ -1078,4 +1100,8 @@ Partial Class Form1
     Friend WithEvents Par2 As TextBox
     Friend WithEvents BenchAll As CheckBox
     Friend WithEvents Par3 As TextBox
+    Friend WithEvents Limit As ComboBox
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Skip As ComboBox
 End Class
