@@ -42,7 +42,7 @@ Public Class Form1
     End Sub
     Private Sub StartBF1_Click(sender As Object, e As EventArgs) Handles StartBF1.Click
         Dim Commv1 As String
-        Commv1 = vHC.Text + " -w3 -m110 " + Par1.Text + Par2.Text + "--hex-salt --hex-charset " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3"
+        Commv1 = vHC.Text + " -w3 -m110 " + Par1.Text + Par2.Text + Par4.Text + "--hex-salt --hex-charset " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3"
         Dim Commv2 As String
         Commv2 = vHC.Text + " -m 110 " + Par1.Text + "--hex-salt --hex-charset " + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force"
         Dim ksMax As String
@@ -142,6 +142,7 @@ Public Class Form1
             Par1.Visible = True
             Par2.Visible = True
             Par3.Visible = True
+            Par4.Visible = True
             manualCheck.Visible = True
             IMEI1.Enabled = True
             DirF.Clear()
@@ -157,6 +158,7 @@ Public Class Form1
             Par1.Visible = False
             Par2.Visible = False
             Par3.Visible = False
+            Par4.Visible = False
             manualCheck.Visible = True
             IMEI1.Enabled = False
             DirF.Clear()
@@ -390,6 +392,14 @@ Public Class Form1
             Par3.Text = "--benchmark-all "
         Else
             Par3.Clear()
+        End If
+    End Sub
+
+    Private Sub DisableHEX_CheckedChanged(sender As Object, e As EventArgs) Handles DisableHEX.CheckedChanged
+        If DisableHEX.Checked = True Then
+            Par4.Text = "--outfile-autohex-disable "
+        Else
+            Par4.Clear()
         End If
     End Sub
 End Class

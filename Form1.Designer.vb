@@ -109,6 +109,8 @@ Partial Class Form1
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Limit = New System.Windows.Forms.ComboBox()
         Me.Skip = New System.Windows.Forms.ComboBox()
+        Me.DisableHEX = New System.Windows.Forms.CheckBox()
+        Me.Par4 = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -643,6 +645,7 @@ Partial Class Form1
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.DisableHEX)
         Me.GroupBox2.Controls.Add(Me.BenchAll)
         Me.GroupBox2.Controls.Add(Me.AutoS)
         Me.GroupBox2.Controls.Add(Me.OptiKer)
@@ -966,6 +969,24 @@ Partial Class Form1
         Me.Skip.Size = New System.Drawing.Size(138, 26)
         Me.Skip.TabIndex = 13
         '
+        'DisableHEX
+        '
+        Me.DisableHEX.AutoSize = True
+        Me.DisableHEX.Location = New System.Drawing.Point(13, 106)
+        Me.DisableHEX.Name = "DisableHEX"
+        Me.DisableHEX.Size = New System.Drawing.Size(103, 22)
+        Me.DisableHEX.TabIndex = 3
+        Me.DisableHEX.Text = "Disable HEX"
+        Me.DisableHEX.UseVisualStyleBackColor = True
+        '
+        'Par4
+        '
+        Me.Par4.Location = New System.Drawing.Point(613, 438)
+        Me.Par4.Name = "Par4"
+        Me.Par4.Size = New System.Drawing.Size(76, 24)
+        Me.Par4.TabIndex = 20
+        Me.Par4.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -973,6 +994,7 @@ Partial Class Form1
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(1071, 502)
+        Me.Controls.Add(Me.Par4)
         Me.Controls.Add(Me.Par3)
         Me.Controls.Add(Me.Par2)
         Me.Controls.Add(Me.Par1)
@@ -1104,4 +1126,6 @@ Partial Class Form1
     Friend WithEvents Label18 As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents Skip As ComboBox
+    Friend WithEvents DisableHEX As CheckBox
+    Friend WithEvents Par4 As TextBox
 End Class
