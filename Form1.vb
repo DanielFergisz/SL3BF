@@ -130,7 +130,7 @@ Public Class Form1
     End Sub
 
     Private Sub DirF_TextChanged(sender As Object, e As EventArgs) Handles DirF.TextChanged
-        If DirF.Text = "gsmadmin" Then
+        If DirF.Text = "$admin" Then
             Salt.Visible = True
             Pass.Visible = True
             Command.Visible = True
@@ -141,6 +141,20 @@ Public Class Form1
             Par1.Visible = True
             Par2.Visible = True
             Par3.Visible = True
+            manualCheck.Visible = True
+            DirF.Clear()
+        End If
+        If DirF.Text = "$user" Then
+            Salt.Visible = False
+            Pass.Visible = False
+            Command.Visible = False
+            MC.Visible = False
+            MC2.Visible = False
+            getNCK.Visible = False
+            mailData.Visible = False
+            Par1.Visible = False
+            Par2.Visible = False
+            Par3.Visible = False
             manualCheck.Visible = True
             DirF.Clear()
         End If

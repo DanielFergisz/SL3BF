@@ -75,6 +75,7 @@ Partial Class Form1
         Me.M1 = New System.Windows.Forms.TextBox()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.BenchAll = New System.Windows.Forms.CheckBox()
         Me.AutoS = New System.Windows.Forms.CheckBox()
         Me.OptiKer = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -105,7 +106,6 @@ Partial Class Form1
         Me.nckC = New System.Windows.Forms.Timer(Me.components)
         Me.Par1 = New System.Windows.Forms.TextBox()
         Me.Par2 = New System.Windows.Forms.TextBox()
-        Me.BenchAll = New System.Windows.Forms.CheckBox()
         Me.Par3 = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -665,6 +665,16 @@ Partial Class Form1
         Me.GroupBox2.TabIndex = 16
         Me.GroupBox2.TabStop = False
         '
+        'BenchAll
+        '
+        Me.BenchAll.AutoSize = True
+        Me.BenchAll.Location = New System.Drawing.Point(13, 78)
+        Me.BenchAll.Name = "BenchAll"
+        Me.BenchAll.Size = New System.Drawing.Size(119, 22)
+        Me.BenchAll.TabIndex = 2
+        Me.BenchAll.Text = "Benchmark All"
+        Me.BenchAll.UseVisualStyleBackColor = True
+        '
         'AutoS
         '
         Me.AutoS.AutoSize = True
@@ -924,16 +934,6 @@ Partial Class Form1
         Me.Par2.TabIndex = 18
         Me.Par2.Visible = False
         '
-        'BenchAll
-        '
-        Me.BenchAll.AutoSize = True
-        Me.BenchAll.Location = New System.Drawing.Point(13, 78)
-        Me.BenchAll.Name = "BenchAll"
-        Me.BenchAll.Size = New System.Drawing.Size(119, 22)
-        Me.BenchAll.TabIndex = 2
-        Me.BenchAll.Text = "Benchmark All"
-        Me.BenchAll.UseVisualStyleBackColor = True
-        '
         'Par3
         '
         Me.Par3.Location = New System.Drawing.Point(613, 408)
@@ -970,7 +970,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.22"
+        Me.Text = "SL3BF v1.23"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
