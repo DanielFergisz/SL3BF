@@ -61,7 +61,10 @@ Public Class Form1
             Else
                 Directory.CreateDirectory(IMEI1.Text)
             End If
-            My.Computer.FileSystem.DeleteFile("hashcat.potfile")
+            If My.Computer.FileSystem.FileExists("hashcat.potfile") Then
+                My.Computer.FileSystem.DeleteFile("hashcat.potfile")
+            End If
+
             Log.Clear()
             Log.AppendText("Start of calculation..")
 
@@ -121,12 +124,8 @@ Public Class Form1
                     Command.Text = Commv2 + " -s " + ks31 + " -l " + ksMax
                 End If
             End If
-
-            If M1.Text.Length = 0 Or M2.Text.Length = 0 Or M3.Text.Length = 0 Or M4.Text.Length = 0 Or M5.Text.Length = 0 Or M6.Text.Length = 0 Or M7.Text.Length = 0 Then
-            Else
-                fileCodCheck.Enabled = True
-                manualCheck.BackColor = Color.Yellow
-            End If
+            fileCodCheck.Enabled = True
+            manualCheck.BackColor = Color.Yellow
         End If
     End Sub
 
@@ -145,6 +144,7 @@ Public Class Form1
             Par4.Visible = True
             manualCheck.Visible = True
             IMEI1.Enabled = True
+            NckToMail.Visible = True
             DirF.Clear()
         End If
         If DirF.Text = "$user" Then
@@ -161,6 +161,7 @@ Public Class Form1
             Par4.Visible = False
             manualCheck.Visible = True
             IMEI1.Enabled = False
+            NckToMail.Visible = False
             DirF.Clear()
         End If
     End Sub
@@ -231,6 +232,14 @@ Public Class Form1
                 Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 108, 22))
                 Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 134, 22))
                 Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 160, 22))
+
+                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 4, 22))
+                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 30, 22))
+                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 56, 22))
+                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 82, 22))
+                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 108, 22))
+                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 134, 22))
+                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 160, 22))
             End If
         End If
     End Sub
@@ -241,24 +250,22 @@ Public Class Form1
     End Sub
 
     Private Sub saveMailData_Click(sender As Object, e As EventArgs) Handles saveMailData.Click
-        If SendMessage.Checked = True Then
-            If M1.Text.Length = 0 Or M2.Text.Length = 0 Or M3.Text.Length = 0 Or M4.Text.Length = 0 Or M5.Text.Length = 0 Or M6.Text.Length = 0 Or M7.Text.Length = 0 Then
-                MsgBox("Please check all textbox !!")
+        If M1.Text.Length = 0 Or M2.Text.Length = 0 Or M3.Text.Length = 0 Or M4.Text.Length = 0 Or M5.Text.Length = 0 Or M6.Text.Length = 0 Or M7.Text.Length = 0 Then
+            MsgBox("Please check all textbox !!")
+        Else
+            If My.Computer.FileSystem.FileExists("Mail_Data.tds") Then
+                My.Computer.FileSystem.DeleteFile("Mail_Data.tds")
+                My.Computer.FileSystem.WriteAllText("Mail_Data.tds", M1.Text + vbCrLf + M2.Text + vbCrLf + M3.Text + vbCrLf + M4.Text + vbCrLf + M5.Text + vbCrLf + M6.Text + vbCrLf + M7.Text, True)
+                mailData.Clear()
+                mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
+                TimerSaveOk.Enabled = True
+                saveInfo.Visible = True
             Else
-                If My.Computer.FileSystem.FileExists("Mail_Data.tds") Then
-                    My.Computer.FileSystem.DeleteFile("Mail_Data.tds")
-                    My.Computer.FileSystem.WriteAllText("Mail_Data.tds", M1.Text + vbCrLf + M2.Text + vbCrLf + M3.Text + vbCrLf + M4.Text + vbCrLf + M5.Text + vbCrLf + M6.Text + vbCrLf + M7.Text, True)
-                    mailData.Clear()
-                    mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
-                    TimerSaveOk.Enabled = True
-                    saveInfo.Visible = True
-                Else
-                    My.Computer.FileSystem.WriteAllText("Mail_Data.tds", M1.Text + vbCrLf + M2.Text + vbCrLf + M3.Text + vbCrLf + M4.Text + vbCrLf + M5.Text + vbCrLf + M6.Text + vbCrLf + M7.Text, True)
-                    mailData.Clear()
-                    mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
-                    TimerSaveOk.Enabled = True
-                    saveInfo.Visible = True
-                End If
+                My.Computer.FileSystem.WriteAllText("Mail_Data.tds", M1.Text + vbCrLf + M2.Text + vbCrLf + M3.Text + vbCrLf + M4.Text + vbCrLf + M5.Text + vbCrLf + M6.Text + vbCrLf + M7.Text, True)
+                mailData.Clear()
+                mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
+                TimerSaveOk.Enabled = True
+                saveInfo.Visible = True
             End If
         End If
     End Sub
@@ -286,39 +293,6 @@ Public Class Form1
     Private Sub fileCodCheck_Tick(sender As Object, e As EventArgs) Handles fileCodCheck.Tick
         If My.Computer.FileSystem.FileExists(IMEI1.Text + "\" + IMEI1.Text + "_COD.txt") Then
             fileCodCheck.Enabled = False
-
-            Try
-                Dim mailfrom As New MailAddress(M1.Text, "SL3BF") ' adres mail do wysyłki + nazwa
-                Dim mailto As New MailAddress(M2.Text, "USR") ' adres docelowy + nazwa
-                Dim message As New MailMessage(mailfrom, mailto)
-                Dim smtp As New SmtpClient(M3.Text) 'serwer smtp
-                Dim zaloncznik As String
-                zaloncznik = IMEI1.Text + "\" + IMEI1.Text + "_COD.txt" 'nazwa pliku
-                If File.Exists(zaloncznik) Then
-                    Dim data As New Attachment(zaloncznik)
-                    message.Attachments.Add(data)
-                End If
-
-                message.Subject = M6.Text 'temat wiadomości
-
-
-                message.BodyEncoding = System.Text.Encoding.UTF8
-                message.Body = M7.Text 'tekst wiadomości
-
-                smtp.Credentials = New NetworkCredential(M4.Text, M5.Text) 'login i hasło
-
-                smtp.DeliveryMethod = SmtpDeliveryMethod.Network
-
-                smtp.Send(message)
-
-                Log.AppendText(Environment.NewLine + "Done. File has been sent")
-                Log.AppendText(Environment.NewLine)
-
-
-            Catch ex As SmtpException
-                Log.AppendText(Environment.NewLine + ex.Message)
-            End Try
-
             MC2.LoadFile(IMEI1.Text + "\" + IMEI1.Text + "_COD.txt", RichTextBoxStreamType.PlainText)
             Log.AppendText(Environment.NewLine + "Reading data...")
             Log.AppendText(Environment.NewLine)
@@ -374,6 +348,14 @@ Public Class Form1
         Log.AppendText(Environment.NewLine)
         Log.AppendText(Environment.NewLine + Log2.Text)
         My.Computer.FileSystem.WriteAllText(IMEI1.Text + "\" + IMEI1.Text + "_NCK.txt", Log2.Text, True)
+        If SendMessage.Checked = True Then
+            If M1.Text.Length = 0 Or M2.Text.Length = 0 Or M3.Text.Length = 0 Or M4.Text.Length = 0 Or M5.Text.Length = 0 Or M6.Text.Length = 0 Or M7.Text.Length = 0 Then
+            Else
+                Mailing.Enabled = True
+            End If
+        End If
+
+        'Mailing.Enabled = True
     End Sub
 
     Private Sub OptiKer_CheckedChanged(sender As Object, e As EventArgs) Handles OptiKer.CheckedChanged
@@ -430,5 +412,44 @@ Public Class Form1
             saveMailData.Enabled = False
             clearMailConfig.Enabled = False
         End If
+    End Sub
+
+    Private Sub Mailing_Tick(sender As Object, e As EventArgs) Handles Mailing.Tick
+        Mailing.Enabled = False
+
+        Try
+            Dim mailfrom As New MailAddress(M1.Text, "SL3BF") ' adres mail do wysyłki + nazwa
+            Dim mailto As New MailAddress(M2.Text, "USR") ' adres docelowy + nazwa
+            Dim message As New MailMessage(mailfrom, mailto)
+            Dim smtp As New SmtpClient(M3.Text) 'serwer smtp
+            Dim zaloncznik As String
+            zaloncznik = IMEI1.Text + "\" + IMEI1.Text + "_COD.txt" 'nazwa pliku
+            If File.Exists(zaloncznik) Then
+                Dim data As New Attachment(zaloncznik)
+                message.Attachments.Add(data)
+            End If
+
+            message.Subject = M6.Text 'temat wiadomości
+
+
+            message.BodyEncoding = System.Text.Encoding.UTF8
+            message.Body = M7.Text + IMEI1.Text + vbCrLf + NckToMail.Text   'tekst wiadomości
+
+            smtp.Credentials = New NetworkCredential(M4.Text, M5.Text) 'login i hasło
+
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network
+
+            smtp.Send(message)
+
+            Log.AppendText(Environment.NewLine)
+            Log.AppendText(Environment.NewLine + "Done. Message has been sent")
+
+        Catch ex As SmtpException
+            Log.AppendText(Environment.NewLine + ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Log_TextChanged(sender As Object, e As EventArgs) Handles Log.TextChanged
+        Log.ScrollToCaret()
     End Sub
 End Class

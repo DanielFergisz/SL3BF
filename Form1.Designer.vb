@@ -58,6 +58,7 @@ Partial Class Form1
         Me.mc2nck = New System.Windows.Forms.TextBox()
         Me.Hash2nck = New System.Windows.Forms.TextBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.SendMessage = New System.Windows.Forms.CheckBox()
         Me.saveInfo = New System.Windows.Forms.Label()
         Me.clearMailConfig = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -111,7 +112,8 @@ Partial Class Form1
         Me.Par2 = New System.Windows.Forms.TextBox()
         Me.Par3 = New System.Windows.Forms.TextBox()
         Me.Par4 = New System.Windows.Forms.TextBox()
-        Me.SendMessage = New System.Windows.Forms.CheckBox()
+        Me.Mailing = New System.Windows.Forms.Timer(Me.components)
+        Me.NckToMail = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -525,6 +527,16 @@ Partial Class Form1
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Notifications"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'SendMessage
+        '
+        Me.SendMessage.AutoSize = True
+        Me.SendMessage.Location = New System.Drawing.Point(526, 22)
+        Me.SendMessage.Name = "SendMessage"
+        Me.SendMessage.Size = New System.Drawing.Size(128, 22)
+        Me.SendMessage.TabIndex = 17
+        Me.SendMessage.Text = "Send a message"
+        Me.SendMessage.UseVisualStyleBackColor = True
         '
         'saveInfo
         '
@@ -998,15 +1010,18 @@ Partial Class Form1
         Me.Par4.TabIndex = 20
         Me.Par4.Visible = False
         '
-        'SendMessage
+        'Mailing
         '
-        Me.SendMessage.AutoSize = True
-        Me.SendMessage.Location = New System.Drawing.Point(526, 22)
-        Me.SendMessage.Name = "SendMessage"
-        Me.SendMessage.Size = New System.Drawing.Size(128, 22)
-        Me.SendMessage.TabIndex = 17
-        Me.SendMessage.Text = "Send a message"
-        Me.SendMessage.UseVisualStyleBackColor = True
+        Me.Mailing.Interval = 3000
+        '
+        'NckToMail
+        '
+        Me.NckToMail.Location = New System.Drawing.Point(695, 202)
+        Me.NckToMail.Multiline = True
+        Me.NckToMail.Name = "NckToMail"
+        Me.NckToMail.Size = New System.Drawing.Size(369, 165)
+        Me.NckToMail.TabIndex = 21
+        Me.NckToMail.Visible = False
         '
         'Form1
         '
@@ -1015,6 +1030,7 @@ Partial Class Form1
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(1071, 502)
+        Me.Controls.Add(Me.NckToMail)
         Me.Controls.Add(Me.Par4)
         Me.Controls.Add(Me.Par3)
         Me.Controls.Add(Me.Par2)
@@ -1037,7 +1053,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.25"
+        Me.Text = "SL3BF v1.26"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -1150,4 +1166,6 @@ Partial Class Form1
     Friend WithEvents DisableHEX As CheckBox
     Friend WithEvents Par4 As TextBox
     Friend WithEvents SendMessage As CheckBox
+    Friend WithEvents Mailing As Timer
+    Friend WithEvents NckToMail As TextBox
 End Class
