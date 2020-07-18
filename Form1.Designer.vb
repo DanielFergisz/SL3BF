@@ -35,6 +35,10 @@ Partial Class Form1
         Me.DirF = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Skip = New System.Windows.Forms.ComboBox()
+        Me.Limit = New System.Windows.Forms.ComboBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.gb1 = New System.Windows.Forms.GroupBox()
         Me.Exe1 = New System.Windows.Forms.Button()
         Me.cmd1 = New System.Windows.Forms.TextBox()
@@ -73,6 +77,7 @@ Partial Class Form1
         Me.M1 = New System.Windows.Forms.TextBox()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.DisableHEX = New System.Windows.Forms.CheckBox()
         Me.BenchAll = New System.Windows.Forms.CheckBox()
         Me.AutoS = New System.Windows.Forms.CheckBox()
         Me.OptiKer = New System.Windows.Forms.CheckBox()
@@ -105,11 +110,6 @@ Partial Class Form1
         Me.Par1 = New System.Windows.Forms.TextBox()
         Me.Par2 = New System.Windows.Forms.TextBox()
         Me.Par3 = New System.Windows.Forms.TextBox()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Limit = New System.Windows.Forms.ComboBox()
-        Me.Skip = New System.Windows.Forms.ComboBox()
-        Me.DisableHEX = New System.Windows.Forms.CheckBox()
         Me.Par4 = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -276,6 +276,42 @@ Partial Class Form1
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Manual"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Skip
+        '
+        Me.Skip.FormattingEnabled = True
+        Me.Skip.Items.AddRange(New Object() {"0", "500000000000"})
+        Me.Skip.Location = New System.Drawing.Point(60, 117)
+        Me.Skip.Name = "Skip"
+        Me.Skip.Size = New System.Drawing.Size(138, 26)
+        Me.Skip.TabIndex = 13
+        '
+        'Limit
+        '
+        Me.Limit.FormattingEnabled = True
+        Me.Limit.Items.AddRange(New Object() {"500000000000", "1000000000000"})
+        Me.Limit.Location = New System.Drawing.Point(60, 146)
+        Me.Limit.Name = "Limit"
+        Me.Limit.Size = New System.Drawing.Size(138, 26)
+        Me.Limit.TabIndex = 12
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(15, 149)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(43, 18)
+        Me.Label18.TabIndex = 11
+        Me.Label18.Text = "Limit:"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(15, 117)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(38, 18)
+        Me.Label17.TabIndex = 10
+        Me.Label17.Text = "Skip:"
         '
         'gb1
         '
@@ -656,6 +692,16 @@ Partial Class Form1
         Me.GroupBox2.TabIndex = 16
         Me.GroupBox2.TabStop = False
         '
+        'DisableHEX
+        '
+        Me.DisableHEX.AutoSize = True
+        Me.DisableHEX.Location = New System.Drawing.Point(13, 106)
+        Me.DisableHEX.Name = "DisableHEX"
+        Me.DisableHEX.Size = New System.Drawing.Size(113, 22)
+        Me.DisableHEX.TabIndex = 3
+        Me.DisableHEX.Text = "Disable [HEX]"
+        Me.DisableHEX.UseVisualStyleBackColor = True
+        '
         'BenchAll
         '
         Me.BenchAll.AutoSize = True
@@ -932,52 +978,6 @@ Partial Class Form1
         Me.Par3.Size = New System.Drawing.Size(76, 24)
         Me.Par3.TabIndex = 19
         Me.Par3.Visible = False
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(15, 117)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(38, 18)
-        Me.Label17.TabIndex = 10
-        Me.Label17.Text = "Skip:"
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(15, 149)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(43, 18)
-        Me.Label18.TabIndex = 11
-        Me.Label18.Text = "Limit:"
-        '
-        'Limit
-        '
-        Me.Limit.FormattingEnabled = True
-        Me.Limit.Items.AddRange(New Object() {"500000000000", "1000000000000"})
-        Me.Limit.Location = New System.Drawing.Point(60, 146)
-        Me.Limit.Name = "Limit"
-        Me.Limit.Size = New System.Drawing.Size(138, 26)
-        Me.Limit.TabIndex = 12
-        '
-        'Skip
-        '
-        Me.Skip.FormattingEnabled = True
-        Me.Skip.Items.AddRange(New Object() {"0", "500000000000"})
-        Me.Skip.Location = New System.Drawing.Point(60, 117)
-        Me.Skip.Name = "Skip"
-        Me.Skip.Size = New System.Drawing.Size(138, 26)
-        Me.Skip.TabIndex = 13
-        '
-        'DisableHEX
-        '
-        Me.DisableHEX.AutoSize = True
-        Me.DisableHEX.Location = New System.Drawing.Point(13, 106)
-        Me.DisableHEX.Name = "DisableHEX"
-        Me.DisableHEX.Size = New System.Drawing.Size(103, 22)
-        Me.DisableHEX.TabIndex = 3
-        Me.DisableHEX.Text = "Disable HEX"
-        Me.DisableHEX.UseVisualStyleBackColor = True
         '
         'Par4
         '

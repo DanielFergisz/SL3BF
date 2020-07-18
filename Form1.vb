@@ -173,8 +173,11 @@ Public Class Form1
         Else
             If Skip.Text.Length = 0 And Limit.Text.Length = 0 Then
                 Process.Start("cmd", "/k " + Commv3)
-           Else
+                Command.Text = Commv3
+
+            Else
                 Process.Start("cmd", "/k " + Commv3 + "-s " + Skip.Text + " -l " + Limit.Text)
+                Command.Text = Commv3 + "-s " + Skip.Text + " -l " + Limit.Text
             End If
         End If
     End Sub
@@ -363,7 +366,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles nckC.Tick
+    Private Sub nckC_Tick(sender As Object, e As EventArgs) Handles nckC.Tick
         nckC.Enabled = False
         genCod2NCK_Click(Nothing, Nothing)
         Log.AppendText(Environment.NewLine)
@@ -397,7 +400,7 @@ Public Class Form1
 
     Private Sub DisableHEX_CheckedChanged(sender As Object, e As EventArgs) Handles DisableHEX.CheckedChanged
         If DisableHEX.Checked = True Then
-            Par4.Text = "--outfile-autohex-disable "
+            Par4.Text = "--outfile-format=1 "
         Else
             Par4.Clear()
         End If
