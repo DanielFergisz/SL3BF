@@ -241,22 +241,24 @@ Public Class Form1
     End Sub
 
     Private Sub saveMailData_Click(sender As Object, e As EventArgs) Handles saveMailData.Click
-        If M1.Text.Length = 0 Or M2.Text.Length = 0 Or M3.Text.Length = 0 Or M4.Text.Length = 0 Or M5.Text.Length = 0 Or M6.Text.Length = 0 Or M7.Text.Length = 0 Then
-            MsgBox("Please check all textbox !!")
-        Else
-            If My.Computer.FileSystem.FileExists("Mail_Data.tds") Then
-                My.Computer.FileSystem.DeleteFile("Mail_Data.tds")
-                My.Computer.FileSystem.WriteAllText("Mail_Data.tds", M1.Text + vbCrLf + M2.Text + vbCrLf + M3.Text + vbCrLf + M4.Text + vbCrLf + M5.Text + vbCrLf + M6.Text + vbCrLf + M7.Text, True)
-                mailData.Clear()
-                mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
-                TimerSaveOk.Enabled = True
-                saveInfo.Visible = True
+        If SendMessage.Checked = True Then
+            If M1.Text.Length = 0 Or M2.Text.Length = 0 Or M3.Text.Length = 0 Or M4.Text.Length = 0 Or M5.Text.Length = 0 Or M6.Text.Length = 0 Or M7.Text.Length = 0 Then
+                MsgBox("Please check all textbox !!")
             Else
-                My.Computer.FileSystem.WriteAllText("Mail_Data.tds", M1.Text + vbCrLf + M2.Text + vbCrLf + M3.Text + vbCrLf + M4.Text + vbCrLf + M5.Text + vbCrLf + M6.Text + vbCrLf + M7.Text, True)
-                mailData.Clear()
-                mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
-                TimerSaveOk.Enabled = True
-                saveInfo.Visible = True
+                If My.Computer.FileSystem.FileExists("Mail_Data.tds") Then
+                    My.Computer.FileSystem.DeleteFile("Mail_Data.tds")
+                    My.Computer.FileSystem.WriteAllText("Mail_Data.tds", M1.Text + vbCrLf + M2.Text + vbCrLf + M3.Text + vbCrLf + M4.Text + vbCrLf + M5.Text + vbCrLf + M6.Text + vbCrLf + M7.Text, True)
+                    mailData.Clear()
+                    mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
+                    TimerSaveOk.Enabled = True
+                    saveInfo.Visible = True
+                Else
+                    My.Computer.FileSystem.WriteAllText("Mail_Data.tds", M1.Text + vbCrLf + M2.Text + vbCrLf + M3.Text + vbCrLf + M4.Text + vbCrLf + M5.Text + vbCrLf + M6.Text + vbCrLf + M7.Text, True)
+                    mailData.Clear()
+                    mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
+                    TimerSaveOk.Enabled = True
+                    saveInfo.Visible = True
+                End If
             End If
         End If
     End Sub
@@ -403,6 +405,30 @@ Public Class Form1
             Par4.Text = "--outfile-format=1 "
         Else
             Par4.Clear()
+        End If
+    End Sub
+
+    Private Sub SendMessage_CheckedChanged(sender As Object, e As EventArgs) Handles SendMessage.CheckedChanged
+        If SendMessage.Checked = True Then
+            M1.Enabled = True
+            M2.Enabled = True
+            M3.Enabled = True
+            M4.Enabled = True
+            M5.Enabled = True
+            M6.Enabled = True
+            M7.Enabled = True
+            saveMailData.Enabled = True
+            clearMailConfig.Enabled = True
+        Else
+            M1.Enabled = False
+            M2.Enabled = False
+            M3.Enabled = False
+            M4.Enabled = False
+            M5.Enabled = False
+            M6.Enabled = False
+            M7.Enabled = False
+            saveMailData.Enabled = False
+            clearMailConfig.Enabled = False
         End If
     End Sub
 End Class

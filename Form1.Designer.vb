@@ -111,6 +111,7 @@ Partial Class Form1
         Me.Par2 = New System.Windows.Forms.TextBox()
         Me.Par3 = New System.Windows.Forms.TextBox()
         Me.Par4 = New System.Windows.Forms.TextBox()
+        Me.SendMessage = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -500,6 +501,7 @@ Partial Class Form1
         '
         'TabPage4
         '
+        Me.TabPage4.Controls.Add(Me.SendMessage)
         Me.TabPage4.Controls.Add(Me.saveInfo)
         Me.TabPage4.Controls.Add(Me.clearMailConfig)
         Me.TabPage4.Controls.Add(Me.Label14)
@@ -529,7 +531,7 @@ Partial Class Form1
         Me.saveInfo.AutoSize = True
         Me.saveInfo.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.saveInfo.ForeColor = System.Drawing.Color.ForestGreen
-        Me.saveInfo.Location = New System.Drawing.Point(568, 170)
+        Me.saveInfo.Location = New System.Drawing.Point(558, 206)
         Me.saveInfo.Name = "saveInfo"
         Me.saveInfo.Size = New System.Drawing.Size(58, 18)
         Me.saveInfo.TabIndex = 16
@@ -538,7 +540,8 @@ Partial Class Form1
         '
         'clearMailConfig
         '
-        Me.clearMailConfig.Location = New System.Drawing.Point(560, 85)
+        Me.clearMailConfig.Enabled = False
+        Me.clearMailConfig.Location = New System.Drawing.Point(551, 154)
         Me.clearMailConfig.Name = "clearMailConfig"
         Me.clearMailConfig.Size = New System.Drawing.Size(75, 28)
         Me.clearMailConfig.TabIndex = 15
@@ -556,6 +559,7 @@ Partial Class Form1
         '
         'M7
         '
+        Me.M7.Enabled = False
         Me.M7.Location = New System.Drawing.Point(137, 215)
         Me.M7.Name = "M7"
         Me.M7.Size = New System.Drawing.Size(356, 26)
@@ -563,7 +567,8 @@ Partial Class Form1
         '
         'saveMailData
         '
-        Me.saveMailData.Location = New System.Drawing.Point(548, 23)
+        Me.saveMailData.Enabled = False
+        Me.saveMailData.Location = New System.Drawing.Point(539, 92)
         Me.saveMailData.Name = "saveMailData"
         Me.saveMailData.Size = New System.Drawing.Size(100, 40)
         Me.saveMailData.TabIndex = 12
@@ -572,6 +577,7 @@ Partial Class Form1
         '
         'M6
         '
+        Me.M6.Enabled = False
         Me.M6.Location = New System.Drawing.Point(137, 183)
         Me.M6.Name = "M6"
         Me.M6.Size = New System.Drawing.Size(356, 26)
@@ -633,6 +639,7 @@ Partial Class Form1
         '
         'M5
         '
+        Me.M5.Enabled = False
         Me.M5.Location = New System.Drawing.Point(137, 151)
         Me.M5.Name = "M5"
         Me.M5.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -641,6 +648,7 @@ Partial Class Form1
         '
         'M4
         '
+        Me.M4.Enabled = False
         Me.M4.Location = New System.Drawing.Point(137, 119)
         Me.M4.Name = "M4"
         Me.M4.Size = New System.Drawing.Size(356, 26)
@@ -648,6 +656,7 @@ Partial Class Form1
         '
         'M3
         '
+        Me.M3.Enabled = False
         Me.M3.Location = New System.Drawing.Point(137, 87)
         Me.M3.Name = "M3"
         Me.M3.Size = New System.Drawing.Size(356, 26)
@@ -655,6 +664,7 @@ Partial Class Form1
         '
         'M2
         '
+        Me.M2.Enabled = False
         Me.M2.Location = New System.Drawing.Point(137, 55)
         Me.M2.Name = "M2"
         Me.M2.Size = New System.Drawing.Size(356, 26)
@@ -662,6 +672,7 @@ Partial Class Form1
         '
         'M1
         '
+        Me.M1.Enabled = False
         Me.M1.Location = New System.Drawing.Point(137, 23)
         Me.M1.Name = "M1"
         Me.M1.Size = New System.Drawing.Size(356, 26)
@@ -987,6 +998,16 @@ Partial Class Form1
         Me.Par4.TabIndex = 20
         Me.Par4.Visible = False
         '
+        'SendMessage
+        '
+        Me.SendMessage.AutoSize = True
+        Me.SendMessage.Location = New System.Drawing.Point(526, 22)
+        Me.SendMessage.Name = "SendMessage"
+        Me.SendMessage.Size = New System.Drawing.Size(128, 22)
+        Me.SendMessage.TabIndex = 17
+        Me.SendMessage.Text = "Send a message"
+        Me.SendMessage.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -1016,7 +1037,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.24"
+        Me.Text = "SL3BF v1.25"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -1128,4 +1149,5 @@ Partial Class Form1
     Friend WithEvents Skip As ComboBox
     Friend WithEvents DisableHEX As CheckBox
     Friend WithEvents Par4 As TextBox
+    Friend WithEvents SendMessage As CheckBox
 End Class
