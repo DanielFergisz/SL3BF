@@ -166,7 +166,7 @@ Public Class Form1
     End Sub
 
     Private Sub StartBF2_Click(sender As Object, e As EventArgs) Handles StartBF2.Click
-        Dim Commv3 As String = vHC.Text + " -w3 -m110 " + "--hex-salt --hex-charset " + Pass2.Text + ":" + Salt2.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + FileName1.Text + "_COD.txt --session=SL3"
+        Dim Commv3 As String = vHC.Text + " -w3 -m110 " + "--hex-salt --hex-charset " + Pass2.Text + ":" + Salt2.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + FileName1.Text + "_COD.txt --session=SL3 "
 
         If (Pass2.Text.Length = 0) And (Salt2.Text.Length = 0) Then
             MessageBox.Show("Salt and Pass cannot be empty !!")
