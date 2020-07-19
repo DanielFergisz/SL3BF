@@ -78,6 +78,8 @@ Partial Class Form1
         Me.M1 = New System.Windows.Forms.TextBox()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.StopR = New System.Windows.Forms.ComboBox()
         Me.RangeCheck = New System.Windows.Forms.CheckBox()
         Me.StartR = New System.Windows.Forms.ComboBox()
@@ -120,8 +122,8 @@ Partial Class Form1
         Me.Par4 = New System.Windows.Forms.TextBox()
         Me.Mailing = New System.Windows.Forms.Timer(Me.components)
         Me.NckToMail = New System.Windows.Forms.TextBox()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
+        Me.BeginMask = New System.Windows.Forms.TextBox()
+        Me.EndMask = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -728,6 +730,24 @@ Partial Class Form1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Select range"
         '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(143, 61)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(19, 18)
+        Me.Label22.TabIndex = 6
+        Me.Label22.Text = "%"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(143, 25)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(19, 18)
+        Me.Label21.TabIndex = 5
+        Me.Label21.Text = "%"
+        '
         'StopR
         '
         Me.StopR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -1098,23 +1118,21 @@ Partial Class Form1
         Me.NckToMail.TabIndex = 21
         Me.NckToMail.Visible = False
         '
-        'Label21
+        'BeginMask
         '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(143, 25)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(19, 18)
-        Me.Label21.TabIndex = 5
-        Me.Label21.Text = "%"
+        Me.BeginMask.Location = New System.Drawing.Point(714, 374)
+        Me.BeginMask.Name = "BeginMask"
+        Me.BeginMask.Size = New System.Drawing.Size(176, 24)
+        Me.BeginMask.TabIndex = 22
+        Me.BeginMask.Visible = False
         '
-        'Label22
+        'EndMask
         '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(143, 61)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(19, 18)
-        Me.Label22.TabIndex = 6
-        Me.Label22.Text = "%"
+        Me.EndMask.Location = New System.Drawing.Point(714, 408)
+        Me.EndMask.Name = "EndMask"
+        Me.EndMask.Size = New System.Drawing.Size(176, 24)
+        Me.EndMask.TabIndex = 23
+        Me.EndMask.Visible = False
         '
         'Form1
         '
@@ -1123,6 +1141,8 @@ Partial Class Form1
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(1071, 502)
+        Me.Controls.Add(Me.EndMask)
+        Me.Controls.Add(Me.BeginMask)
         Me.Controls.Add(Me.NckToMail)
         Me.Controls.Add(Me.Par4)
         Me.Controls.Add(Me.Par3)
@@ -1146,7 +1166,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.27"
+        Me.Text = "SL3BF v1.28"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -1271,4 +1291,6 @@ Partial Class Form1
     Friend WithEvents Label19 As Label
     Friend WithEvents Label22 As Label
     Friend WithEvents Label21 As Label
+    Friend WithEvents BeginMask As TextBox
+    Friend WithEvents EndMask As TextBox
 End Class

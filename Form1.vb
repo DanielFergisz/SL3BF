@@ -7,10 +7,15 @@ Public Class Form1
         If My.Computer.FileSystem.FileExists("hashcat.exe") Then
             vHC.SelectedItem = "hashcat"
         End If
+
         If My.Computer.FileSystem.FileExists("hashcat64.exe") Then
             vHC.SelectedItem = "hashcat64"
         End If
+
         numPC.SelectedItem = "1"
+        StartR.SelectedItem = "0"
+        StopR.SelectedItem = "100"
+
         If My.Computer.FileSystem.FileExists("Mail_Data.tds") Then
             mailData.LoadFile("Mail_Data.tds", RichTextBoxStreamType.PlainText)
             M1.Text = mailData.Lines(0)
@@ -69,61 +74,68 @@ Public Class Form1
             Log.AppendText("Start of calculation..")
 
             If algo1.Checked = True Then
+                If RangeCheck.Checked = False Then
+                    If numPC.SelectedItem = "1" Then
+                        Process.Start("cmd", "/k " + Commv1)
+                        Command.Text = Commv1
+                    End If
+                    If numPC.SelectedItem = "2" And pcV.SelectedItem = "1" Then
+                        Process.Start("cmd", "/k " + Commv1 + " -s 0 -l " + ks2)
+                        Command.Text = Commv1 + " -s 0 -l " + ks2
+                    End If
+                    If numPC.SelectedItem = "2" And pcV.SelectedItem = "2" Then
+                        Process.Start("cmd", "/k " + Commv1 + " -s " + ks2 + " -l " + ksMax)
+                        Command.Text = Commv1 + " -s " + ks2 + " -l " + ksMax
+                    End If
 
-                If numPC.SelectedItem = "1" Then
-                    Process.Start("cmd", "/k " + Commv1)
-                    Command.Text = Commv1
-                End If
-                If numPC.SelectedItem = "2" And pcV.SelectedItem = "1" Then
-                    Process.Start("cmd", "/k " + Commv1 + " -s 0 -l " + ks2)
-                    Command.Text = Commv1 + " -s 0 -l " + ks2
-                End If
-                If numPC.SelectedItem = "2" And pcV.SelectedItem = "2" Then
-                    Process.Start("cmd", "/k " + Commv1 + " -s " + ks2 + " -l " + ksMax)
-                    Command.Text = Commv1 + " -s " + ks2 + " -l " + ksMax
-                End If
-
-                If numPC.SelectedItem = "3" And pcV.SelectedItem = "1" Then
-                    Process.Start("cmd", "/k " + Commv1 + " -s 0 -l " + ks3)
-                    Command.Text = Commv1 + " -s 0 -l " + ks3
-                End If
-                If numPC.SelectedItem = "3" And pcV.SelectedItem = "2" Then
-                    Process.Start("cmd", "/k " + Commv1 + " -s " + ks3 + " -l " + ks31)
-                    Command.Text = Commv1 + " -s " + ks3 + " -l " + ks31
-                End If
-                If numPC.SelectedItem = "3" And pcV.SelectedItem = "3" Then
-                    Process.Start("cmd", "/k " + Commv1 + " -s " + ks31 + " -l " + ksMax)
-                    Command.Text = Commv1 + " -s " + ks31 + " -l " + ksMax
+                    If numPC.SelectedItem = "3" And pcV.SelectedItem = "1" Then
+                        Process.Start("cmd", "/k " + Commv1 + " -s 0 -l " + ks3)
+                        Command.Text = Commv1 + " -s 0 -l " + ks3
+                    End If
+                    If numPC.SelectedItem = "3" And pcV.SelectedItem = "2" Then
+                        Process.Start("cmd", "/k " + Commv1 + " -s " + ks3 + " -l " + ks31)
+                        Command.Text = Commv1 + " -s " + ks3 + " -l " + ks31
+                    End If
+                    If numPC.SelectedItem = "3" And pcV.SelectedItem = "3" Then
+                        Process.Start("cmd", "/k " + Commv1 + " -s " + ks31 + " -l " + ksMax)
+                        Command.Text = Commv1 + " -s " + ks31 + " -l " + ksMax
+                    End If
+                Else
+                    Process.Start("cmd", "/k " + Commv1 + " -s " + BeginMask.Text + " -l " + EndMask.Text)
                 End If
             End If
 
             If algo2.Checked = True Then
-                If numPC.SelectedItem = "1" Then
-                    Process.Start("cmd", "/k " + Commv2)
-                    Command.Text = Commv2
-                End If
-                If numPC.SelectedItem = "2" And pcV.SelectedItem = "1" Then
-                    Process.Start("cmd", "/k " + Commv2 + " -s 0 -l " + ks2)
-                    Command.Text = Commv2 + " -s 0 -l " + ks2
-                End If
-                If numPC.SelectedItem = "2" And pcV.SelectedItem = "2" Then
-                    Process.Start("cmd", "/k " + Commv2 + " -s " + ks2 + " -l " + ksMax)
-                    Command.Text = Commv2 + " -s " + ks2 + " -l " + ksMax
-                End If
+                If RangeCheck.Checked = False Then
+                    If numPC.SelectedItem = "1" Then
+                        Process.Start("cmd", "/k " + Commv2)
+                        Command.Text = Commv2
+                    End If
+                    If numPC.SelectedItem = "2" And pcV.SelectedItem = "1" Then
+                        Process.Start("cmd", "/k " + Commv2 + " -s 0 -l " + ks2)
+                        Command.Text = Commv2 + " -s 0 -l " + ks2
+                    End If
+                    If numPC.SelectedItem = "2" And pcV.SelectedItem = "2" Then
+                        Process.Start("cmd", "/k " + Commv2 + " -s " + ks2 + " -l " + ksMax)
+                        Command.Text = Commv2 + " -s " + ks2 + " -l " + ksMax
+                    End If
 
-                If numPC.SelectedItem = "3" And pcV.SelectedItem = "1" Then
-                    Process.Start("cmd", "/k " + Commv2 + " -s 0 -l " + ks3)
-                    Command.Text = Commv2 + " -s 0 -l " + ks3
-                End If
-                If numPC.SelectedItem = "3" And pcV.SelectedItem = "2" Then
-                    Process.Start("cmd", "/k " + Commv2 + " -s " + ks3 + " -l " + ks31)
-                    Command.Text = Commv2 + " -s " + ks3 + " -l " + ks31
-                End If
-                If numPC.SelectedItem = "3" And pcV.SelectedItem = "3" Then
-                    Process.Start("cmd", "/k " + Commv2 + " -s " + ks31 + " -l " + ksMax)
-                    Command.Text = Commv2 + " -s " + ks31 + " -l " + ksMax
-                End If
+                    If numPC.SelectedItem = "3" And pcV.SelectedItem = "1" Then
+                        Process.Start("cmd", "/k " + Commv2 + " -s 0 -l " + ks3)
+                        Command.Text = Commv2 + " -s 0 -l " + ks3
+                    End If
+                    If numPC.SelectedItem = "3" And pcV.SelectedItem = "2" Then
+                        Process.Start("cmd", "/k " + Commv2 + " -s " + ks3 + " -l " + ks31)
+                        Command.Text = Commv2 + " -s " + ks3 + " -l " + ks31
+                    End If
+                    If numPC.SelectedItem = "3" And pcV.SelectedItem = "3" Then
+                        Process.Start("cmd", "/k " + Commv2 + " -s " + ks31 + " -l " + ksMax)
+                        Command.Text = Commv2 + " -s " + ks31 + " -l " + ksMax
+                    End If
+                Else
+                    Process.Start("cmd", "/k " + Commv1 + " -s " + BeginMask.Text + " -l " + EndMask.Text)
             End If
+        End If
             fileCodCheck.Enabled = True
             manualCheck.BackColor = Color.Yellow
         End If
@@ -145,6 +157,8 @@ Public Class Form1
             manualCheck.Visible = True
             IMEI1.Enabled = True
             NckToMail.Visible = True
+            BeginMask.Visible = True
+            EndMask.Visible = True
             DirF.Clear()
         End If
         If DirF.Text = "$user" Then
@@ -162,6 +176,8 @@ Public Class Form1
             manualCheck.Visible = True
             IMEI1.Enabled = False
             NckToMail.Visible = False
+            BeginMask.Visible = False
+            EndMask.Visible = False
             DirF.Clear()
         End If
     End Sub
@@ -563,5 +579,10 @@ Public Class Form1
             StopR.Items.Add("100")
             StopR.SelectedItem = "100"
         End If
+        BeginMask.Text = StartR.Text * 10000000000
+    End Sub
+
+    Private Sub StopR_SelectedIndexChanged(sender As Object, e As EventArgs) Handles StopR.SelectedIndexChanged
+        EndMask.Text = StopR.Text * 10000000000
     End Sub
 End Class
