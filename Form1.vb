@@ -102,6 +102,7 @@ Public Class Form1
                     End If
                 Else
                     Process.Start("cmd", "/k " + Commv1 + " -s " + BeginMask.Text + " -l " + EndMask.Text)
+                    Command.Text = Commv1 + " -s " + BeginMask.Text + " -l " + EndMask.Text
                 End If
             End If
 
@@ -133,8 +134,9 @@ Public Class Form1
                         Command.Text = Commv2 + " -s " + ks31 + " -l " + ksMax
                     End If
                 Else
-                    Process.Start("cmd", "/k " + Commv1 + " -s " + BeginMask.Text + " -l " + EndMask.Text)
-            End If
+                    Process.Start("cmd", "/k " + Commv2 + " -s " + BeginMask.Text + " -l " + EndMask.Text)
+                    Command.Text = Commv2 + " -s " + BeginMask.Text + " -l " + EndMask.Text
+                End If
         End If
             fileCodCheck.Enabled = True
             manualCheck.BackColor = Color.Yellow
@@ -249,6 +251,7 @@ Public Class Form1
                 Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 134, 22))
                 Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 160, 22))
 
+                NckToMail.Clear()
                 NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 4, 22))
                 NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 30, 22))
                 NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 56, 22))
@@ -370,8 +373,6 @@ Public Class Form1
                 Mailing.Enabled = True
             End If
         End If
-
-        'Mailing.Enabled = True
     End Sub
 
     Private Sub OptiKer_CheckedChanged(sender As Object, e As EventArgs) Handles OptiKer.CheckedChanged
@@ -469,7 +470,7 @@ Public Class Form1
         Log.ScrollToCaret()
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles RangeCheck.CheckedChanged
+    Private Sub RangeCheck_CheckedChanged(sender As Object, e As EventArgs) Handles RangeCheck.CheckedChanged
         If RangeCheck.Checked = True Then
             StartR.Enabled = True
             StopR.Enabled = True
