@@ -480,6 +480,7 @@ Public Class Form1
             StopR.Items.Add("80")
             StopR.Items.Add("90")
             StopR.Items.Add("100")
+            StopR.SelectedItem = "10"
         End If
         If StartR.SelectedItem = "10" Then
             StopR.Items.Clear()
@@ -492,6 +493,7 @@ Public Class Form1
             StopR.Items.Add("80")
             StopR.Items.Add("90")
             StopR.Items.Add("100")
+            StopR.SelectedItem = "20"
         End If
         If StartR.SelectedItem = "20" Then
             StopR.Items.Clear()
@@ -503,6 +505,7 @@ Public Class Form1
             StopR.Items.Add("80")
             StopR.Items.Add("90")
             StopR.Items.Add("100")
+            StopR.SelectedItem = "30"
         End If
         If StartR.SelectedItem = "30" Then
             StopR.Items.Clear()
@@ -513,6 +516,7 @@ Public Class Form1
             StopR.Items.Add("80")
             StopR.Items.Add("90")
             StopR.Items.Add("100")
+            StopR.SelectedItem = "40"
         End If
         If StartR.SelectedItem = "40" Then
             StopR.Items.Clear()
@@ -522,6 +526,7 @@ Public Class Form1
             StopR.Items.Add("80")
             StopR.Items.Add("90")
             StopR.Items.Add("100")
+            StopR.SelectedItem = "50"
         End If
         If StartR.SelectedItem = "50" Then
             StopR.Items.Clear()
@@ -530,6 +535,7 @@ Public Class Form1
             StopR.Items.Add("80")
             StopR.Items.Add("90")
             StopR.Items.Add("100")
+            StopR.SelectedItem = "60"
         End If
         If StartR.SelectedItem = "60" Then
             StopR.Items.Clear()
@@ -537,21 +543,25 @@ Public Class Form1
             StopR.Items.Add("80")
             StopR.Items.Add("90")
             StopR.Items.Add("100")
+            StopR.SelectedItem = "70"
         End If
         If StartR.SelectedItem = "70" Then
             StopR.Items.Clear()
             StopR.Items.Add("80")
             StopR.Items.Add("90")
             StopR.Items.Add("100")
+            StopR.SelectedItem = "80"
         End If
         If StartR.SelectedItem = "80" Then
             StopR.Items.Clear()
             StopR.Items.Add("90")
             StopR.Items.Add("100")
+            StopR.SelectedItem = "90"
         End If
         If StartR.SelectedItem = "90" Then
             StopR.Items.Clear()
             StopR.Items.Add("100")
+            StopR.SelectedItem = "100"
         End If
     End Sub
 End Class
