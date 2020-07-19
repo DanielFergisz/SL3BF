@@ -452,4 +452,106 @@ Public Class Form1
     Private Sub Log_TextChanged(sender As Object, e As EventArgs) Handles Log.TextChanged
         Log.ScrollToCaret()
     End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles RangeCheck.CheckedChanged
+        If RangeCheck.Checked = True Then
+            StartR.Enabled = True
+            StopR.Enabled = True
+            numPC.Enabled = False
+            pcV.Enabled = False
+        Else
+            StartR.Enabled = False
+            StopR.Enabled = False
+            numPC.Enabled = True
+            pcV.Enabled = True
+        End If
+    End Sub
+
+    Private Sub StartR_SelectedIndexChanged(sender As Object, e As EventArgs) Handles StartR.SelectedIndexChanged
+        If StartR.SelectedItem = "0" Then
+            StopR.Items.Clear()
+            StopR.Items.Add("10")
+            StopR.Items.Add("20")
+            StopR.Items.Add("30")
+            StopR.Items.Add("40")
+            StopR.Items.Add("50")
+            StopR.Items.Add("60")
+            StopR.Items.Add("70")
+            StopR.Items.Add("80")
+            StopR.Items.Add("90")
+            StopR.Items.Add("100")
+        End If
+        If StartR.SelectedItem = "10" Then
+            StopR.Items.Clear()
+            StopR.Items.Add("20")
+            StopR.Items.Add("30")
+            StopR.Items.Add("40")
+            StopR.Items.Add("50")
+            StopR.Items.Add("60")
+            StopR.Items.Add("70")
+            StopR.Items.Add("80")
+            StopR.Items.Add("90")
+            StopR.Items.Add("100")
+        End If
+        If StartR.SelectedItem = "20" Then
+            StopR.Items.Clear()
+            StopR.Items.Add("30")
+            StopR.Items.Add("40")
+            StopR.Items.Add("50")
+            StopR.Items.Add("60")
+            StopR.Items.Add("70")
+            StopR.Items.Add("80")
+            StopR.Items.Add("90")
+            StopR.Items.Add("100")
+        End If
+        If StartR.SelectedItem = "30" Then
+            StopR.Items.Clear()
+            StopR.Items.Add("40")
+            StopR.Items.Add("50")
+            StopR.Items.Add("60")
+            StopR.Items.Add("70")
+            StopR.Items.Add("80")
+            StopR.Items.Add("90")
+            StopR.Items.Add("100")
+        End If
+        If StartR.SelectedItem = "40" Then
+            StopR.Items.Clear()
+            StopR.Items.Add("50")
+            StopR.Items.Add("60")
+            StopR.Items.Add("70")
+            StopR.Items.Add("80")
+            StopR.Items.Add("90")
+            StopR.Items.Add("100")
+        End If
+        If StartR.SelectedItem = "50" Then
+            StopR.Items.Clear()
+            StopR.Items.Add("60")
+            StopR.Items.Add("70")
+            StopR.Items.Add("80")
+            StopR.Items.Add("90")
+            StopR.Items.Add("100")
+        End If
+        If StartR.SelectedItem = "60" Then
+            StopR.Items.Clear()
+            StopR.Items.Add("70")
+            StopR.Items.Add("80")
+            StopR.Items.Add("90")
+            StopR.Items.Add("100")
+        End If
+        If StartR.SelectedItem = "70" Then
+            StopR.Items.Clear()
+            StopR.Items.Add("80")
+            StopR.Items.Add("90")
+            StopR.Items.Add("100")
+        End If
+        If StartR.SelectedItem = "80" Then
+            StopR.Items.Clear()
+            StopR.Items.Add("90")
+            StopR.Items.Add("100")
+        End If
+        If StartR.SelectedItem = "90" Then
+            StopR.Items.Clear()
+            StopR.Items.Add("100")
+        End If
+    End Sub
 End Class

@@ -77,6 +77,12 @@ Partial Class Form1
         Me.M2 = New System.Windows.Forms.TextBox()
         Me.M1 = New System.Windows.Forms.TextBox()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.StopR = New System.Windows.Forms.ComboBox()
+        Me.RangeCheck = New System.Windows.Forms.CheckBox()
+        Me.StartR = New System.Windows.Forms.ComboBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DisableHEX = New System.Windows.Forms.CheckBox()
         Me.BenchAll = New System.Windows.Forms.CheckBox()
@@ -114,6 +120,8 @@ Partial Class Form1
         Me.Par4 = New System.Windows.Forms.TextBox()
         Me.Mailing = New System.Windows.Forms.Timer(Me.components)
         Me.NckToMail = New System.Windows.Forms.TextBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -121,6 +129,7 @@ Partial Class Form1
         Me.TabPage3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.TabPage5.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.RB1.SuspendLayout()
@@ -692,6 +701,7 @@ Partial Class Form1
         '
         'TabPage5
         '
+        Me.TabPage5.Controls.Add(Me.GroupBox3)
         Me.TabPage5.Controls.Add(Me.GroupBox2)
         Me.TabPage5.Controls.Add(Me.GroupBox1)
         Me.TabPage5.Controls.Add(Me.RB1)
@@ -701,6 +711,71 @@ Partial Class Form1
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Settings"
         Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.Label22)
+        Me.GroupBox3.Controls.Add(Me.Label21)
+        Me.GroupBox3.Controls.Add(Me.StopR)
+        Me.GroupBox3.Controls.Add(Me.RangeCheck)
+        Me.GroupBox3.Controls.Add(Me.StartR)
+        Me.GroupBox3.Controls.Add(Me.Label20)
+        Me.GroupBox3.Controls.Add(Me.Label19)
+        Me.GroupBox3.Location = New System.Drawing.Point(340, 3)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(253, 100)
+        Me.GroupBox3.TabIndex = 17
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Select range"
+        '
+        'StopR
+        '
+        Me.StopR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.StopR.Enabled = False
+        Me.StopR.FormattingEnabled = True
+        Me.StopR.Location = New System.Drawing.Point(69, 58)
+        Me.StopR.Name = "StopR"
+        Me.StopR.Size = New System.Drawing.Size(68, 26)
+        Me.StopR.TabIndex = 4
+        '
+        'RangeCheck
+        '
+        Me.RangeCheck.AutoSize = True
+        Me.RangeCheck.Location = New System.Drawing.Point(177, 18)
+        Me.RangeCheck.Name = "RangeCheck"
+        Me.RangeCheck.Size = New System.Drawing.Size(73, 22)
+        Me.RangeCheck.TabIndex = 3
+        Me.RangeCheck.Text = "On/Off"
+        Me.RangeCheck.UseVisualStyleBackColor = True
+        '
+        'StartR
+        '
+        Me.StartR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.StartR.Enabled = False
+        Me.StartR.FormattingEnabled = True
+        Me.StartR.Items.AddRange(New Object() {"0", "10", "20", "30", "40", "50", "60", "70", "80", "90"})
+        Me.StartR.Location = New System.Drawing.Point(69, 22)
+        Me.StartR.Name = "StartR"
+        Me.StartR.Size = New System.Drawing.Size(68, 26)
+        Me.StartR.TabIndex = 2
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(27, 61)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(35, 18)
+        Me.Label20.TabIndex = 1
+        Me.Label20.Text = "End:"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(16, 29)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(47, 18)
+        Me.Label19.TabIndex = 0
+        Me.Label19.Text = "Begin:"
         '
         'GroupBox2
         '
@@ -1023,6 +1098,24 @@ Partial Class Form1
         Me.NckToMail.TabIndex = 21
         Me.NckToMail.Visible = False
         '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(143, 25)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(19, 18)
+        Me.Label21.TabIndex = 5
+        Me.Label21.Text = "%"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(143, 61)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(19, 18)
+        Me.Label22.TabIndex = 6
+        Me.Label22.Text = "%"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -1053,7 +1146,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.26"
+        Me.Text = "SL3BF v1.27"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -1066,6 +1159,8 @@ Partial Class Form1
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -1168,4 +1263,12 @@ Partial Class Form1
     Friend WithEvents SendMessage As CheckBox
     Friend WithEvents Mailing As Timer
     Friend WithEvents NckToMail As TextBox
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents StopR As ComboBox
+    Friend WithEvents RangeCheck As CheckBox
+    Friend WithEvents StartR As ComboBox
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Label21 As Label
 End Class
