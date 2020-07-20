@@ -815,9 +815,9 @@ Partial Class Form1
         Me.DisableHEX.AutoSize = True
         Me.DisableHEX.Location = New System.Drawing.Point(13, 106)
         Me.DisableHEX.Name = "DisableHEX"
-        Me.DisableHEX.Size = New System.Drawing.Size(113, 22)
+        Me.DisableHEX.Size = New System.Drawing.Size(119, 22)
         Me.DisableHEX.TabIndex = 3
-        Me.DisableHEX.Text = "Disable [HEX]"
+        Me.DisableHEX.Text = "Disable HEX [ ]"
         Me.DisableHEX.UseVisualStyleBackColor = True
         '
         'BenchAll
@@ -988,15 +988,15 @@ Partial Class Form1
         Me.bench1.Location = New System.Drawing.Point(140, 17)
         Me.bench1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.bench1.Name = "bench1"
-        Me.bench1.Size = New System.Drawing.Size(90, 25)
+        Me.bench1.Size = New System.Drawing.Size(67, 25)
         Me.bench1.TabIndex = 7
-        Me.bench1.Text = "Benchmark"
+        Me.bench1.Text = "Bench"
         Me.bench1.UseVisualStyleBackColor = True
         '
         'help1
         '
         Me.help1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.help1.Location = New System.Drawing.Point(235, 17)
+        Me.help1.Location = New System.Drawing.Point(213, 17)
         Me.help1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.help1.Name = "help1"
         Me.help1.Size = New System.Drawing.Size(66, 25)
@@ -1140,7 +1140,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(1071, 502)
+        Me.ClientSize = New System.Drawing.Size(1073, 504)
         Me.Controls.Add(Me.EndMask)
         Me.Controls.Add(Me.BeginMask)
         Me.Controls.Add(Me.NckToMail)
