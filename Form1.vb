@@ -137,7 +137,7 @@ Public Class Form1
                     Process.Start("cmd", "/k " + Commv2 + " -s " + BeginMask.Text + " -l " + EndMask.Text)
                     Command.Text = Commv2 + " -s " + BeginMask.Text + " -l " + EndMask.Text
                 End If
-        End If
+            End If
             fileCodCheck.Enabled = True
             manualCheck.BackColor = Color.Yellow
         End If
