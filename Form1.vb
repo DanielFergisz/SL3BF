@@ -249,7 +249,9 @@ Public Class Form1
                 Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 82, 22))
                 Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 108, 22))
                 Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 134, 22))
+                Log2.SelectionColor = Color.DarkBlue
                 Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 160, 22))
+                Log2.SelectionColor = Color.Empty
 
                 NckToMail.Clear()
                 NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 4, 22))
@@ -585,5 +587,43 @@ Public Class Form1
 
     Private Sub StopR_SelectedIndexChanged(sender As Object, e As EventArgs) Handles StopR.SelectedIndexChanged
         EndMask.Text = StopR.Text * 10000000000
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Form2.Show()
+    End Sub
+
+    Private Sub Pass_TextChanged(sender As Object, e As EventArgs) Handles Pass.TextChanged
+        'If Pass.Text = "38F312750F686F9FC9B1B3778774A195" Or
+        'Pass.Text = "9A28E119033B91D14D22838C86D0D53C" Or
+        'Pass.Text = "9DDBFCFE6E73CED7D8C6268C8EB85723" Or
+        'Pass.Text = "A5404AE83A594ECADEE532F0C236BFA6" Or
+        'Pass.Text = "BAF3A9C3DBFA8454937DB77F2B8852B1" Or
+        'Pass.Text = "CAEEBB65D3C48E6DC73B49DC5063A2EE" Or
+        'Pass.Text = "F2D76DFAFD66C7F195F278417DF05888" Or
+        'Pass.Text = "F682624FFB08F6D955DBE7D9C0485084" Or
+        'Pass.Text = "FCB5C510AF7F09F313D9BDE85A707CC0" Or
+        'Pass.Text = "25B977A055BE9B5DEC0C38A2A279C695" Or
+        'Pass.Text = "68597B9162BAB81AF74C56E78EA2588F" Or
+        'Pass.Text = "EA81B32860B86EF4231A11831045F3E6" Or
+        'Pass.Text = "8E309B54DA1ADDE27C2A035D63AACACD" Or
+        'Pass.Text = "916F75217F32081248B15C38DFC8E81B" Or
+        'Pass.Text = "7B045400E1752022F9EB80B0DEA9C65D" Or
+        'Pass.Text = "DA550B5BAAB517409088A3E4F3EB53AC" Or
+        'Pass.Text = "B8C3ADECFC997FCD8081D3DEAF870B8C" Or
+        'Pass.Text = "479C6DDE3942E12C429C1D6ADED80371" Or
+        'Pass.Text = "C70CB07324056BC66A824347F40DB2D5" Or
+        'Pass.Text = "B1A9CEADB5CE9CF9FB4F442150AA8E09" Or
+        'Pass.Text = "46802B476C93A05CBAF76A64752086A9" Or
+        'Pass.Text = "1B0D74C532CA1C6133940C740E8C786E" Or
+        'Pass.Text = "700370BCF8AFBAB25DD62DBD124FD9CE" Or
+        'Pass.Text = "928E5FFB88D81E5F74729A212AB9D12E" Or
+        'Pass.Text = "55DF9CBCC80B17225043DDA1CC783C97" Then
+        '    MsgBox("this HASH is not supported - 20 NCK !!!")
+        '    Pass.Clear()
+        '    Salt.Clear()
+        '    Log.Clear()
+        '    DirF.Clear()
+        'End If
     End Sub
 End Class

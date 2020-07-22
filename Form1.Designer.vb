@@ -124,6 +124,7 @@ Partial Class Form1
         Me.NckToMail = New System.Windows.Forms.TextBox()
         Me.BeginMask = New System.Windows.Forms.TextBox()
         Me.EndMask = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -1134,6 +1135,15 @@ Partial Class Form1
         Me.EndMask.TabIndex = 23
         Me.EndMask.Visible = False
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(311, 18)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(81, 23)
+        Me.Button1.TabIndex = 24
+        Me.Button1.Text = "Phones List"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -1141,6 +1151,7 @@ Partial Class Form1
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(1073, 504)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.EndMask)
         Me.Controls.Add(Me.BeginMask)
         Me.Controls.Add(Me.NckToMail)
@@ -1166,7 +1177,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.28"
+        Me.Text = "SL3BF v1.29"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -1293,4 +1304,5 @@ Partial Class Form1
     Friend WithEvents Label21 As Label
     Friend WithEvents BeginMask As TextBox
     Friend WithEvents EndMask As TextBox
+    Friend WithEvents Button1 As Button
 End Class
