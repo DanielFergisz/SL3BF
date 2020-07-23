@@ -182,7 +182,7 @@ Public Class Form1
             Par2.Visible = False
             Par3.Visible = False
             Par4.Visible = False
-            manualCheck.Visible = True
+            manualCheck.Visible = False
             IMEI1.Enabled = False
             NckToMail.Visible = False
             BeginMask.Visible = False
