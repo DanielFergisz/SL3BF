@@ -43,6 +43,13 @@ Public Class Form1
                 Pass.Text = Mid(Log.Text, 17, 40)
                 Salt.Text = "00" + Mid(IMEI1.Text, 1, 14) + "00"
             End If
+            If DirF.Text.Contains(".sha") Then
+                Log.Text = My.Computer.FileSystem.ReadAllText(OpenFileDialog1.FileName)
+                Dim ShaImei As String = Strings.Right(DirF.Text, 19)
+                IMEI1.Text = Mid(ShaImei, 1, 15)
+                Pass.Text = Mid(Log.Text, 1, 40)
+                Salt.Text = "00" + Mid(IMEI1.Text, 1, 14) + "00"
+            End If
         End If
     End Sub
     Private Sub StartBF1_Click(sender As Object, e As EventArgs) Handles StartBF1.Click
@@ -592,4 +599,5 @@ Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Form2.Show()
     End Sub
+
 End Class
