@@ -125,6 +125,9 @@ Partial Class Form1
         Me.BeginMask = New System.Windows.Forms.TextBox()
         Me.EndMask = New System.Windows.Forms.TextBox()
         Me.PList = New System.Windows.Forms.Button()
+        Me.MaskCommand = New System.Windows.Forms.TextBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -136,6 +139,7 @@ Partial Class Form1
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.RB1.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'vHC
@@ -704,6 +708,7 @@ Partial Class Form1
         '
         'TabPage5
         '
+        Me.TabPage5.Controls.Add(Me.GroupBox4)
         Me.TabPage5.Controls.Add(Me.GroupBox3)
         Me.TabPage5.Controls.Add(Me.GroupBox2)
         Me.TabPage5.Controls.Add(Me.GroupBox1)
@@ -1145,6 +1150,35 @@ Partial Class Form1
         Me.PList.Text = "Phones List"
         Me.PList.UseVisualStyleBackColor = True
         '
+        'MaskCommand
+        '
+        Me.MaskCommand.Enabled = False
+        Me.MaskCommand.Location = New System.Drawing.Point(71, 19)
+        Me.MaskCommand.Name = "MaskCommand"
+        Me.MaskCommand.Size = New System.Drawing.Size(312, 29)
+        Me.MaskCommand.TabIndex = 18
+        Me.MaskCommand.Text = "?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label23.Location = New System.Drawing.Point(18, 22)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(56, 22)
+        Me.Label23.TabIndex = 19
+        Me.Label23.Text = "Mask:"
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.MaskCommand)
+        Me.GroupBox4.Controls.Add(Me.Label23)
+        Me.GroupBox4.Location = New System.Drawing.Point(174, 110)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(399, 58)
+        Me.GroupBox4.TabIndex = 20
+        Me.GroupBox4.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
@@ -1178,7 +1212,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.30"
+        Me.Text = "SL3BF v1.31"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -1199,6 +1233,8 @@ Partial Class Form1
         Me.GroupBox1.PerformLayout()
         Me.RB1.ResumeLayout(False)
         Me.RB1.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1306,4 +1342,7 @@ Partial Class Form1
     Friend WithEvents BeginMask As TextBox
     Friend WithEvents EndMask As TextBox
     Friend WithEvents PList As Button
+    Friend WithEvents Label23 As Label
+    Friend WithEvents MaskCommand As TextBox
+    Friend WithEvents GroupBox4 As GroupBox
 End Class

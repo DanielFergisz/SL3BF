@@ -54,9 +54,9 @@ Public Class Form1
     End Sub
     Private Sub StartBF1_Click(sender As Object, e As EventArgs) Handles StartBF1.Click
         Dim Commv1 As String
-        Commv1 = vHC.Text + " -w3 -m110 " + Par1.Text + Par2.Text + Par4.Text + "--hex-salt --hex-charset " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3"
+        Commv1 = vHC.Text + " -w3 -m110 " + Par1.Text + Par2.Text + Par4.Text + "--hex-salt --hex-charset " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 " + MaskCommand.Text + " --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3"
         Dim Commv2 As String
-        Commv2 = vHC.Text + " -m 110 " + Par1.Text + "--hex-salt --hex-charset " + Pass.Text + ":" + Salt.Text + " -a 3 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force"
+        Commv2 = vHC.Text + " -m 110 " + Par1.Text + "--hex-salt --hex-charset " + Pass.Text + ":" + Salt.Text + " -a 3 " + MaskCommand.Text + " -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force"
         Dim ksMax As String
         ksMax = "1000000000000"
         Dim ks2 As String
@@ -168,6 +168,7 @@ Public Class Form1
             NckToMail.Visible = True
             BeginMask.Visible = True
             EndMask.Visible = True
+            MaskCommand.Enabled = True
             DirF.Clear()
         End If
         If DirF.Text = "$user" Then
@@ -187,12 +188,13 @@ Public Class Form1
             NckToMail.Visible = False
             BeginMask.Visible = False
             EndMask.Visible = False
+            MaskCommand.Enabled = False
             DirF.Clear()
         End If
     End Sub
 
     Private Sub StartBF2_Click(sender As Object, e As EventArgs) Handles StartBF2.Click
-        Dim Commv3 As String = vHC.Text + " -w3 -m110 " + "--hex-salt --hex-charset " + Pass2.Text + ":" + Salt2.Text + " -a3 -1 00010203040506070809 ?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1 --force --outfile=" + FileName1.Text + "_COD.txt --session=SL3 "
+        Dim Commv3 As String = vHC.Text + " -w3 -m110 " + "--hex-salt --hex-charset " + Pass2.Text + ":" + Salt2.Text + " -a3 -1 00010203040506070809 " + MaskCommand.Text + " --force --outfile=" + FileName1.Text + "_COD.txt --session=SL3 "
 
         If (Pass2.Text.Length = 0) And (Salt2.Text.Length = 0) Then
             MessageBox.Show("Salt and Pass cannot be empty !!")
