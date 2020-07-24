@@ -596,7 +596,7 @@ Public Class Form1
         EndMask.Text = StopR.Text * 10000000000
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub PList_Click(sender As Object, e As EventArgs) Handles PList.Click
         Form2.Show()
     End Sub
 
