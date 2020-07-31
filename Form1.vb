@@ -55,8 +55,6 @@ Public Class Form1
     Private Sub StartBF1_Click(sender As Object, e As EventArgs) Handles StartBF1.Click
         Dim Commv1 As String
         Commv1 = vHC.Text + " -w3 -m110 " + Par1.Text + Par2.Text + Par4.Text + "--hex-salt --hex-charset " + Pass.Text + ":" + Salt.Text + " -a3 -1 00010203040506070809 " + MaskCommand.Text + " --force --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session=SL3"
-        Dim Commv2 As String
-        Commv2 = vHC.Text + " -m 110 " + Par1.Text + "--hex-salt --hex-charset " + Pass.Text + ":" + Salt.Text + " -a 3 " + MaskCommand.Text + " -1 00010203040506070809 --outfile=" + IMEI1.Text + "\" + IMEI1.Text + "_COD.txt --session SL3 --force"
         Dim ksMax As String
         ksMax = "1000000000000"
         Dim ks2 As String
