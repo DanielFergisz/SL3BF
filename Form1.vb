@@ -80,71 +80,36 @@ Public Class Form1
             Log.Clear()
             Log.AppendText("Start of calculation..")
 
-            If algo1.Checked = True Then
-                If RangeCheck.Checked = False Then
-                    If numPC.SelectedItem = "1" Then
-                        Process.Start("cmd", "/k " + Commv1)
-                        Command.Text = Commv1
-                    End If
-                    If numPC.SelectedItem = "2" And pcV.SelectedItem = "1" Then
-                        Process.Start("cmd", "/k " + Commv1 + " -s 0 -l " + ks2)
-                        Command.Text = Commv1 + " -s 0 -l " + ks2
-                    End If
-                    If numPC.SelectedItem = "2" And pcV.SelectedItem = "2" Then
-                        Process.Start("cmd", "/k " + Commv1 + " -s " + ks2 + " -l " + ksMax)
-                        Command.Text = Commv1 + " -s " + ks2 + " -l " + ksMax
-                    End If
+            If RangeCheck.Checked = False Then
+                If numPC.SelectedItem = "1" Then
+                    Process.Start("cmd", "/k " + Commv1)
+                    Command.Text = Commv1
+                End If
+                If numPC.SelectedItem = "2" And pcV.SelectedItem = "1" Then
+                    Process.Start("cmd", "/k " + Commv1 + " -s 0 -l " + ks2)
+                    Command.Text = Commv1 + " -s 0 -l " + ks2
+                End If
+                If numPC.SelectedItem = "2" And pcV.SelectedItem = "2" Then
+                    Process.Start("cmd", "/k " + Commv1 + " -s " + ks2 + " -l " + ksMax)
+                    Command.Text = Commv1 + " -s " + ks2 + " -l " + ksMax
+                End If
 
-                    If numPC.SelectedItem = "3" And pcV.SelectedItem = "1" Then
-                        Process.Start("cmd", "/k " + Commv1 + " -s 0 -l " + ks3)
-                        Command.Text = Commv1 + " -s 0 -l " + ks3
-                    End If
-                    If numPC.SelectedItem = "3" And pcV.SelectedItem = "2" Then
-                        Process.Start("cmd", "/k " + Commv1 + " -s " + ks3 + " -l " + ks31)
-                        Command.Text = Commv1 + " -s " + ks3 + " -l " + ks31
-                    End If
-                    If numPC.SelectedItem = "3" And pcV.SelectedItem = "3" Then
-                        Process.Start("cmd", "/k " + Commv1 + " -s " + ks31 + " -l " + ksMax)
-                        Command.Text = Commv1 + " -s " + ks31 + " -l " + ksMax
-                    End If
-                Else
-                    Process.Start("cmd", "/k " + Commv1 + " -s " + BeginMask.Text + " -l " + EndMask.Text)
+                If numPC.SelectedItem = "3" And pcV.SelectedItem = "1" Then
+                    Process.Start("cmd", "/k " + Commv1 + " -s 0 -l " + ks3)
+                    Command.Text = Commv1 + " -s 0 -l " + ks3
+                End If
+                If numPC.SelectedItem = "3" And pcV.SelectedItem = "2" Then
+                    Process.Start("cmd", "/k " + Commv1 + " -s " + ks3 + " -l " + ks31)
+                    Command.Text = Commv1 + " -s " + ks3 + " -l " + ks31
+                End If
+                If numPC.SelectedItem = "3" And pcV.SelectedItem = "3" Then
+                    Process.Start("cmd", "/k " + Commv1 + " -s " + ks31 + " -l " + ksMax)
+                    Command.Text = Commv1 + " -s " + ks31 + " -l " + ksMax
+                End If
+            Else
+                Process.Start("cmd", "/k " + Commv1 + " -s " + BeginMask.Text + " -l " + EndMask.Text)
                     Command.Text = Commv1 + " -s " + BeginMask.Text + " -l " + EndMask.Text
                 End If
-            End If
-
-            If algo2.Checked = True Then
-                If RangeCheck.Checked = False Then
-                    If numPC.SelectedItem = "1" Then
-                        Process.Start("cmd", "/k " + Commv2)
-                        Command.Text = Commv2
-                    End If
-                    If numPC.SelectedItem = "2" And pcV.SelectedItem = "1" Then
-                        Process.Start("cmd", "/k " + Commv2 + " -s 0 -l " + ks2)
-                        Command.Text = Commv2 + " -s 0 -l " + ks2
-                    End If
-                    If numPC.SelectedItem = "2" And pcV.SelectedItem = "2" Then
-                        Process.Start("cmd", "/k " + Commv2 + " -s " + ks2 + " -l " + ksMax)
-                        Command.Text = Commv2 + " -s " + ks2 + " -l " + ksMax
-                    End If
-
-                    If numPC.SelectedItem = "3" And pcV.SelectedItem = "1" Then
-                        Process.Start("cmd", "/k " + Commv2 + " -s 0 -l " + ks3)
-                        Command.Text = Commv2 + " -s 0 -l " + ks3
-                    End If
-                    If numPC.SelectedItem = "3" And pcV.SelectedItem = "2" Then
-                        Process.Start("cmd", "/k " + Commv2 + " -s " + ks3 + " -l " + ks31)
-                        Command.Text = Commv2 + " -s " + ks3 + " -l " + ks31
-                    End If
-                    If numPC.SelectedItem = "3" And pcV.SelectedItem = "3" Then
-                        Process.Start("cmd", "/k " + Commv2 + " -s " + ks31 + " -l " + ksMax)
-                        Command.Text = Commv2 + " -s " + ks31 + " -l " + ksMax
-                    End If
-                Else
-                    Process.Start("cmd", "/k " + Commv2 + " -s " + BeginMask.Text + " -l " + EndMask.Text)
-                    Command.Text = Commv2 + " -s " + BeginMask.Text + " -l " + EndMask.Text
-                End If
-            End If
             fileCodCheck.Enabled = True
             manualCheck.BackColor = Color.Yellow
         End If
