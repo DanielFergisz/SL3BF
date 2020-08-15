@@ -863,6 +863,8 @@ Partial Class Form1
         'AutoS
         '
         Me.AutoS.AutoSize = True
+        Me.AutoS.Checked = True
+        Me.AutoS.CheckState = System.Windows.Forms.CheckState.Checked
         Me.AutoS.Location = New System.Drawing.Point(13, 50)
         Me.AutoS.Name = "AutoS"
         Me.AutoS.Size = New System.Drawing.Size(101, 22)
@@ -873,6 +875,8 @@ Partial Class Form1
         'OptiKer
         '
         Me.OptiKer.AutoSize = True
+        Me.OptiKer.Checked = True
+        Me.OptiKer.CheckState = System.Windows.Forms.CheckState.Checked
         Me.OptiKer.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.OptiKer.Location = New System.Drawing.Point(13, 22)
         Me.OptiKer.Name = "OptiKer"
@@ -1167,7 +1171,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.32"
+        Me.Text = "SL3BF v1.33"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
