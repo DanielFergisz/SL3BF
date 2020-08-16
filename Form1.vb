@@ -297,6 +297,9 @@ Public Class Form1
             Hash2nck.Text = Mid(MC2.Text, 1, 40)
             mc2nck.Text = Mid(MC2.Text, 66, 30)
             nckC.Enabled = True
+            If P_OFF.Checked = True Then
+                S_down.Enabled = True
+            End If
         Else
             If manualCheck.BackColor = Color.Yellow Then
                 manualCheck.BackColor = Color.Green
@@ -565,4 +568,12 @@ Public Class Form1
         Form2.Show()
     End Sub
 
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles P_OFF.CheckedChanged
+
+    End Sub
+
+    Private Sub S_down_Tick(sender As Object, e As EventArgs) Handles S_down.Tick
+        S_down.Enabled = False
+        Shell("shutdown -s")
+    End Sub
 End Class

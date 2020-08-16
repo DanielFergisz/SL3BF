@@ -77,6 +77,7 @@ Partial Class Form1
         Me.M2 = New System.Windows.Forms.TextBox()
         Me.M1 = New System.Windows.Forms.TextBox()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.P_OFF = New System.Windows.Forms.CheckBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.MaskCommand = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
@@ -125,6 +126,8 @@ Partial Class Form1
         Me.BeginMask = New System.Windows.Forms.TextBox()
         Me.EndMask = New System.Windows.Forms.TextBox()
         Me.PList = New System.Windows.Forms.Button()
+        Me.S_down = New System.Windows.Forms.Timer(Me.components)
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -136,6 +139,7 @@ Partial Class Form1
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'vHC
@@ -703,6 +707,7 @@ Partial Class Form1
         '
         'TabPage5
         '
+        Me.TabPage5.Controls.Add(Me.GroupBox5)
         Me.TabPage5.Controls.Add(Me.GroupBox4)
         Me.TabPage5.Controls.Add(Me.GroupBox3)
         Me.TabPage5.Controls.Add(Me.GroupBox2)
@@ -713,6 +718,17 @@ Partial Class Form1
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Settings"
         Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'P_OFF
+        '
+        Me.P_OFF.AutoSize = True
+        Me.P_OFF.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.P_OFF.Location = New System.Drawing.Point(13, 15)
+        Me.P_OFF.Name = "P_OFF"
+        Me.P_OFF.Size = New System.Drawing.Size(215, 22)
+        Me.P_OFF.TabIndex = 21
+        Me.P_OFF.Text = "Shutdown PC after calculation"
+        Me.P_OFF.UseVisualStyleBackColor = True
         '
         'GroupBox4
         '
@@ -755,7 +771,7 @@ Partial Class Form1
         Me.GroupBox3.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(387, 3)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(253, 101)
+        Me.GroupBox3.Size = New System.Drawing.Size(268, 101)
         Me.GroupBox3.TabIndex = 17
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Select range"
@@ -1138,6 +1154,19 @@ Partial Class Form1
         Me.PList.Text = "Phones List"
         Me.PList.UseVisualStyleBackColor = True
         '
+        'S_down
+        '
+        Me.S_down.Interval = 30000
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.P_OFF)
+        Me.GroupBox5.Location = New System.Drawing.Point(3, 168)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(652, 97)
+        Me.GroupBox5.TabIndex = 22
+        Me.GroupBox5.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -1171,7 +1200,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.33"
+        Me.Text = "SL3BF v1.34"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -1192,6 +1221,8 @@ Partial Class Form1
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1299,4 +1330,7 @@ Partial Class Form1
     Friend WithEvents Label23 As Label
     Friend WithEvents MaskCommand As TextBox
     Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents P_OFF As CheckBox
+    Friend WithEvents S_down As Timer
+    Friend WithEvents GroupBox5 As GroupBox
 End Class
