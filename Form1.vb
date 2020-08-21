@@ -211,28 +211,28 @@ Public Class Form1
             Dim result As String = webClient.DownloadString("http://repairbox.pl/sl3/exe/index.php?hash=" + Hash2nck.Text + "&mastersp=" + mc2nck.Text) 'przechodzi na strone i pobiera treść do stringa
             getNCK.Clear()
             Log2.Text = "Getting data from server..."
-            getNCK.AppendText(Environment.NewLine + result) 'wkleja zawartość strony do pola tekstowego
+            getNCK.AppendText(result.Trim) 'wkleja zawartość strony do pola tekstowego
             If getNCK.Text.Length = 0 Then
             Else
                 Log2.AppendText(Environment.NewLine)
-                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 4, 22))
-                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 30, 22))
-                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 56, 22))
-                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 82, 22))
-                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 108, 22))
-                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 134, 22))
+                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 1, 22))
+                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 27, 22))
+                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 53, 22))
+                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 79, 22))
+                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 105, 22))
+                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 131, 22))
                 Log2.SelectionColor = Color.DarkBlue
-                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 160, 22))
+                Log2.AppendText(Environment.NewLine + Mid(getNCK.Text, 157, 22))
                 Log2.SelectionColor = Color.Empty
 
                 NckToMail.Clear()
-                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 4, 22))
-                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 30, 22))
-                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 56, 22))
-                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 82, 22))
-                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 108, 22))
-                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 134, 22))
-                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 160, 22))
+                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 1, 22))
+                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 27, 22))
+                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 53, 22))
+                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 79, 22))
+                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 105, 22))
+                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 131, 22))
+                NckToMail.AppendText(Environment.NewLine + Mid(getNCK.Text, 157, 22))
             End If
         End If
     End Sub
@@ -567,11 +567,6 @@ Public Class Form1
     Private Sub PList_Click(sender As Object, e As EventArgs) Handles PList.Click
         Form2.Show()
     End Sub
-
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles P_OFF.CheckedChanged
-
-    End Sub
-
     Private Sub S_down_Tick(sender As Object, e As EventArgs) Handles S_down.Tick
         S_down.Enabled = False
         Shell("shutdown -s")

@@ -77,6 +77,7 @@ Partial Class Form1
         Me.M2 = New System.Windows.Forms.TextBox()
         Me.M1 = New System.Windows.Forms.TextBox()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.P_OFF = New System.Windows.Forms.CheckBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.MaskCommand = New System.Windows.Forms.TextBox()
@@ -127,7 +128,6 @@ Partial Class Form1
         Me.EndMask = New System.Windows.Forms.TextBox()
         Me.PList = New System.Windows.Forms.Button()
         Me.S_down = New System.Windows.Forms.Timer(Me.components)
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -135,11 +135,11 @@ Partial Class Form1
         Me.TabPage3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.TabPage5.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'vHC
@@ -719,6 +719,15 @@ Partial Class Form1
         Me.TabPage5.Text = "Settings"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.P_OFF)
+        Me.GroupBox5.Location = New System.Drawing.Point(3, 168)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(652, 97)
+        Me.GroupBox5.TabIndex = 22
+        Me.GroupBox5.TabStop = False
+        '
         'P_OFF
         '
         Me.P_OFF.AutoSize = True
@@ -1033,7 +1042,7 @@ Partial Class Form1
         Me.getNCK.Location = New System.Drawing.Point(10, 432)
         Me.getNCK.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.getNCK.Name = "getNCK"
-        Me.getNCK.Size = New System.Drawing.Size(597, 65)
+        Me.getNCK.Size = New System.Drawing.Size(597, 42)
         Me.getNCK.TabIndex = 11
         Me.getNCK.Text = ""
         Me.getNCK.Visible = False
@@ -1158,22 +1167,13 @@ Partial Class Form1
         '
         Me.S_down.Interval = 30000
         '
-        'GroupBox5
-        '
-        Me.GroupBox5.Controls.Add(Me.P_OFF)
-        Me.GroupBox5.Location = New System.Drawing.Point(3, 168)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(652, 97)
-        Me.GroupBox5.TabIndex = 22
-        Me.GroupBox5.TabStop = False
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(1073, 504)
+        Me.ClientSize = New System.Drawing.Size(1073, 479)
         Me.Controls.Add(Me.PList)
         Me.Controls.Add(Me.EndMask)
         Me.Controls.Add(Me.BeginMask)
@@ -1200,7 +1200,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.34"
+        Me.Text = "SL3BF v1.35"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -1213,6 +1213,8 @@ Partial Class Form1
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
@@ -1221,8 +1223,6 @@ Partial Class Form1
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
