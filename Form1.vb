@@ -195,11 +195,21 @@ Public Class Form1
             MC.Text = My.Computer.FileSystem.ReadAllText(OpenFileDialog2.FileName)
             Log.Clear()
             Log.Text = "Reading data.."
-            Log.AppendText(Environment.NewLine + "Master Code: ")
-            Log.SelectionColor = Color.DarkBlue
-            Log.AppendText(Mid(MC.Text, 66, 30))
-            Log.SelectionColor = Color.Empty
-            Log.AppendText(Environment.NewLine + "Hash: " + Mid(MC.Text, 1, 40))
+            If NewMC.Checked = True Then
+                Log.AppendText(Environment.NewLine + "Master Code: ")
+                Log.SelectionColor = Color.DarkBlue
+                Log.AppendText(Mid(MC.Text, 66, 30))
+                Log.SelectionColor = Color.Empty
+                Log.AppendText(Environment.NewLine + "Hash: " + Mid(MC.Text, 1, 40))
+            End If
+            If NewMC.Checked = False Then
+                Log.AppendText(Environment.NewLine + "Master Code: ")
+                Log.SelectionColor = Color.DarkBlue
+                Log.AppendText(Mid(MC.Text, 61, 30))
+                Log.SelectionColor = Color.Empty
+                Log.AppendText(Environment.NewLine + "Hash: " + Mid(MC.Text, 1, 40))
+            End If
+
         End If
     End Sub
 

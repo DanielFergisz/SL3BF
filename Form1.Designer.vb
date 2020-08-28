@@ -128,6 +128,7 @@ Partial Class Form1
         Me.EndMask = New System.Windows.Forms.TextBox()
         Me.PList = New System.Windows.Forms.Button()
         Me.S_down = New System.Windows.Forms.Timer(Me.components)
+        Me.NewMC = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -854,6 +855,7 @@ Partial Class Form1
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.NewMC)
         Me.GroupBox2.Controls.Add(Me.DisableHEX)
         Me.GroupBox2.Controls.Add(Me.BenchAll)
         Me.GroupBox2.Controls.Add(Me.AutoS)
@@ -1167,6 +1169,18 @@ Partial Class Form1
         '
         Me.S_down.Interval = 30000
         '
+        'NewMC
+        '
+        Me.NewMC.AutoSize = True
+        Me.NewMC.Checked = True
+        Me.NewMC.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.NewMC.Location = New System.Drawing.Point(12, 136)
+        Me.NewMC.Name = "NewMC"
+        Me.NewMC.Size = New System.Drawing.Size(138, 22)
+        Me.NewMC.TabIndex = 4
+        Me.NewMC.Text = "New MasterCode"
+        Me.NewMC.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -1200,7 +1214,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SL3BF v1.35"
+        Me.Text = "SL3BF v1.36"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -1333,4 +1347,5 @@ Partial Class Form1
     Friend WithEvents P_OFF As CheckBox
     Friend WithEvents S_down As Timer
     Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents NewMC As CheckBox
 End Class
