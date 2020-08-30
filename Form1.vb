@@ -6,10 +6,11 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If My.Computer.FileSystem.FileExists("hashcat.exe") Then
             vHC.SelectedItem = "hashcat"
-        End If
+        Else
 
-        If My.Computer.FileSystem.FileExists("hashcat64.exe") Then
-            vHC.SelectedItem = "hashcat64"
+            If My.Computer.FileSystem.FileExists("hashcat64.exe") Then
+                vHC.SelectedItem = "hashcat64"
+            End If
         End If
 
         numPC.SelectedItem = "1"

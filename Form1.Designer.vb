@@ -91,6 +91,7 @@ Partial Class Form1
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.NewMC = New System.Windows.Forms.CheckBox()
         Me.DisableHEX = New System.Windows.Forms.CheckBox()
         Me.BenchAll = New System.Windows.Forms.CheckBox()
         Me.AutoS = New System.Windows.Forms.CheckBox()
@@ -128,7 +129,6 @@ Partial Class Form1
         Me.EndMask = New System.Windows.Forms.TextBox()
         Me.PList = New System.Windows.Forms.Button()
         Me.S_down = New System.Windows.Forms.Timer(Me.components)
-        Me.NewMC = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -867,6 +867,18 @@ Partial Class Form1
         Me.GroupBox2.TabIndex = 16
         Me.GroupBox2.TabStop = False
         '
+        'NewMC
+        '
+        Me.NewMC.AutoSize = True
+        Me.NewMC.Checked = True
+        Me.NewMC.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.NewMC.Location = New System.Drawing.Point(12, 136)
+        Me.NewMC.Name = "NewMC"
+        Me.NewMC.Size = New System.Drawing.Size(138, 22)
+        Me.NewMC.TabIndex = 4
+        Me.NewMC.Text = "New MasterCode"
+        Me.NewMC.UseVisualStyleBackColor = True
+        '
         'DisableHEX
         '
         Me.DisableHEX.AutoSize = True
@@ -1168,18 +1180,6 @@ Partial Class Form1
         'S_down
         '
         Me.S_down.Interval = 30000
-        '
-        'NewMC
-        '
-        Me.NewMC.AutoSize = True
-        Me.NewMC.Checked = True
-        Me.NewMC.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.NewMC.Location = New System.Drawing.Point(12, 136)
-        Me.NewMC.Name = "NewMC"
-        Me.NewMC.Size = New System.Drawing.Size(138, 22)
-        Me.NewMC.TabIndex = 4
-        Me.NewMC.Text = "New MasterCode"
-        Me.NewMC.UseVisualStyleBackColor = True
         '
         'Form1
         '
