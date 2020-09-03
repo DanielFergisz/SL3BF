@@ -580,6 +580,6 @@ Public Class Form1
     End Sub
     Private Sub S_down_Tick(sender As Object, e As EventArgs) Handles S_down.Tick
         S_down.Enabled = False
-        Shell("shutdown -s")
+        Shell("shutdown -f -s")
     End Sub
 End Class
